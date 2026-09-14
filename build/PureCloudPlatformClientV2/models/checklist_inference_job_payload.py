@@ -49,14 +49,17 @@ class ChecklistInferenceJobPayload(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'conversation_context': 'list[ConversationContext]'
+            'conversation_context': 'list[ConversationContext]',
+            'preview': 'bool'
         }
 
         self.attribute_map = {
-            'conversation_context': 'conversationContext'
+            'conversation_context': 'conversationContext',
+            'preview': 'preview'
         }
 
         self._conversation_context = None
+        self._preview = None
 
     @property
     def conversation_context(self) -> List['ConversationContext']:
@@ -81,6 +84,30 @@ class ChecklistInferenceJobPayload(object):
         
 
         self._conversation_context = conversation_context
+
+    @property
+    def preview(self) -> bool:
+        """
+        Gets the preview of this ChecklistInferenceJobPayload.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :return: The preview of this ChecklistInferenceJobPayload.
+        :rtype: bool
+        """
+        return self._preview
+
+    @preview.setter
+    def preview(self, preview: bool) -> None:
+        """
+        Sets the preview of this ChecklistInferenceJobPayload.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :param preview: The preview of this ChecklistInferenceJobPayload.
+        :type: bool
+        """
+        
+
+        self._preview = preview
 
     def to_dict(self):
         """

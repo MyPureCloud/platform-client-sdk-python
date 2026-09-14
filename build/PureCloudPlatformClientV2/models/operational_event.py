@@ -59,6 +59,8 @@ class OperationalEvent(object):
             'parent_entity_id': 'str',
             'conversation': 'AddressableEntityRef',
             'date_created': 'datetime',
+            'date_modified': 'datetime',
+            'entity_modified_by': 'str',
             'entity_version': 'str',
             'phone_number': 'str',
             'external_contact_id': 'str'
@@ -75,6 +77,8 @@ class OperationalEvent(object):
             'parent_entity_id': 'parentEntityId',
             'conversation': 'conversation',
             'date_created': 'dateCreated',
+            'date_modified': 'dateModified',
+            'entity_modified_by': 'entityModifiedBy',
             'entity_version': 'entityVersion',
             'phone_number': 'phoneNumber',
             'external_contact_id': 'externalContactId'
@@ -90,6 +94,8 @@ class OperationalEvent(object):
         self._parent_entity_id = None
         self._conversation = None
         self._date_created = None
+        self._date_modified = None
+        self._entity_modified_by = None
         self._entity_version = None
         self._phone_number = None
         self._external_contact_id = None
@@ -333,6 +339,54 @@ class OperationalEvent(object):
         
 
         self._date_created = date_created
+
+    @property
+    def date_modified(self) -> datetime:
+        """
+        Gets the date_modified of this OperationalEvent.
+        The date and time the entity affected by the event was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_modified of this OperationalEvent.
+        :rtype: datetime
+        """
+        return self._date_modified
+
+    @date_modified.setter
+    def date_modified(self, date_modified: datetime) -> None:
+        """
+        Sets the date_modified of this OperationalEvent.
+        The date and time the entity affected by the event was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_modified: The date_modified of this OperationalEvent.
+        :type: datetime
+        """
+        
+
+        self._date_modified = date_modified
+
+    @property
+    def entity_modified_by(self) -> str:
+        """
+        Gets the entity_modified_by of this OperationalEvent.
+        The unique identifier of the user who last modified the entity affected by the event.
+
+        :return: The entity_modified_by of this OperationalEvent.
+        :rtype: str
+        """
+        return self._entity_modified_by
+
+    @entity_modified_by.setter
+    def entity_modified_by(self, entity_modified_by: str) -> None:
+        """
+        Sets the entity_modified_by of this OperationalEvent.
+        The unique identifier of the user who last modified the entity affected by the event.
+
+        :param entity_modified_by: The entity_modified_by of this OperationalEvent.
+        :type: str
+        """
+        
+
+        self._entity_modified_by = entity_modified_by
 
     @property
     def entity_version(self) -> str:

@@ -121,7 +121,7 @@ class SummaryAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["conversationId", "copied", "editedField", "errorType", "language", "mediaType", "messageType", "presented", "queueId", "summaryGenerated", "summaryId", "summaryRating", "triggerSourceId", "triggerSourceOutcome", "triggerSourceType", "userId", "wrapUpCodeRating", "wrapUpCodeSuggestionSelected", "wrapupCodesGenerated"]
+        allowed_values = ["conversationId", "copied", "editedField", "errorType", "language", "mediaType", "messageType", "presented", "queueId", "summaryGenerated", "summaryId", "summaryRating", "triggerSourceId", "triggerSourceOutcome", "triggerSourceType", "triggerType", "userId", "wrapUpCodeRating", "wrapUpCodeSuggestionSelected", "wrapupCodesGenerated"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

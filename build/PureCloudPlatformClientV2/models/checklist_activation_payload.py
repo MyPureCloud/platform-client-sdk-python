@@ -56,7 +56,8 @@ class ChecklistActivationPayload(object):
             'queue_id': 'str',
             'assistant_id': 'str',
             'media_type': 'str',
-            'direction': 'str'
+            'direction': 'str',
+            'preview': 'bool'
         }
 
         self.attribute_map = {
@@ -69,7 +70,8 @@ class ChecklistActivationPayload(object):
             'queue_id': 'queueId',
             'assistant_id': 'assistantId',
             'media_type': 'mediaType',
-            'direction': 'direction'
+            'direction': 'direction',
+            'preview': 'preview'
         }
 
         self._activation_trigger_type = None
@@ -82,6 +84,7 @@ class ChecklistActivationPayload(object):
         self._assistant_id = None
         self._media_type = None
         self._direction = None
+        self._preview = None
 
     @property
     def activation_trigger_type(self) -> str:
@@ -337,6 +340,30 @@ class ChecklistActivationPayload(object):
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
+
+    @property
+    def preview(self) -> bool:
+        """
+        Gets the preview of this ChecklistActivationPayload.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :return: The preview of this ChecklistActivationPayload.
+        :rtype: bool
+        """
+        return self._preview
+
+    @preview.setter
+    def preview(self, preview: bool) -> None:
+        """
+        Sets the preview of this ChecklistActivationPayload.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :param preview: The preview of this ChecklistActivationPayload.
+        :type: bool
+        """
+        
+
+        self._preview = preview
 
     def to_dict(self):
         """

@@ -2406,7 +2406,7 @@ except ApiException as e:
 
 ## get_architect_prompts
 
-> [**PromptEntityListing**](PromptEntityListing) get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
+> [**PromptEntityListing**](PromptEntityListing) get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order, include_media_uris=include_media_uris, include_resources=include_resources, language=language, division_id=division_id)
 
 
 Get a pageable list of user prompts
@@ -2442,10 +2442,11 @@ sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 include_media_uris = True # bool | Include the media URIs for each resource (optional) (default to True)
 include_resources = True # bool | Include the resources for each system prompt (optional) (default to True)
 language = ['language_example'] # list[str] | Filter the resources down to the provided languages (optional)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
 
 try:
     # Get a pageable list of user prompts
-    api_response = api_instance.get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
+    api_response = api_instance.get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order, include_media_uris=include_media_uris, include_resources=include_resources, language=language, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_architect_prompts: %s\n" % e)
@@ -2466,6 +2467,7 @@ except ApiException as e:
 | **include_media_uris** | **bool**| Include the media URIs for each resource | [optional] [default to True] |
 | **include_resources** | **bool**| Include the resources for each system prompt | [optional] [default to True] |
 | **language** | [**list[str]**](str)| Filter the resources down to the provided languages | [optional]  |
+| **division_id** | [**list[str]**](str)| division ID(s) | [optional]  |
 
 ### Return type
 
@@ -7187,7 +7189,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
-body = NULL # object |  (optional)
+body = PureCloudPlatformClientV2.RegisterArchitectJobRequest() # RegisterArchitectJobRequest |  (optional)
 
 try:
     # Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
@@ -7202,7 +7204,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | [optional]  |
+| **body** | [**RegisterArchitectJobRequest**](RegisterArchitectJobRequest)|  | [optional]  |
 
 ### Return type
 
@@ -8129,4 +8131,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

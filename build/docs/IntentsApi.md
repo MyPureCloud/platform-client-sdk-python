@@ -837,8 +837,6 @@ except ApiException as e:
 
 Get customer intents by IDs
 
-post_intents_customerintents_bulk_retrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/intents/customerintents/bulk/retrieve 
 
 Requires ANY permissions: 
@@ -880,4 +878,4 @@ except ApiException as e:
 [**list[CustomerIntentResponse]**](CustomerIntentResponse)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

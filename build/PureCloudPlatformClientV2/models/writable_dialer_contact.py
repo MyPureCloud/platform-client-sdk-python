@@ -60,7 +60,10 @@ class WritableDialerContact(object):
             'callable': 'bool',
             'phone_number_status': 'dict(str, PhoneNumberStatus)',
             'contactable_status': 'dict(str, ContactableStatus)',
-            'date_created': 'datetime'
+            'date_created': 'datetime',
+            'retention_type': 'str',
+            'retention_days': 'int',
+            'date_expiration': 'datetime'
         }
 
         self.attribute_map = {
@@ -73,7 +76,10 @@ class WritableDialerContact(object):
             'callable': 'callable',
             'phone_number_status': 'phoneNumberStatus',
             'contactable_status': 'contactableStatus',
-            'date_created': 'dateCreated'
+            'date_created': 'dateCreated',
+            'retention_type': 'retentionType',
+            'retention_days': 'retentionDays',
+            'date_expiration': 'dateExpiration'
         }
 
         self._id = None
@@ -86,6 +92,9 @@ class WritableDialerContact(object):
         self._phone_number_status = None
         self._contactable_status = None
         self._date_created = None
+        self._retention_type = None
+        self._retention_days = None
+        self._date_expiration = None
 
     @property
     def id(self) -> str:
@@ -326,6 +335,83 @@ class WritableDialerContact(object):
         
 
         self._date_created = date_created
+
+    @property
+    def retention_type(self) -> str:
+        """
+        Gets the retention_type of this WritableDialerContact.
+        The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration
+
+        :return: The retention_type of this WritableDialerContact.
+        :rtype: str
+        """
+        return self._retention_type
+
+    @retention_type.setter
+    def retention_type(self, retention_type: str) -> None:
+        """
+        Sets the retention_type of this WritableDialerContact.
+        The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration
+
+        :param retention_type: The retention_type of this WritableDialerContact.
+        :type: str
+        """
+        if isinstance(retention_type, int):
+            retention_type = str(retention_type)
+        allowed_values = ["Never", "Today", "RetentionDays", "DateExpiration"]
+        if retention_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for retention_type -> " + retention_type)
+            self._retention_type = "outdated_sdk_version"
+        else:
+            self._retention_type = retention_type
+
+    @property
+    def retention_days(self) -> int:
+        """
+        Gets the retention_days of this WritableDialerContact.
+        The number of days to retain this contact. Required when retentionType is RetentionDays.
+
+        :return: The retention_days of this WritableDialerContact.
+        :rtype: int
+        """
+        return self._retention_days
+
+    @retention_days.setter
+    def retention_days(self, retention_days: int) -> None:
+        """
+        Sets the retention_days of this WritableDialerContact.
+        The number of days to retain this contact. Required when retentionType is RetentionDays.
+
+        :param retention_days: The retention_days of this WritableDialerContact.
+        :type: int
+        """
+        
+
+        self._retention_days = retention_days
+
+    @property
+    def date_expiration(self) -> datetime:
+        """
+        Gets the date_expiration of this WritableDialerContact.
+        The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_expiration of this WritableDialerContact.
+        :rtype: datetime
+        """
+        return self._date_expiration
+
+    @date_expiration.setter
+    def date_expiration(self, date_expiration: datetime) -> None:
+        """
+        Sets the date_expiration of this WritableDialerContact.
+        The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_expiration: The date_expiration of this WritableDialerContact.
+        :type: datetime
+        """
+        
+
+        self._date_expiration = date_expiration
 
     def to_dict(self):
         """

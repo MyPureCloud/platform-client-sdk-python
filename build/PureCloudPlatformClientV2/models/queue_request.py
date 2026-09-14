@@ -89,6 +89,7 @@ class QueueRequest(object):
             'message_in_queue_flow': 'DomainEntityRef',
             'whisper_prompt': 'DomainEntityRef',
             'on_hold_prompt': 'DomainEntityRef',
+            'default_media_language': 'str',
             'auto_answer_only': 'bool',
             'canned_response_libraries': 'CannedResponseLibraries',
             'enable_transcription': 'bool',
@@ -133,6 +134,7 @@ class QueueRequest(object):
             'message_in_queue_flow': 'messageInQueueFlow',
             'whisper_prompt': 'whisperPrompt',
             'on_hold_prompt': 'onHoldPrompt',
+            'default_media_language': 'defaultMediaLanguage',
             'auto_answer_only': 'autoAnswerOnly',
             'canned_response_libraries': 'cannedResponseLibraries',
             'enable_transcription': 'enableTranscription',
@@ -176,6 +178,7 @@ class QueueRequest(object):
         self._message_in_queue_flow = None
         self._whisper_prompt = None
         self._on_hold_prompt = None
+        self._default_media_language = None
         self._auto_answer_only = None
         self._canned_response_libraries = None
         self._enable_transcription = None
@@ -830,6 +833,30 @@ class QueueRequest(object):
         
 
         self._on_hold_prompt = on_hold_prompt
+
+    @property
+    def default_media_language(self) -> str:
+        """
+        Gets the default_media_language of this QueueRequest.
+        The canonical language code (e.g. en-US) used for the default media language on the queue.
+
+        :return: The default_media_language of this QueueRequest.
+        :rtype: str
+        """
+        return self._default_media_language
+
+    @default_media_language.setter
+    def default_media_language(self, default_media_language: str) -> None:
+        """
+        Sets the default_media_language of this QueueRequest.
+        The canonical language code (e.g. en-US) used for the default media language on the queue.
+
+        :param default_media_language: The default_media_language of this QueueRequest.
+        :type: str
+        """
+        
+
+        self._default_media_language = default_media_language
 
     @property
     def auto_answer_only(self) -> bool:

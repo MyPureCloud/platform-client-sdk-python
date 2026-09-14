@@ -73,6 +73,10 @@ class ContactList(object):
             'zip_code_column_name': 'str',
             'column_data_type_specifications': 'list[ColumnDataTypeSpecification]',
             'trim_whitespace': 'bool',
+            'retention_type': 'str',
+            'retention_days': 'int',
+            'date_expiration': 'datetime',
+            'time_zone': 'str',
             'self_uri': 'str'
         }
 
@@ -96,6 +100,10 @@ class ContactList(object):
             'zip_code_column_name': 'zipCodeColumnName',
             'column_data_type_specifications': 'columnDataTypeSpecifications',
             'trim_whitespace': 'trimWhitespace',
+            'retention_type': 'retentionType',
+            'retention_days': 'retentionDays',
+            'date_expiration': 'dateExpiration',
+            'time_zone': 'timeZone',
             'self_uri': 'selfUri'
         }
 
@@ -118,6 +126,10 @@ class ContactList(object):
         self._zip_code_column_name = None
         self._column_data_type_specifications = None
         self._trim_whitespace = None
+        self._retention_type = None
+        self._retention_days = None
+        self._date_expiration = None
+        self._time_zone = None
         self._self_uri = None
 
     @property
@@ -575,6 +587,107 @@ class ContactList(object):
         
 
         self._trim_whitespace = trim_whitespace
+
+    @property
+    def retention_type(self) -> str:
+        """
+        Gets the retention_type of this ContactList.
+        The type of retention for this list. Valid values: Never, Today, RetentionDays
+
+        :return: The retention_type of this ContactList.
+        :rtype: str
+        """
+        return self._retention_type
+
+    @retention_type.setter
+    def retention_type(self, retention_type: str) -> None:
+        """
+        Sets the retention_type of this ContactList.
+        The type of retention for this list. Valid values: Never, Today, RetentionDays
+
+        :param retention_type: The retention_type of this ContactList.
+        :type: str
+        """
+        if isinstance(retention_type, int):
+            retention_type = str(retention_type)
+        allowed_values = ["Never", "Today", "RetentionDays"]
+        if retention_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for retention_type -> " + retention_type)
+            self._retention_type = "outdated_sdk_version"
+        else:
+            self._retention_type = retention_type
+
+    @property
+    def retention_days(self) -> int:
+        """
+        Gets the retention_days of this ContactList.
+        The number of days to retain this list. Required when retentionType is RetentionDays.
+
+        :return: The retention_days of this ContactList.
+        :rtype: int
+        """
+        return self._retention_days
+
+    @retention_days.setter
+    def retention_days(self, retention_days: int) -> None:
+        """
+        Sets the retention_days of this ContactList.
+        The number of days to retain this list. Required when retentionType is RetentionDays.
+
+        :param retention_days: The retention_days of this ContactList.
+        :type: int
+        """
+        
+
+        self._retention_days = retention_days
+
+    @property
+    def date_expiration(self) -> datetime:
+        """
+        Gets the date_expiration of this ContactList.
+        The expiration date of the contact list. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_expiration of this ContactList.
+        :rtype: datetime
+        """
+        return self._date_expiration
+
+    @date_expiration.setter
+    def date_expiration(self, date_expiration: datetime) -> None:
+        """
+        Sets the date_expiration of this ContactList.
+        The expiration date of the contact list. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_expiration: The date_expiration of this ContactList.
+        :type: datetime
+        """
+        
+
+        self._date_expiration = date_expiration
+
+    @property
+    def time_zone(self) -> str:
+        """
+        Gets the time_zone of this ContactList.
+        The time zone for this contact list; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+
+        :return: The time_zone of this ContactList.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone: str) -> None:
+        """
+        Sets the time_zone of this ContactList.
+        The time zone for this contact list; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+
+        :param time_zone: The time_zone of this ContactList.
+        :type: str
+        """
+        
+
+        self._time_zone = time_zone
 
     @property
     def self_uri(self) -> str:

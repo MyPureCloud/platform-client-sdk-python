@@ -1370,8 +1370,6 @@ except ApiException as e:
 
 Get a case query job by id
 
-get_casemanagement_cases_query_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/casemanagement/cases/query/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -1419,8 +1417,6 @@ except ApiException as e:
 
 
 Get results for a case query job
-
-get_casemanagement_cases_query_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/query/jobs/{jobId}/results 
 
@@ -1569,8 +1565,6 @@ except ApiException as e:
 
 
 Update the ownerId of a Case
-
-patch_casemanagement_case_owner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/casemanagement/cases/{caseId}/owner 
 
@@ -2472,8 +2466,6 @@ except ApiException as e:
 
 Create a Case query job.
 
-post_casemanagement_cases_query_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/casemanagement/cases/query/jobs 
 
 Requires ANY permissions: 
@@ -2617,4 +2609,4 @@ except ApiException as e:
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

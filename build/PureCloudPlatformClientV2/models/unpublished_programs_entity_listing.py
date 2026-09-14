@@ -51,6 +51,7 @@ class UnpublishedProgramsEntityListing(object):
         self.swagger_types = {
             'entities': 'list[Program]',
             'page_size': 'int',
+            'total': 'int',
             'self_uri': 'str',
             'page_count': 'int',
             'next_uri': 'str'
@@ -59,6 +60,7 @@ class UnpublishedProgramsEntityListing(object):
         self.attribute_map = {
             'entities': 'entities',
             'page_size': 'pageSize',
+            'total': 'total',
             'self_uri': 'selfUri',
             'page_count': 'pageCount',
             'next_uri': 'nextUri'
@@ -66,6 +68,7 @@ class UnpublishedProgramsEntityListing(object):
 
         self._entities = None
         self._page_size = None
+        self._total = None
         self._self_uri = None
         self._page_count = None
         self._next_uri = None
@@ -117,6 +120,30 @@ class UnpublishedProgramsEntityListing(object):
         
 
         self._page_size = page_size
+
+    @property
+    def total(self) -> int:
+        """
+        Gets the total of this UnpublishedProgramsEntityListing.
+
+
+        :return: The total of this UnpublishedProgramsEntityListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total: int) -> None:
+        """
+        Sets the total of this UnpublishedProgramsEntityListing.
+
+
+        :param total: The total of this UnpublishedProgramsEntityListing.
+        :type: int
+        """
+        
+
+        self._total = total
 
     @property
     def self_uri(self) -> str:

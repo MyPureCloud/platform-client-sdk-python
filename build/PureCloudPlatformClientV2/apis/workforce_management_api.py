@@ -70,6 +70,7 @@ from ..models import AgentQueryOpportunitiesResponse
 from ..models import AgentScheduleBidScheduleSetResponse
 from ..models import AgentScheduleBiddingPreferenceResponse
 from ..models import AgentScheduleBids
+from ..models import AgentSchedulingPreferenceListing
 from ..models import AgentTimeOffRequestPatch
 from ..models import AgentUpdateAlternativeShiftTradeRequest
 from ..models import AgentWorkPlanBiddingPreferenceResponse
@@ -164,6 +165,7 @@ from ..models import BusinessUnitActivityCode
 from ..models import BusinessUnitActivityCodeListing
 from ..models import BusinessUnitListing
 from ..models import BusinessUnitResponse
+from ..models import BusinessUnitSchedulingPreferencesSettingsResponse
 from ..models import CalendarUrlResponse
 from ..models import CapacityPlanDeleteRequest
 from ..models import CapacityPlanForecastInputsResponse
@@ -255,6 +257,7 @@ from ..models import ProcessScheduleUpdateUploadRequest
 from ..models import QueryAdherenceExplanationsResponse
 from ..models import QueryAgentScheduleUnavailableTimesRequest
 from ..models import QueryAgentScheduleUnavailableTimesResponse
+from ..models import QueryAgentSchedulingPreferencesRequest
 from ..models import QueryAgentShiftTradeListJobRequest
 from ..models import QueryAgentUnavailableTimesRequest
 from ..models import QueryAgentUnavailableTimesValidationJobResponse
@@ -326,9 +329,11 @@ from ..models import UpdateActivityCodeRequest
 from ..models import UpdateActivityPlanRequest
 from ..models import UpdateAdherenceExplanationStatusRequest
 from ..models import UpdateAgentScheduleBiddingPreference
+from ..models import UpdateAgentSchedulingPreferencesRequest
 from ..models import UpdateAgentWorkPlanBiddingPreference
 from ..models import UpdateAlternativeShiftBuSettingsRequest
 from ..models import UpdateBusinessUnitRequest
+from ..models import UpdateBusinessUnitSchedulingPreferencesSettingsRequest
 from ..models import UpdateCapacityPlanRequest
 from ..models import UpdateManagementUnitRequest
 from ..models import UpdateManagementUnitsSettingsRequest
@@ -350,6 +355,7 @@ from ..models import UpdateUnavailableTimesRequest
 from ..models import UpdateWorkPlanBid
 from ..models import UpdateWorkPlanRotationRequest
 from ..models import UploadUrlRequestBody
+from ..models import UserActivityListing
 from ..models import UserListScheduleRequestBody
 from ..models import UserScheduleAdherence
 from ..models import UserScheduleAdherenceListing
@@ -357,6 +363,7 @@ from ..models import UserScheduleContainer
 from ..models import UserStaffingGroupListing
 from ..models import UserTimeOffIntegrationStatusResponse
 from ..models import UserTimeOffIntegrationStatusResponseListing
+from ..models import UsersActivityRequest
 from ..models import ValidateAgentUnavailableTimesRequest
 from ..models import ValidateAgentUnavailableTimesResponse
 from ..models import ValidateWorkPlanResponse
@@ -6609,6 +6616,85 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BuScheduleRunListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_schedulingpreferences_settings(self, business_unit_id: str, **kwargs) -> 'BusinessUnitSchedulingPreferencesSettingsResponse':
+        """
+        Get business unit scheduling preferences settings
+        
+	    get_workforcemanagement_businessunit_schedulingpreferences_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_schedulingpreferences_settings(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :return: BusinessUnitSchedulingPreferencesSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_schedulingpreferences_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_schedulingpreferences_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BusinessUnitSchedulingPreferencesSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -12920,6 +13006,79 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_schedulingpreferences_settings(self, **kwargs) -> 'BusinessUnitSchedulingPreferencesSettingsResponse':
+        """
+        Get scheduling preferences settings for the agent's business unit
+        
+	    get_workforcemanagement_schedulingpreferences_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_schedulingpreferences_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: BusinessUnitSchedulingPreferencesSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_schedulingpreferences_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/schedulingpreferences/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BusinessUnitSchedulingPreferencesSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("get_workforcemanagement_shifttrades is deprecated")
     def get_workforcemanagement_shifttrades(self, **kwargs) -> 'ShiftTradeListResponse':
         """
@@ -15816,6 +15975,91 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_businessunit_schedulingpreferences_settings(self, business_unit_id: str, body: 'UpdateBusinessUnitSchedulingPreferencesSettingsRequest', **kwargs) -> 'BusinessUnitSchedulingPreferencesSettingsResponse':
+        """
+        Update business unit scheduling preferences settings
+        
+	    patch_workforcemanagement_businessunit_schedulingpreferences_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_schedulingpreferences_settings(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param UpdateBusinessUnitSchedulingPreferencesSettingsRequest body: body (required)
+        :return: BusinessUnitSchedulingPreferencesSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_schedulingpreferences_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_schedulingpreferences_settings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_schedulingpreferences_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BusinessUnitSchedulingPreferencesSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_businessunit_servicegoaltemplate(self, business_unit_id: str, service_goal_template_id: str, body: 'UpdateServiceGoalTemplate', **kwargs) -> 'ServiceGoalTemplate':
         """
         Updates a service goal template
@@ -17358,6 +17602,85 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_schedulingpreferences(self, body: 'UpdateAgentSchedulingPreferencesRequest', **kwargs) -> 'AgentSchedulingPreferenceListing':
+        """
+        Update agent scheduling preferences
+        
+	    patch_workforcemanagement_schedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_schedulingpreferences(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UpdateAgentSchedulingPreferencesRequest body: body (required)
+        :return: AgentSchedulingPreferenceListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_schedulingpreferences" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_schedulingpreferences`")
+
+
+        resource_path = '/api/v2/workforcemanagement/schedulingpreferences'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentSchedulingPreferenceListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_timeoffrequest(self, time_off_request_id: str, body: 'AgentTimeOffRequestPatch', **kwargs) -> 'TimeOffRequestResponse':
         """
         Update a time off request for the current user
@@ -18176,6 +18499,91 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AgentQueryAdherenceExplanationsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_agent_schedulingpreferences_query(self, agent_id: str, body: 'QueryAgentSchedulingPreferencesRequest', **kwargs) -> 'AgentSchedulingPreferenceListing':
+        """
+        Get agent scheduling preferences
+        
+	    post_workforcemanagement_agent_schedulingpreferences_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agent_schedulingpreferences_query(agent_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_id: The ID of the agent (required)
+        :param QueryAgentSchedulingPreferencesRequest body: body (required)
+        :return: AgentSchedulingPreferenceListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agent_schedulingpreferences_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_id' is set
+        if ('agent_id' not in params) or (params['agent_id'] is None):
+            raise ValueError("Missing the required parameter `agent_id` when calling `post_workforcemanagement_agent_schedulingpreferences_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agent_schedulingpreferences_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/{agentId}/schedulingpreferences/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_id' in params:
+            path_params['agentId'] = params['agent_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentSchedulingPreferenceListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -28027,6 +28435,85 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_schedulingpreferences_query(self, body: 'QueryAgentSchedulingPreferencesRequest', **kwargs) -> 'AgentSchedulingPreferenceListing':
+        """
+        Get agent scheduling preferences
+        
+	    post_workforcemanagement_schedulingpreferences_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_schedulingpreferences_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param QueryAgentSchedulingPreferencesRequest body: body (required)
+        :return: AgentSchedulingPreferenceListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_schedulingpreferences_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_schedulingpreferences_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/schedulingpreferences/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentSchedulingPreferenceListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_shifttrading_trade_jobs(self, trade_id: str, body: 'UpdateShiftTradeJobRequest', **kwargs) -> 'ShiftTradeUpdateTradeJobResponse':
         """
         Updates a shift trade. This route can only be called by the initiating user
@@ -29166,6 +29653,84 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ValidateAgentUnavailableTimesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_users_activity(self, body: 'UsersActivityRequest', **kwargs) -> 'UserActivityListing':
+        """
+        Get a list of UserScheduleAdherence records for the requested users
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_users_activity(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UsersActivityRequest body: Request body (required)
+        :return: UserActivityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_users_activity" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_users_activity`")
+
+
+        resource_path = '/api/v2/workforcemanagement/users/activity'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserActivityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

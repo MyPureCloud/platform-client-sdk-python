@@ -22,8 +22,11 @@
 | **zip_code_column_name** | str | The name of ContactListTemplate column containing the zip code for use with automatic time zone mapping. Only allowed if &#39;automaticTimeZoneMapping&#39; is set to true. | [optional] |
 | **column_data_type_specifications** | [list[ColumnDataTypeSpecification]](ColumnDataTypeSpecification) | The settings of the columns selected for dynamic queueing | [optional] |
 | **trim_whitespace** | bool | Whether to trim white space when importing a ContactListTemplate csv file, default value &#x3D; true | [optional] |
+| **retention_type** | str | The type of retention for this ContactListTemplate. Valid values: Never, Today, RetentionDays | [optional] |
+| **retention_days** | int | The number of days to retain contact lists created from this template. Required when retentionType is RetentionDays. | [optional] |
+| **time_zone** | str | The time zone for this contact list template; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London | [optional] |
 | **self_uri** | str | The URI for this object | [optional] |
 
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

@@ -1019,7 +1019,7 @@ class PresenceApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id: user Id (required)
+        :param str user_id: User ID (UUID) (required)
         :param str source_id: Presence source ID (required)
         :return: UserPresence
                  If the method is called asynchronously,
@@ -1103,7 +1103,7 @@ class PresenceApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id: user Id (required)
+        :param str user_id: User ID (UUID) (required)
         :return: UserPresence
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1337,7 +1337,7 @@ class PresenceApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id: user Id (required)
+        :param str user_id: User ID (UUID) (required)
         :param str source_id: Presence source ID (required)
         :param UserPresence body: User presence (required)
         :return: UserPresence
@@ -1427,7 +1427,7 @@ class PresenceApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str user_id: user Id (required)
+        :param str user_id: User ID (UUID) (required)
         :param UserPresence body: User presence (required)
         :return: UserPresence
                  If the method is called asynchronously,

@@ -9339,7 +9339,7 @@ except ApiException as e:
 
 Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
 
-Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
+Supply the two-step verification PIN. Embedded Signup v2: phoneNumber (E.164 from availablePhoneNumbers) and pin. Embedded Signup v4: pin only. Poll GET until status is Active.
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} 
 
@@ -14320,7 +14320,7 @@ except ApiException as e:
 
 Create a WhatsApp Integration using the WhatsApp embedded signup flow
 
-Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
+Use the access token (Embedded Signup v2) or the OAuth code and session_info IDs (Embedded Signup v4) from the embedded signup flow. Creation is asynchronous; poll GET until createStatus is Completed. Embedded Signup v2: name is required; select an E.164 number from availablePhoneNumbers and pass it to PATCH. Embedded Signup v4: name is optional; activate with pin only.
 
 Wraps POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup 
 
@@ -16139,4 +16139,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_

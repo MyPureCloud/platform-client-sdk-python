@@ -47,14 +47,17 @@ class ChecklistFinalizePayload(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'exit_reason': 'str'
+            'exit_reason': 'str',
+            'preview': 'bool'
         }
 
         self.attribute_map = {
-            'exit_reason': 'exitReason'
+            'exit_reason': 'exitReason',
+            'preview': 'preview'
         }
 
         self._exit_reason = None
+        self._preview = None
 
     @property
     def exit_reason(self) -> str:
@@ -79,6 +82,30 @@ class ChecklistFinalizePayload(object):
         
 
         self._exit_reason = exit_reason
+
+    @property
+    def preview(self) -> bool:
+        """
+        Gets the preview of this ChecklistFinalizePayload.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :return: The preview of this ChecklistFinalizePayload.
+        :rtype: bool
+        """
+        return self._preview
+
+    @preview.setter
+    def preview(self, preview: bool) -> None:
+        """
+        Sets the preview of this ChecklistFinalizePayload.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :param preview: The preview of this ChecklistFinalizePayload.
+        :type: bool
+        """
+        
+
+        self._preview = preview
 
     def to_dict(self):
         """

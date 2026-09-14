@@ -63,6 +63,7 @@ class AgentChecklistResponse(object):
             'assistant_id': 'str',
             'media_type': 'str',
             'direction': 'str',
+            'preview': 'bool',
             'evaluation_start_date': 'datetime',
             'evaluation_last_modified_date': 'datetime',
             'evaluation_finalized_date': 'datetime',
@@ -87,6 +88,7 @@ class AgentChecklistResponse(object):
             'assistant_id': 'assistantId',
             'media_type': 'mediaType',
             'direction': 'direction',
+            'preview': 'preview',
             'evaluation_start_date': 'evaluationStartDate',
             'evaluation_last_modified_date': 'evaluationLastModifiedDate',
             'evaluation_finalized_date': 'evaluationFinalizedDate',
@@ -110,6 +112,7 @@ class AgentChecklistResponse(object):
         self._assistant_id = None
         self._media_type = None
         self._direction = None
+        self._preview = None
         self._evaluation_start_date = None
         self._evaluation_last_modified_date = None
         self._evaluation_finalized_date = None
@@ -445,6 +448,30 @@ class AgentChecklistResponse(object):
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
+
+    @property
+    def preview(self) -> bool:
+        """
+        Gets the preview of this AgentChecklistResponse.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :return: The preview of this AgentChecklistResponse.
+        :rtype: bool
+        """
+        return self._preview
+
+    @preview.setter
+    def preview(self, preview: bool) -> None:
+        """
+        Sets the preview of this AgentChecklistResponse.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :param preview: The preview of this AgentChecklistResponse.
+        :type: bool
+        """
+        
+
+        self._preview = preview
 
     @property
     def evaluation_start_date(self) -> datetime:

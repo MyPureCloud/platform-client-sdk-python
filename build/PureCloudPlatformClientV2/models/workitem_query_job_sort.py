@@ -48,22 +48,25 @@ class WorkitemQueryJobSort(object):
         """
         self.swagger_types = {
             'name': 'str',
-            'ascending': 'bool'
+            'ascending': 'bool',
+            'custom_field': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'ascending': 'ascending'
+            'ascending': 'ascending',
+            'custom_field': 'customField'
         }
 
         self._name = None
         self._ascending = None
+        self._custom_field = None
 
     @property
     def name(self) -> str:
         """
         Gets the name of this WorkitemQueryJobSort.
-        Specify an attribute for sorting.
+        Specify an attribute for sorting. Use 'customFields' to sort by a custom field, in which case the customField property is required.
 
         :return: The name of this WorkitemQueryJobSort.
         :rtype: str
@@ -74,14 +77,14 @@ class WorkitemQueryJobSort(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this WorkitemQueryJobSort.
-        Specify an attribute for sorting.
+        Specify an attribute for sorting. Use 'customFields' to sort by a custom field, in which case the customField property is required.
 
         :param name: The name of this WorkitemQueryJobSort.
         :type: str
         """
         if isinstance(name, int):
             name = str(name)
-        allowed_values = ["dateDue", "dateCreated", "priority"]
+        allowed_values = ["dateDue", "dateCreated", "priority", "customFields"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"
@@ -111,6 +114,30 @@ class WorkitemQueryJobSort(object):
         
 
         self._ascending = ascending
+
+    @property
+    def custom_field(self) -> str:
+        """
+        Gets the custom_field of this WorkitemQueryJobSort.
+        The key of the custom field to sort by. Required when name is 'customFields' and must not be set otherwise.
+
+        :return: The custom_field of this WorkitemQueryJobSort.
+        :rtype: str
+        """
+        return self._custom_field
+
+    @custom_field.setter
+    def custom_field(self, custom_field: str) -> None:
+        """
+        Sets the custom_field of this WorkitemQueryJobSort.
+        The key of the custom field to sort by. Required when name is 'customFields' and must not be set otherwise.
+
+        :param custom_field: The custom_field of this WorkitemQueryJobSort.
+        :type: str
+        """
+        
+
+        self._custom_field = custom_field
 
     def to_dict(self):
         """

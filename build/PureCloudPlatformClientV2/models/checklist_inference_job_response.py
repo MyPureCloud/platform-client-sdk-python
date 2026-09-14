@@ -63,6 +63,7 @@ class ChecklistInferenceJobResponse(object):
             'assistant_id': 'str',
             'media_type': 'str',
             'direction': 'str',
+            'preview': 'bool',
             'self_uri': 'str'
         }
 
@@ -80,6 +81,7 @@ class ChecklistInferenceJobResponse(object):
             'assistant_id': 'assistantId',
             'media_type': 'mediaType',
             'direction': 'direction',
+            'preview': 'preview',
             'self_uri': 'selfUri'
         }
 
@@ -96,6 +98,7 @@ class ChecklistInferenceJobResponse(object):
         self._assistant_id = None
         self._media_type = None
         self._direction = None
+        self._preview = None
         self._self_uri = None
 
     @property
@@ -424,6 +427,30 @@ class ChecklistInferenceJobResponse(object):
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
+
+    @property
+    def preview(self) -> bool:
+        """
+        Gets the preview of this ChecklistInferenceJobResponse.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :return: The preview of this ChecklistInferenceJobResponse.
+        :rtype: bool
+        """
+        return self._preview
+
+    @preview.setter
+    def preview(self, preview: bool) -> None:
+        """
+        Sets the preview of this ChecklistInferenceJobResponse.
+        Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+
+        :param preview: The preview of this ChecklistInferenceJobResponse.
+        :type: bool
+        """
+        
+
+        self._preview = preview
 
     @property
     def self_uri(self) -> str:

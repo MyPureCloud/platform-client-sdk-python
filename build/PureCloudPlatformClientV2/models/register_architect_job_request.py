@@ -47,13 +47,38 @@ class RegisterArchitectJobRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'create_stubs': 'bool'
         }
 
         self.attribute_map = {
-            
+            'create_stubs': 'createStubs'
         }
 
+        self._create_stubs = None
+
+    @property
+    def create_stubs(self) -> bool:
+        """
+        Gets the create_stubs of this RegisterArchitectJobRequest.
+        If true, flow stubs will be created for any dependencies during the job.
+
+        :return: The create_stubs of this RegisterArchitectJobRequest.
+        :rtype: bool
+        """
+        return self._create_stubs
+
+    @create_stubs.setter
+    def create_stubs(self, create_stubs: bool) -> None:
+        """
+        Sets the create_stubs of this RegisterArchitectJobRequest.
+        If true, flow stubs will be created for any dependencies during the job.
+
+        :param create_stubs: The create_stubs of this RegisterArchitectJobRequest.
+        :type: bool
+        """
+        
+
+        self._create_stubs = create_stubs
 
     def to_dict(self):
         """

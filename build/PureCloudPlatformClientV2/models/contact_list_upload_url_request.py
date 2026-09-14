@@ -55,7 +55,10 @@ class ContactListUploadUrlRequest(object):
             'list_name_prefix': 'str',
             'clear_system_data': 'bool',
             'division_id_for_target_contact_lists': 'str',
-            'file_specification_template_id': 'str'
+            'file_specification_template_id': 'str',
+            'retention_type_column': 'str',
+            'retention_days_column': 'str',
+            'retention_date_expiration_column': 'str'
         }
 
         self.attribute_map = {
@@ -67,7 +70,10 @@ class ContactListUploadUrlRequest(object):
             'list_name_prefix': 'listNamePrefix',
             'clear_system_data': 'clearSystemData',
             'division_id_for_target_contact_lists': 'divisionIdForTargetContactLists',
-            'file_specification_template_id': 'fileSpecificationTemplateId'
+            'file_specification_template_id': 'fileSpecificationTemplateId',
+            'retention_type_column': 'retentionTypeColumn',
+            'retention_days_column': 'retentionDaysColumn',
+            'retention_date_expiration_column': 'retentionDateExpirationColumn'
         }
 
         self._signed_url_timeout_seconds = None
@@ -79,6 +85,9 @@ class ContactListUploadUrlRequest(object):
         self._clear_system_data = None
         self._division_id_for_target_contact_lists = None
         self._file_specification_template_id = None
+        self._retention_type_column = None
+        self._retention_days_column = None
+        self._retention_date_expiration_column = None
 
     @property
     def signed_url_timeout_seconds(self) -> int:
@@ -295,6 +304,78 @@ class ContactListUploadUrlRequest(object):
         
 
         self._file_specification_template_id = file_specification_template_id
+
+    @property
+    def retention_type_column(self) -> str:
+        """
+        Gets the retention_type_column of this ContactListUploadUrlRequest.
+        The column name from your file to get retention type values from.
+
+        :return: The retention_type_column of this ContactListUploadUrlRequest.
+        :rtype: str
+        """
+        return self._retention_type_column
+
+    @retention_type_column.setter
+    def retention_type_column(self, retention_type_column: str) -> None:
+        """
+        Sets the retention_type_column of this ContactListUploadUrlRequest.
+        The column name from your file to get retention type values from.
+
+        :param retention_type_column: The retention_type_column of this ContactListUploadUrlRequest.
+        :type: str
+        """
+        
+
+        self._retention_type_column = retention_type_column
+
+    @property
+    def retention_days_column(self) -> str:
+        """
+        Gets the retention_days_column of this ContactListUploadUrlRequest.
+        The column name from your file to get retention day values from.
+
+        :return: The retention_days_column of this ContactListUploadUrlRequest.
+        :rtype: str
+        """
+        return self._retention_days_column
+
+    @retention_days_column.setter
+    def retention_days_column(self, retention_days_column: str) -> None:
+        """
+        Sets the retention_days_column of this ContactListUploadUrlRequest.
+        The column name from your file to get retention day values from.
+
+        :param retention_days_column: The retention_days_column of this ContactListUploadUrlRequest.
+        :type: str
+        """
+        
+
+        self._retention_days_column = retention_days_column
+
+    @property
+    def retention_date_expiration_column(self) -> str:
+        """
+        Gets the retention_date_expiration_column of this ContactListUploadUrlRequest.
+        The column name from your file to get date expiration values from.
+
+        :return: The retention_date_expiration_column of this ContactListUploadUrlRequest.
+        :rtype: str
+        """
+        return self._retention_date_expiration_column
+
+    @retention_date_expiration_column.setter
+    def retention_date_expiration_column(self, retention_date_expiration_column: str) -> None:
+        """
+        Sets the retention_date_expiration_column of this ContactListUploadUrlRequest.
+        The column name from your file to get date expiration values from.
+
+        :param retention_date_expiration_column: The retention_date_expiration_column of this ContactListUploadUrlRequest.
+        :type: str
+        """
+        
+
+        self._retention_date_expiration_column = retention_date_expiration_column
 
     def to_dict(self):
         """

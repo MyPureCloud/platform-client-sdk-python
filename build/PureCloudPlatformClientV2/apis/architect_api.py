@@ -102,6 +102,7 @@ from ..models import PromptAssetUpload
 from ..models import PromptEntityListing
 from ..models import RegisterArchitectExportJob
 from ..models import RegisterArchitectExportJobResponse
+from ..models import RegisterArchitectJobRequest
 from ..models import RegisterArchitectJobResponse
 from ..models import RegisterArchitectValidateJob
 from ..models import RegisterArchitectValidateJobResponse
@@ -3788,12 +3789,13 @@ class ArchitectApi(object):
         :param bool include_media_uris: Include the media URIs for each resource
         :param bool include_resources: Include the resources for each system prompt
         :param list[str] language: Filter the resources down to the provided languages
+        :param list[str] division_id: division ID(s)
         :return: PromptEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'name', 'description', 'name_or_description', 'sort_by', 'sort_order', 'include_media_uris', 'include_resources', 'language']
+        all_params = ['page_number', 'page_size', 'name', 'description', 'name_or_description', 'sort_by', 'sort_order', 'include_media_uris', 'include_resources', 'language', 'division_id']
         all_params.append('callback')
 
         params = locals()
@@ -3832,6 +3834,8 @@ class ArchitectApi(object):
             query_params['includeResources'] = params['include_resources']
         if 'language' in params:
             query_params['language'] = params['language']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
 
         header_params = {}
 
@@ -11333,7 +11337,7 @@ class ArchitectApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param object body: 
+        :param RegisterArchitectJobRequest body: 
         :return: RegisterArchitectJobResponse
                  If the method is called asynchronously,
                  returns the request thread.

@@ -243,7 +243,7 @@ class BillingApi(object):
             for asynchronous request. (optional)
         :param str before: The cursor that points to the start of the set of entities that has been returned.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str page_size: Number of entities to return. Maximum of 10.
         :param date date_start: Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :param date date_end: End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :param str status: Filter by the status of contracts
@@ -267,6 +267,10 @@ class BillingApi(object):
         del params['kwargs']
 
 
+        if 'page_size' in params and params['page_size'] > 10: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_billing_contracts`, must be a value less than or equal to  `10`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_billing_contracts`, must be a value greater than or equal to `1`")
 
         resource_path = '/api/v2/billing/contracts'.replace('{format}', 'json')
         path_params = {}

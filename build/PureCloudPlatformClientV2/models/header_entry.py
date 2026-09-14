@@ -63,7 +63,7 @@ class HeaderEntry(object):
     def key(self) -> str:
         """
         Gets the key of this HeaderEntry.
-        The key of the header (e.g., 'Subject', 'From', 'X-Custom-Header').
+        The key of the custom header (e.g., 'X-Custom-Header', 'X-Ticket-ID'). Restricted headers such as 'Subject', 'From', and 'Message-ID' are not allowed and will result in a 400 Bad Request.
 
         :return: The key of this HeaderEntry.
         :rtype: str
@@ -74,7 +74,7 @@ class HeaderEntry(object):
     def key(self, key: str) -> None:
         """
         Sets the key of this HeaderEntry.
-        The key of the header (e.g., 'Subject', 'From', 'X-Custom-Header').
+        The key of the custom header (e.g., 'X-Custom-Header', 'X-Ticket-ID'). Restricted headers such as 'Subject', 'From', and 'Message-ID' are not allowed and will result in a 400 Bad Request.
 
         :param key: The key of this HeaderEntry.
         :type: str

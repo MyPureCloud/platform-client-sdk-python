@@ -120,7 +120,7 @@ class WhatsAppEmbeddedSignupIntegrationActivationRequest(object):
     def phone_number(self) -> str:
         """
         Gets the phone_number of this WhatsAppEmbeddedSignupIntegrationActivationRequest.
-        Phone number to associate with the WhatsApp integration
+        E.164 phone number to associate with the WhatsApp integration. Not required for embedded signup v4 or later.
 
         :return: The phone_number of this WhatsAppEmbeddedSignupIntegrationActivationRequest.
         :rtype: str
@@ -131,7 +131,7 @@ class WhatsAppEmbeddedSignupIntegrationActivationRequest(object):
     def phone_number(self, phone_number: str) -> None:
         """
         Sets the phone_number of this WhatsAppEmbeddedSignupIntegrationActivationRequest.
-        Phone number to associate with the WhatsApp integration
+        E.164 phone number to associate with the WhatsApp integration. Not required for embedded signup v4 or later.
 
         :param phone_number: The phone_number of this WhatsAppEmbeddedSignupIntegrationActivationRequest.
         :type: str

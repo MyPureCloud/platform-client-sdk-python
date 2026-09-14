@@ -53,7 +53,8 @@ class TimeOffRequestQueryBody(object):
             'user_ids': 'list[str]',
             'statuses': 'list[str]',
             'substatuses': 'list[str]',
-            'date_range': 'DateRange'
+            'date_range': 'DateRange',
+            'team_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -61,7 +62,8 @@ class TimeOffRequestQueryBody(object):
             'user_ids': 'userIds',
             'statuses': 'statuses',
             'substatuses': 'substatuses',
-            'date_range': 'dateRange'
+            'date_range': 'dateRange',
+            'team_ids': 'teamIds'
         }
 
         self._ids = None
@@ -69,6 +71,7 @@ class TimeOffRequestQueryBody(object):
         self._statuses = None
         self._substatuses = None
         self._date_range = None
+        self._team_ids = None
 
     @property
     def ids(self) -> List[str]:
@@ -98,7 +101,7 @@ class TimeOffRequestQueryBody(object):
     def user_ids(self) -> List[str]:
         """
         Gets the user_ids of this TimeOffRequestQueryBody.
-        The set of user ids to filter time off requests
+        The set of user ids to filter time off requests. Omit to query all users in the management unit. Note: If teamIds is also specified, only time off requests for users in the requested teams will be returned
 
         :return: The user_ids of this TimeOffRequestQueryBody.
         :rtype: list[str]
@@ -109,7 +112,7 @@ class TimeOffRequestQueryBody(object):
     def user_ids(self, user_ids: List[str]) -> None:
         """
         Sets the user_ids of this TimeOffRequestQueryBody.
-        The set of user ids to filter time off requests
+        The set of user ids to filter time off requests. Omit to query all users in the management unit. Note: If teamIds is also specified, only time off requests for users in the requested teams will be returned
 
         :param user_ids: The user_ids of this TimeOffRequestQueryBody.
         :type: list[str]
@@ -189,6 +192,30 @@ class TimeOffRequestQueryBody(object):
         
 
         self._date_range = date_range
+
+    @property
+    def team_ids(self) -> List[str]:
+        """
+        Gets the team_ids of this TimeOffRequestQueryBody.
+        The IDs of work teams to query. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
+
+        :return: The team_ids of this TimeOffRequestQueryBody.
+        :rtype: list[str]
+        """
+        return self._team_ids
+
+    @team_ids.setter
+    def team_ids(self, team_ids: List[str]) -> None:
+        """
+        Sets the team_ids of this TimeOffRequestQueryBody.
+        The IDs of work teams to query. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
+
+        :param team_ids: The team_ids of this TimeOffRequestQueryBody.
+        :type: list[str]
+        """
+        
+
+        self._team_ids = team_ids
 
     def to_dict(self):
         """

@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import QueueEmailAddress
     from . import ServiceLevel
 
 class EmailMediaSettings(object):
@@ -53,7 +54,8 @@ class EmailMediaSettings(object):
             'alerting_timeout_seconds': 'int',
             'service_level': 'ServiceLevel',
             'auto_answer_alert_tone_seconds': 'float',
-            'manual_answer_alert_tone_seconds': 'float'
+            'manual_answer_alert_tone_seconds': 'float',
+            'all_outbound_email_addresses': 'list[QueueEmailAddress]'
         }
 
         self.attribute_map = {
@@ -61,7 +63,8 @@ class EmailMediaSettings(object):
             'alerting_timeout_seconds': 'alertingTimeoutSeconds',
             'service_level': 'serviceLevel',
             'auto_answer_alert_tone_seconds': 'autoAnswerAlertToneSeconds',
-            'manual_answer_alert_tone_seconds': 'manualAnswerAlertToneSeconds'
+            'manual_answer_alert_tone_seconds': 'manualAnswerAlertToneSeconds',
+            'all_outbound_email_addresses': 'allOutboundEmailAddresses'
         }
 
         self._enable_auto_answer = None
@@ -69,6 +72,7 @@ class EmailMediaSettings(object):
         self._service_level = None
         self._auto_answer_alert_tone_seconds = None
         self._manual_answer_alert_tone_seconds = None
+        self._all_outbound_email_addresses = None
 
     @property
     def enable_auto_answer(self) -> bool:
@@ -189,6 +193,30 @@ class EmailMediaSettings(object):
         
 
         self._manual_answer_alert_tone_seconds = manual_answer_alert_tone_seconds
+
+    @property
+    def all_outbound_email_addresses(self) -> List['QueueEmailAddress']:
+        """
+        Gets the all_outbound_email_addresses of this EmailMediaSettings.
+        The list of email addresses that are assigned to the queue and can be used by agents as an outbound email address.
+
+        :return: The all_outbound_email_addresses of this EmailMediaSettings.
+        :rtype: list[QueueEmailAddress]
+        """
+        return self._all_outbound_email_addresses
+
+    @all_outbound_email_addresses.setter
+    def all_outbound_email_addresses(self, all_outbound_email_addresses: List['QueueEmailAddress']) -> None:
+        """
+        Sets the all_outbound_email_addresses of this EmailMediaSettings.
+        The list of email addresses that are assigned to the queue and can be used by agents as an outbound email address.
+
+        :param all_outbound_email_addresses: The all_outbound_email_addresses of this EmailMediaSettings.
+        :type: list[QueueEmailAddress]
+        """
+        
+
+        self._all_outbound_email_addresses = all_outbound_email_addresses
 
     def to_dict(self):
         """

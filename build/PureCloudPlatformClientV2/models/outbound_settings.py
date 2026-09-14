@@ -62,6 +62,9 @@ class OutboundSettings(object):
             'compliance_abandon_rate_denominator': 'str',
             'automatic_time_zone_mapping': 'AutomaticTimeZoneMappingSettings',
             'reschedule_time_zone_skipped_contacts': 'bool',
+            'contact_list_default_retention_type': 'str',
+            'contact_list_default_retention_days': 'int',
+            'time_zone': 'str',
             'self_uri': 'str'
         }
 
@@ -79,6 +82,9 @@ class OutboundSettings(object):
             'compliance_abandon_rate_denominator': 'complianceAbandonRateDenominator',
             'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
             'reschedule_time_zone_skipped_contacts': 'rescheduleTimeZoneSkippedContacts',
+            'contact_list_default_retention_type': 'contactListDefaultRetentionType',
+            'contact_list_default_retention_days': 'contactListDefaultRetentionDays',
+            'time_zone': 'timeZone',
             'self_uri': 'selfUri'
         }
 
@@ -95,6 +101,9 @@ class OutboundSettings(object):
         self._compliance_abandon_rate_denominator = None
         self._automatic_time_zone_mapping = None
         self._reschedule_time_zone_skipped_contacts = None
+        self._contact_list_default_retention_type = None
+        self._contact_list_default_retention_days = None
+        self._time_zone = None
         self._self_uri = None
 
     @property
@@ -413,6 +422,83 @@ class OutboundSettings(object):
         
 
         self._reschedule_time_zone_skipped_contacts = reschedule_time_zone_skipped_contacts
+
+    @property
+    def contact_list_default_retention_type(self) -> str:
+        """
+        Gets the contact_list_default_retention_type of this OutboundSettings.
+        The default type of retention for newly created contact lists and contact list templates. Valid values: Never, Today, RetentionDays.
+
+        :return: The contact_list_default_retention_type of this OutboundSettings.
+        :rtype: str
+        """
+        return self._contact_list_default_retention_type
+
+    @contact_list_default_retention_type.setter
+    def contact_list_default_retention_type(self, contact_list_default_retention_type: str) -> None:
+        """
+        Sets the contact_list_default_retention_type of this OutboundSettings.
+        The default type of retention for newly created contact lists and contact list templates. Valid values: Never, Today, RetentionDays.
+
+        :param contact_list_default_retention_type: The contact_list_default_retention_type of this OutboundSettings.
+        :type: str
+        """
+        if isinstance(contact_list_default_retention_type, int):
+            contact_list_default_retention_type = str(contact_list_default_retention_type)
+        allowed_values = ["Never", "Today", "RetentionDays"]
+        if contact_list_default_retention_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for contact_list_default_retention_type -> " + contact_list_default_retention_type)
+            self._contact_list_default_retention_type = "outdated_sdk_version"
+        else:
+            self._contact_list_default_retention_type = contact_list_default_retention_type
+
+    @property
+    def contact_list_default_retention_days(self) -> int:
+        """
+        Gets the contact_list_default_retention_days of this OutboundSettings.
+        The default number of days to retain newly created contact lists and contact list templates. Only applicable when retentionType is RetentionDays.
+
+        :return: The contact_list_default_retention_days of this OutboundSettings.
+        :rtype: int
+        """
+        return self._contact_list_default_retention_days
+
+    @contact_list_default_retention_days.setter
+    def contact_list_default_retention_days(self, contact_list_default_retention_days: int) -> None:
+        """
+        Sets the contact_list_default_retention_days of this OutboundSettings.
+        The default number of days to retain newly created contact lists and contact list templates. Only applicable when retentionType is RetentionDays.
+
+        :param contact_list_default_retention_days: The contact_list_default_retention_days of this OutboundSettings.
+        :type: int
+        """
+        
+
+        self._contact_list_default_retention_days = contact_list_default_retention_days
+
+    @property
+    def time_zone(self) -> str:
+        """
+        Gets the time_zone of this OutboundSettings.
+        The time zone for newly created lists' retention when option Today is used; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+
+        :return: The time_zone of this OutboundSettings.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone: str) -> None:
+        """
+        Sets the time_zone of this OutboundSettings.
+        The time zone for newly created lists' retention when option Today is used; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+
+        :param time_zone: The time_zone of this OutboundSettings.
+        :type: str
+        """
+        
+
+        self._time_zone = time_zone
 
     @property
     def self_uri(self) -> str:

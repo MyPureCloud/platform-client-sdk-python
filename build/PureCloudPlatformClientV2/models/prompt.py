@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import Operation
     from . import PromptAsset
+    from . import WritableStarrableDivision
 
 class Prompt(object):
     """
@@ -52,6 +53,7 @@ class Prompt(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'WritableStarrableDivision',
             'description': 'str',
             'resources': 'list[PromptAsset]',
             'current_operation': 'Operation',
@@ -61,6 +63,7 @@ class Prompt(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'description': 'description',
             'resources': 'resources',
             'current_operation': 'currentOperation',
@@ -69,6 +72,7 @@ class Prompt(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._description = None
         self._resources = None
         self._current_operation = None
@@ -121,6 +125,30 @@ class Prompt(object):
         
 
         self._name = name
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this Prompt.
+        The division to which this entity belongs.
+
+        :return: The division of this Prompt.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this Prompt.
+        The division to which this entity belongs.
+
+        :param division: The division of this Prompt.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def description(self) -> str:

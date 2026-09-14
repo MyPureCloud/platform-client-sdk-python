@@ -47,14 +47,17 @@ class CreateRoutingSkill(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'name': 'str'
+            'name': 'str',
+            'division_id': 'str'
         }
 
         self.attribute_map = {
-            'name': 'name'
+            'name': 'name',
+            'division_id': 'divisionId'
         }
 
         self._name = None
+        self._division_id = None
 
     @property
     def name(self) -> str:
@@ -79,6 +82,30 @@ class CreateRoutingSkill(object):
         
 
         self._name = name
+
+    @property
+    def division_id(self) -> str:
+        """
+        Gets the division_id of this CreateRoutingSkill.
+        The division to which this skill will belong
+
+        :return: The division_id of this CreateRoutingSkill.
+        :rtype: str
+        """
+        return self._division_id
+
+    @division_id.setter
+    def division_id(self, division_id: str) -> None:
+        """
+        Sets the division_id of this CreateRoutingSkill.
+        The division to which this skill will belong
+
+        :param division_id: The division_id of this CreateRoutingSkill.
+        :type: str
+        """
+        
+
+        self._division_id = division_id
 
     def to_dict(self):
         """

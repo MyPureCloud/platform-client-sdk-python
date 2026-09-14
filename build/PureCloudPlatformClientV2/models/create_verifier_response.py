@@ -52,6 +52,7 @@ class CreateVerifierResponse(object):
             'type': 'str',
             'enabled': 'bool',
             'key_uri': 'str',
+            'encoded_quick_response_code': 'str',
             'default': 'bool'
         }
 
@@ -61,6 +62,7 @@ class CreateVerifierResponse(object):
             'type': 'type',
             'enabled': 'enabled',
             'key_uri': 'keyUri',
+            'encoded_quick_response_code': 'encodedQuickResponseCode',
             'default': 'default'
         }
 
@@ -69,6 +71,7 @@ class CreateVerifierResponse(object):
         self._type = None
         self._enabled = None
         self._key_uri = None
+        self._encoded_quick_response_code = None
         self._default = None
 
     @property
@@ -195,6 +198,30 @@ class CreateVerifierResponse(object):
         
 
         self._key_uri = key_uri
+
+    @property
+    def encoded_quick_response_code(self) -> str:
+        """
+        Gets the encoded_quick_response_code of this CreateVerifierResponse.
+        Base64-encoded PNG of the TOTP registration QR code.
+
+        :return: The encoded_quick_response_code of this CreateVerifierResponse.
+        :rtype: str
+        """
+        return self._encoded_quick_response_code
+
+    @encoded_quick_response_code.setter
+    def encoded_quick_response_code(self, encoded_quick_response_code: str) -> None:
+        """
+        Sets the encoded_quick_response_code of this CreateVerifierResponse.
+        Base64-encoded PNG of the TOTP registration QR code.
+
+        :param encoded_quick_response_code: The encoded_quick_response_code of this CreateVerifierResponse.
+        :type: str
+        """
+        
+
+        self._encoded_quick_response_code = encoded_quick_response_code
 
     @property
     def default(self) -> bool:

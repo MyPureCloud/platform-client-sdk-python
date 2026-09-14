@@ -2342,7 +2342,6 @@ class CaseManagementApi(object):
         """
         Get a case query job by id
         
-	    get_casemanagement_cases_query_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2421,7 +2420,6 @@ class CaseManagementApi(object):
         """
         Get results for a case query job
         
-	    get_casemanagement_cases_query_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2665,7 +2663,6 @@ class CaseManagementApi(object):
         """
         Update the ownerId of a Case
         
-	    patch_casemanagement_case_owner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4192,7 +4189,6 @@ class CaseManagementApi(object):
         """
         Create a Case query job.
         
-	    post_casemanagement_cases_query_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

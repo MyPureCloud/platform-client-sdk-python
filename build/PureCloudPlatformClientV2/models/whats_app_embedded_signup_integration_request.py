@@ -102,7 +102,7 @@ class WhatsAppEmbeddedSignupIntegrationRequest(object):
     def name(self) -> str:
         """
         Gets the name of this WhatsAppEmbeddedSignupIntegrationRequest.
-        The name of the WhatsApp Integration
+        The name of the WhatsApp Integration. Required for Embedded Signup v2; optional for v4 (set later via PATCH).
 
         :return: The name of this WhatsAppEmbeddedSignupIntegrationRequest.
         :rtype: str
@@ -113,7 +113,7 @@ class WhatsAppEmbeddedSignupIntegrationRequest(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this WhatsAppEmbeddedSignupIntegrationRequest.
-        The name of the WhatsApp Integration
+        The name of the WhatsApp Integration. Required for Embedded Signup v2; optional for v4 (set later via PATCH).
 
         :param name: The name of this WhatsAppEmbeddedSignupIntegrationRequest.
         :type: str
@@ -174,7 +174,7 @@ class WhatsAppEmbeddedSignupIntegrationRequest(object):
     def embedded_signup_access_token(self) -> str:
         """
         Gets the embedded_signup_access_token of this WhatsAppEmbeddedSignupIntegrationRequest.
-        The access token returned from the embedded signup flow
+        The access token returned from the embedded signup flow. Not required for versions v4 or later.
 
         :return: The embedded_signup_access_token of this WhatsAppEmbeddedSignupIntegrationRequest.
         :rtype: str
@@ -185,7 +185,7 @@ class WhatsAppEmbeddedSignupIntegrationRequest(object):
     def embedded_signup_access_token(self, embedded_signup_access_token: str) -> None:
         """
         Sets the embedded_signup_access_token of this WhatsAppEmbeddedSignupIntegrationRequest.
-        The access token returned from the embedded signup flow
+        The access token returned from the embedded signup flow. Not required for versions v4 or later.
 
         :param embedded_signup_access_token: The embedded_signup_access_token of this WhatsAppEmbeddedSignupIntegrationRequest.
         :type: str

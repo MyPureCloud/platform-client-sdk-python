@@ -68,6 +68,9 @@ class DialerContact(object):
             'contact_column_time_zones': 'dict(str, ContactColumnTimeZone)',
             'configuration_overrides': 'ConfigurationOverrides',
             'date_created': 'datetime',
+            'retention_type': 'str',
+            'retention_days': 'int',
+            'date_expiration': 'datetime',
             'self_uri': 'str'
         }
 
@@ -86,6 +89,9 @@ class DialerContact(object):
             'contact_column_time_zones': 'contactColumnTimeZones',
             'configuration_overrides': 'configurationOverrides',
             'date_created': 'dateCreated',
+            'retention_type': 'retentionType',
+            'retention_days': 'retentionDays',
+            'date_expiration': 'dateExpiration',
             'self_uri': 'selfUri'
         }
 
@@ -103,6 +109,9 @@ class DialerContact(object):
         self._contact_column_time_zones = None
         self._configuration_overrides = None
         self._date_created = None
+        self._retention_type = None
+        self._retention_days = None
+        self._date_expiration = None
         self._self_uri = None
 
     @property
@@ -440,6 +449,83 @@ class DialerContact(object):
         
 
         self._date_created = date_created
+
+    @property
+    def retention_type(self) -> str:
+        """
+        Gets the retention_type of this DialerContact.
+        The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration
+
+        :return: The retention_type of this DialerContact.
+        :rtype: str
+        """
+        return self._retention_type
+
+    @retention_type.setter
+    def retention_type(self, retention_type: str) -> None:
+        """
+        Sets the retention_type of this DialerContact.
+        The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration
+
+        :param retention_type: The retention_type of this DialerContact.
+        :type: str
+        """
+        if isinstance(retention_type, int):
+            retention_type = str(retention_type)
+        allowed_values = ["Never", "Today", "RetentionDays", "DateExpiration"]
+        if retention_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for retention_type -> " + retention_type)
+            self._retention_type = "outdated_sdk_version"
+        else:
+            self._retention_type = retention_type
+
+    @property
+    def retention_days(self) -> int:
+        """
+        Gets the retention_days of this DialerContact.
+        The number of days to retain this contact. Required when retentionType is RetentionDays.
+
+        :return: The retention_days of this DialerContact.
+        :rtype: int
+        """
+        return self._retention_days
+
+    @retention_days.setter
+    def retention_days(self, retention_days: int) -> None:
+        """
+        Sets the retention_days of this DialerContact.
+        The number of days to retain this contact. Required when retentionType is RetentionDays.
+
+        :param retention_days: The retention_days of this DialerContact.
+        :type: int
+        """
+        
+
+        self._retention_days = retention_days
+
+    @property
+    def date_expiration(self) -> datetime:
+        """
+        Gets the date_expiration of this DialerContact.
+        The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_expiration of this DialerContact.
+        :rtype: datetime
+        """
+        return self._date_expiration
+
+    @date_expiration.setter
+    def date_expiration(self, date_expiration: datetime) -> None:
+        """
+        Sets the date_expiration of this DialerContact.
+        The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_expiration: The date_expiration of this DialerContact.
+        :type: datetime
+        """
+        
+
+        self._date_expiration = date_expiration
 
     @property
     def self_uri(self) -> str:

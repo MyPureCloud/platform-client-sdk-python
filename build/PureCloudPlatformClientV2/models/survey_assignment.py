@@ -54,7 +54,8 @@ class SurveyAssignment(object):
             'flow': 'DomainEntityRef',
             'invite_time_interval': 'str',
             'sending_user': 'str',
-            'sending_domain': 'str'
+            'sending_domain': 'str',
+            'use_threading_timeline_for_send_time': 'bool'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class SurveyAssignment(object):
             'flow': 'flow',
             'invite_time_interval': 'inviteTimeInterval',
             'sending_user': 'sendingUser',
-            'sending_domain': 'sendingDomain'
+            'sending_domain': 'sendingDomain',
+            'use_threading_timeline_for_send_time': 'useThreadingTimelineForSendTime'
         }
 
         self._survey_form = None
@@ -70,6 +72,7 @@ class SurveyAssignment(object):
         self._invite_time_interval = None
         self._sending_user = None
         self._sending_domain = None
+        self._use_threading_timeline_for_send_time = None
 
     @property
     def survey_form(self) -> 'PublishedSurveyFormReference':
@@ -190,6 +193,30 @@ class SurveyAssignment(object):
         
 
         self._sending_domain = sending_domain
+
+    @property
+    def use_threading_timeline_for_send_time(self) -> bool:
+        """
+        Gets the use_threading_timeline_for_send_time of this SurveyAssignment.
+        If true, the survey invitation send time will be calculated using the threading timeline. If false or unspecified, a fixed 72-hour delay will be used. Default is false for new policies.
+
+        :return: The use_threading_timeline_for_send_time of this SurveyAssignment.
+        :rtype: bool
+        """
+        return self._use_threading_timeline_for_send_time
+
+    @use_threading_timeline_for_send_time.setter
+    def use_threading_timeline_for_send_time(self, use_threading_timeline_for_send_time: bool) -> None:
+        """
+        Sets the use_threading_timeline_for_send_time of this SurveyAssignment.
+        If true, the survey invitation send time will be calculated using the threading timeline. If false or unspecified, a fixed 72-hour delay will be used. Default is false for new policies.
+
+        :param use_threading_timeline_for_send_time: The use_threading_timeline_for_send_time of this SurveyAssignment.
+        :type: bool
+        """
+        
+
+        self._use_threading_timeline_for_send_time = use_threading_timeline_for_send_time
 
     def to_dict(self):
         """

@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ConversationAttribute
 
 class Variable(object):
     """
@@ -53,7 +55,8 @@ class Variable(object):
             'description': 'str',
             'validation': 'object',
             'list_values': 'object',
-            'list_variables': 'list[Variable]'
+            'list_variables': 'list[Variable]',
+            'custom_conversation_attributes': 'list[ConversationAttribute]'
         }
 
         self.attribute_map = {
@@ -63,7 +66,8 @@ class Variable(object):
             'description': 'description',
             'validation': 'validation',
             'list_values': 'listValues',
-            'list_variables': 'listVariables'
+            'list_variables': 'listVariables',
+            'custom_conversation_attributes': 'customConversationAttributes'
         }
 
         self._name = None
@@ -73,6 +77,7 @@ class Variable(object):
         self._validation = None
         self._list_values = None
         self._list_variables = None
+        self._custom_conversation_attributes = None
 
     @property
     def name(self) -> str:
@@ -251,6 +256,30 @@ class Variable(object):
         
 
         self._list_variables = list_variables
+
+    @property
+    def custom_conversation_attributes(self) -> List['ConversationAttribute']:
+        """
+        Gets the custom_conversation_attributes of this Variable.
+        The Conversation Custom Attributes (CCA) for this variable. When present, the variable value is bound to the specified conversation attributes.
+
+        :return: The custom_conversation_attributes of this Variable.
+        :rtype: list[ConversationAttribute]
+        """
+        return self._custom_conversation_attributes
+
+    @custom_conversation_attributes.setter
+    def custom_conversation_attributes(self, custom_conversation_attributes: List['ConversationAttribute']) -> None:
+        """
+        Sets the custom_conversation_attributes of this Variable.
+        The Conversation Custom Attributes (CCA) for this variable. When present, the variable value is bound to the specified conversation attributes.
+
+        :param custom_conversation_attributes: The custom_conversation_attributes of this Variable.
+        :type: list[ConversationAttribute]
+        """
+        
+
+        self._custom_conversation_attributes = custom_conversation_attributes
 
     def to_dict(self):
         """

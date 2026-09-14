@@ -76,6 +76,8 @@ from ..models import ContactListTemplateEntityListing
 from ..models import ContactListUploadUrlRequest
 from ..models import ContactListingRequest
 from ..models import ContactListingResponse
+from ..models import ContactListsBulkEditRequest
+from ..models import ContactListsBulkEditResponse
 from ..models import ContactsBulkOperationJob
 from ..models import ContactsBulkOperationJobListing
 from ..models import ContactsExportRequest
@@ -5227,6 +5229,8 @@ class OutboundApi(object):
         :param str name: Name
         :param list[str] id: id
         :param list[str] division_id: Division ID(s)
+        :param str time_zone: Filter by time zone
+        :param list[str] date_expiration: Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :return: ContactListEntityListing
@@ -5234,7 +5238,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'id', 'division_id', 'sort_by', 'sort_order']
+        all_params = ['include_import_status', 'include_size', 'page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'id', 'division_id', 'time_zone', 'date_expiration', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -5271,6 +5275,10 @@ class OutboundApi(object):
             query_params['id'] = params['id']
         if 'division_id' in params:
             query_params['divisionId'] = params['division_id']
+        if 'time_zone' in params:
+            query_params['timeZone'] = params['time_zone']
+        if 'date_expiration' in params:
+            query_params['dateExpiration'] = params['date_expiration']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
@@ -5589,6 +5597,7 @@ class OutboundApi(object):
         :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
         :param str filter_type: Filter type
         :param str name: Name
+        :param str time_zone: Filter by time zone
         :param str sort_by: Sort by
         :param str sort_order: Sort order
         :return: ContactListTemplateEntityListing
@@ -5596,7 +5605,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'time_zone', 'sort_by', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -5625,6 +5634,8 @@ class OutboundApi(object):
             query_params['filterType'] = params['filter_type']
         if 'name' in params:
             query_params['name'] = params['name']
+        if 'time_zone' in params:
+            query_params['timeZone'] = params['time_zone']
         if 'sort_by' in params:
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
@@ -11080,6 +11091,84 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ContactList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_outbound_contactlists_bulk_update(self, body: 'ContactListsBulkEditRequest', **kwargs) -> 'ContactListsBulkEditResponse':
+        """
+        Bulk update contact lists.
+        A maximum of 100 contact lists can be updated per request.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_contactlists_bulk_update(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactListsBulkEditRequest body: Contact lists bulk edit request. (required)
+        :return: ContactListsBulkEditResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_contactlists_bulk_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_contactlists_bulk_update`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/bulk/update'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactListsBulkEditResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -81,6 +81,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_scheduling_run**](#get_workforcemanagement_businessunit_scheduling_run) | Get a scheduling run|
 |[**get_workforcemanagement_businessunit_scheduling_run_result**](#get_workforcemanagement_businessunit_scheduling_run_result) | Get the result of a rescheduling operation|
 |[**get_workforcemanagement_businessunit_scheduling_runs**](#get_workforcemanagement_businessunit_scheduling_runs) | Get the list of scheduling runs|
+|[**get_workforcemanagement_businessunit_schedulingpreferences_settings**](#get_workforcemanagement_businessunit_schedulingpreferences_settings) | Get business unit scheduling preferences settings|
 |[**get_workforcemanagement_businessunit_servicegoaltemplate**](#get_workforcemanagement_businessunit_servicegoaltemplate) | Get a service goal template|
 |[**get_workforcemanagement_businessunit_servicegoaltemplates**](#get_workforcemanagement_businessunit_servicegoaltemplates) | Gets list of service goal templates|
 |[**get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job**](#get_workforcemanagement_businessunit_shifttrading_trades_evaluate_job) | View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status|
@@ -156,6 +157,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_schedulebid_schedulesets**](#get_workforcemanagement_schedulebid_schedulesets) | Gets an agent&#39;s schedule sets for a bid|
 |[**get_workforcemanagement_schedulebids**](#get_workforcemanagement_schedulebids) | Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently|
 |[**get_workforcemanagement_schedulingjob**](#get_workforcemanagement_schedulingjob) | Get status of the scheduling job|
+|[**get_workforcemanagement_schedulingpreferences_settings**](#get_workforcemanagement_schedulingpreferences_settings) | Get scheduling preferences settings for the agent&#39;s business unit|
 |[**get_workforcemanagement_shifttrades**](#get_workforcemanagement_shifttrades) | Gets all of my shift trades|
 |[**get_workforcemanagement_shifttrading_trade_job**](#get_workforcemanagement_shifttrading_trade_job) | View result of update trade operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_shifttrading_trade_match_job**](#get_workforcemanagement_shifttrading_trade_match_job) | View result of match shift trade operation. Only the receiving user who started the operation can query the status.|
@@ -191,6 +193,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_businessunit_schedulebid_group_preferences**](#patch_workforcemanagement_businessunit_schedulebid_group_preferences) | Overrides the assigned schedule bid for the specified agents|
 |[**patch_workforcemanagement_businessunit_scheduler_settings**](#patch_workforcemanagement_businessunit_scheduler_settings) | Update scheduler settings for a business unit|
 |[**patch_workforcemanagement_businessunit_scheduling_run**](#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
+|[**patch_workforcemanagement_businessunit_schedulingpreferences_settings**](#patch_workforcemanagement_businessunit_schedulingpreferences_settings) | Update business unit scheduling preferences settings|
 |[**patch_workforcemanagement_businessunit_servicegoaltemplate**](#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
 |[**patch_workforcemanagement_businessunit_staffinggroup**](#patch_workforcemanagement_businessunit_staffinggroup) | Updates a staffing group|
 |[**patch_workforcemanagement_businessunit_timeoffplan**](#patch_workforcemanagement_businessunit_timeoffplan) | Updates a time-off plan|
@@ -208,6 +211,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_managementunit_week_shifttrade**](#patch_workforcemanagement_managementunit_week_shifttrade) | Updates a shift trade. This route can only be called by the initiating agent|
 |[**patch_workforcemanagement_managementunit_workplan**](#patch_workforcemanagement_managementunit_workplan) | Update a work plan|
 |[**patch_workforcemanagement_managementunit_workplanrotation**](#patch_workforcemanagement_managementunit_workplanrotation) | Update a work plan rotation|
+|[**patch_workforcemanagement_schedulingpreferences**](#patch_workforcemanagement_schedulingpreferences) | Update agent scheduling preferences|
 |[**patch_workforcemanagement_timeoffrequest**](#patch_workforcemanagement_timeoffrequest) | Update a time off request for the current user|
 |[**patch_workforcemanagement_unavailabletimes**](#patch_workforcemanagement_unavailabletimes) | Update agent unavailable times|
 |[**patch_workforcemanagement_user_workplanbidranks**](#patch_workforcemanagement_user_workplanbidranks) | Update work plan bid ranks for a user|
@@ -218,6 +222,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_adherence_historical_bulk**](#post_workforcemanagement_adherence_historical_bulk) | Request a historical adherence report in bulk|
 |[**post_workforcemanagement_agent_adherence_explanations**](#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
 |[**post_workforcemanagement_agent_adherence_explanations_query**](#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
+|[**post_workforcemanagement_agent_schedulingpreferences_query**](#post_workforcemanagement_agent_schedulingpreferences_query) | Get agent scheduling preferences|
 |[**post_workforcemanagement_agent_unavailabletimes_query**](#post_workforcemanagement_agent_unavailabletimes_query) | Get agent unavailable times|
 |[**post_workforcemanagement_agents**](#post_workforcemanagement_agents) | Move agents in and out of management unit|
 |[**post_workforcemanagement_agents_integrations_hris_query**](#post_workforcemanagement_agents_integrations_hris_query) | Query integrations for agents|
@@ -332,6 +337,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunits**](#post_workforcemanagement_managementunits) | Add a management unit|
 |[**post_workforcemanagement_notifications_update**](#post_workforcemanagement_notifications_update) | Mark a list of notifications as read or unread|
 |[**post_workforcemanagement_schedules**](#post_workforcemanagement_schedules) | Get published schedule for the current user|
+|[**post_workforcemanagement_schedulingpreferences_query**](#post_workforcemanagement_schedulingpreferences_query) | Get agent scheduling preferences|
 |[**post_workforcemanagement_shifttrading_trade_jobs**](#post_workforcemanagement_shifttrading_trade_jobs) | Updates a shift trade. This route can only be called by the initiating user|
 |[**post_workforcemanagement_shifttrading_trade_match_jobs**](#post_workforcemanagement_shifttrading_trade_match_jobs) | Matches a shift trade. This route can only be called by the receiving user|
 |[**post_workforcemanagement_shifttrading_trade_state_jobs**](#post_workforcemanagement_shifttrading_trade_state_jobs) | Update trade state by a user|
@@ -346,6 +352,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_timeoffrequests_integrationstatus_query**](#post_workforcemanagement_timeoffrequests_integrationstatus_query) | Retrieves integration statuses for a list of current user time off requests|
 |[**post_workforcemanagement_unavailabletimes_query**](#post_workforcemanagement_unavailabletimes_query) | Get agent unavailable times|
 |[**post_workforcemanagement_unavailabletimes_validation_jobs**](#post_workforcemanagement_unavailabletimes_validation_jobs) | Validates proposed changes to an agent&#39;s unavailable time spans against scheduling rules and constraints for a specific week|
+|[**post_workforcemanagement_users_activity**](#post_workforcemanagement_users_activity) | Get a list of UserScheduleAdherence records for the requested users|
 |[**put_workforcemanagement_agent_integrations_hris**](#put_workforcemanagement_agent_integrations_hris) | Update integrations for agent|
 |[**put_workforcemanagement_businessunit_timeofflimit_values**](#put_workforcemanagement_businessunit_timeofflimit_values) | Sets daily values for a date range of time-off limit object|
 |[**put_workforcemanagement_managementunit_timeofflimit_values**](#put_workforcemanagement_managementunit_timeofflimit_values) | Sets daily values for a date range of time off limit object|
@@ -4304,6 +4311,56 @@ except ApiException as e:
 ### Return type
 
 [**BuScheduleRunListing**](BuScheduleRunListing)
+
+
+## get_workforcemanagement_businessunit_schedulingpreferences_settings
+
+> [**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse) get_workforcemanagement_businessunit_schedulingpreferences_settings(business_unit_id)
+
+
+Get business unit scheduling preferences settings
+
+get_workforcemanagement_businessunit_schedulingpreferences_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings 
+
+Requires ANY permissions: 
+
+* wfm:schedulingPreferencesSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get business unit scheduling preferences settings
+    api_response = api_instance.get_workforcemanagement_businessunit_schedulingpreferences_settings(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_schedulingpreferences_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+
+### Return type
+
+[**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse)
 
 
 ## get_workforcemanagement_businessunit_servicegoaltemplate
@@ -8302,6 +8359,52 @@ except ApiException as e:
 [**SchedulingStatusResponse**](SchedulingStatusResponse)
 
 
+## get_workforcemanagement_schedulingpreferences_settings
+
+> [**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse) get_workforcemanagement_schedulingpreferences_settings()
+
+
+Get scheduling preferences settings for the agent's business unit
+
+get_workforcemanagement_schedulingpreferences_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/schedulingpreferences/settings 
+
+Requires ANY permissions: 
+
+* wfm:agentSchedulingPreferencesSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Get scheduling preferences settings for the agent's business unit
+    api_response = api_instance.get_workforcemanagement_schedulingpreferences_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_schedulingpreferences_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse)
+
+
 ## get_workforcemanagement_shifttrades
 
 > [**ShiftTradeListResponse**](ShiftTradeListResponse) get_workforcemanagement_shifttrades()
@@ -10053,6 +10156,58 @@ except ApiException as e:
 void (empty response body)
 
 
+## patch_workforcemanagement_businessunit_schedulingpreferences_settings
+
+> [**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse) patch_workforcemanagement_businessunit_schedulingpreferences_settings(business_unit_id, body)
+
+
+Update business unit scheduling preferences settings
+
+patch_workforcemanagement_businessunit_schedulingpreferences_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings 
+
+Requires ANY permissions: 
+
+* wfm:schedulingPreferencesSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.UpdateBusinessUnitSchedulingPreferencesSettingsRequest() # UpdateBusinessUnitSchedulingPreferencesSettingsRequest | body
+
+try:
+    # Update business unit scheduling preferences settings
+    api_response = api_instance.patch_workforcemanagement_businessunit_schedulingpreferences_settings(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_schedulingpreferences_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**UpdateBusinessUnitSchedulingPreferencesSettingsRequest**](UpdateBusinessUnitSchedulingPreferencesSettingsRequest)| body |  |
+
+### Return type
+
+[**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse)
+
+
 ## patch_workforcemanagement_businessunit_servicegoaltemplate
 
 > [**ServiceGoalTemplate**](ServiceGoalTemplate) patch_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, body)
@@ -10953,6 +11108,56 @@ except ApiException as e:
 [**WorkPlanRotationResponse**](WorkPlanRotationResponse)
 
 
+## patch_workforcemanagement_schedulingpreferences
+
+> [**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing) patch_workforcemanagement_schedulingpreferences(body)
+
+
+Update agent scheduling preferences
+
+patch_workforcemanagement_schedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/workforcemanagement/schedulingpreferences 
+
+Requires ANY permissions: 
+
+* wfm:agentSchedulingPreferences:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.UpdateAgentSchedulingPreferencesRequest() # UpdateAgentSchedulingPreferencesRequest | body
+
+try:
+    # Update agent scheduling preferences
+    api_response = api_instance.patch_workforcemanagement_schedulingpreferences(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_schedulingpreferences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UpdateAgentSchedulingPreferencesRequest**](UpdateAgentSchedulingPreferencesRequest)| body |  |
+
+### Return type
+
+[**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing)
+
+
 ## patch_workforcemanagement_timeoffrequest
 
 > [**TimeOffRequestResponse**](TimeOffRequestResponse) patch_workforcemanagement_timeoffrequest(time_off_request_id, body)
@@ -11449,6 +11654,58 @@ except ApiException as e:
 ### Return type
 
 [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse)
+
+
+## post_workforcemanagement_agent_schedulingpreferences_query
+
+> [**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing) post_workforcemanagement_agent_schedulingpreferences_query(agent_id, body)
+
+
+Get agent scheduling preferences
+
+post_workforcemanagement_agent_schedulingpreferences_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/schedulingpreferences/query 
+
+Requires ANY permissions: 
+
+* wfm:schedulingPreferencesQuery:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent
+body = PureCloudPlatformClientV2.QueryAgentSchedulingPreferencesRequest() # QueryAgentSchedulingPreferencesRequest | body
+
+try:
+    # Get agent scheduling preferences
+    api_response = api_instance.post_workforcemanagement_agent_schedulingpreferences_query(agent_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agent_schedulingpreferences_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent |  |
+| **body** | [**QueryAgentSchedulingPreferencesRequest**](QueryAgentSchedulingPreferencesRequest)| body |  |
+
+### Return type
+
+[**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing)
 
 
 ## post_workforcemanagement_agent_unavailabletimes_query
@@ -17379,6 +17636,56 @@ except ApiException as e:
 [**UserScheduleContainer**](UserScheduleContainer)
 
 
+## post_workforcemanagement_schedulingpreferences_query
+
+> [**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing) post_workforcemanagement_schedulingpreferences_query(body)
+
+
+Get agent scheduling preferences
+
+post_workforcemanagement_schedulingpreferences_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/workforcemanagement/schedulingpreferences/query 
+
+Requires ANY permissions: 
+
+* wfm:agentSchedulingPreferencesQuery:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.QueryAgentSchedulingPreferencesRequest() # QueryAgentSchedulingPreferencesRequest | body
+
+try:
+    # Get agent scheduling preferences
+    api_response = api_instance.post_workforcemanagement_schedulingpreferences_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_schedulingpreferences_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**QueryAgentSchedulingPreferencesRequest**](QueryAgentSchedulingPreferencesRequest)| body |  |
+
+### Return type
+
+[**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing)
+
+
 ## post_workforcemanagement_shifttrading_trade_jobs
 
 > [**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse) post_workforcemanagement_shifttrading_trade_jobs(trade_id, body, force_async=force_async)
@@ -18079,6 +18386,54 @@ except ApiException as e:
 [**ValidateAgentUnavailableTimesResponse**](ValidateAgentUnavailableTimesResponse)
 
 
+## post_workforcemanagement_users_activity
+
+> [**UserActivityListing**](UserActivityListing) post_workforcemanagement_users_activity(body)
+
+
+Get a list of UserScheduleAdherence records for the requested users
+
+Wraps POST /api/v2/workforcemanagement/users/activity 
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.UsersActivityRequest() # UsersActivityRequest | Request body
+
+try:
+    # Get a list of UserScheduleAdherence records for the requested users
+    api_response = api_instance.post_workforcemanagement_users_activity(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_users_activity: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UsersActivityRequest**](UsersActivityRequest)| Request body |  |
+
+### Return type
+
+[**UserActivityListing**](UserActivityListing)
+
+
 ## put_workforcemanagement_agent_integrations_hris
 
 > [**AgentIntegrationsResponse**](AgentIntegrationsResponse) put_workforcemanagement_agent_integrations_hris(agent_id, body)
@@ -18290,4 +18645,4 @@ except ApiException as e:
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_PureCloudPlatformClientV2 266.0.0_
+_PureCloudPlatformClientV2 267.0.0_
