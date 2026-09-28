@@ -2279,8 +2279,6 @@ except ApiException as e:
 
 Get analytics data warehouse file download
 
-get_analytics_dataextraction_download is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/dataextraction/downloads/{downloadId} 
 
 Requires ANY permissions: 
@@ -2327,8 +2325,6 @@ void (empty response body)
 
 
 Get metadata on files available for extraction
-
-get_analytics_dataextraction_downloads_metadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/dataextraction/downloads/metadata 
 
@@ -5047,8 +5043,6 @@ except ApiException as e:
 
 Get download URLs for analytics data warehouse files
 
-post_analytics_dataextraction_downloads_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/dataextraction/downloads/bulk 
 
 Requires ANY permissions: 
@@ -6937,4 +6931,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_

@@ -182,4 +182,4 @@ except ApiException as e:
 [**DependencyEntityListing**](DependencyEntityListing)
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_

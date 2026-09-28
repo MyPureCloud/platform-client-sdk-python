@@ -2923,7 +2923,7 @@ except ApiException as e:
 
 ## get_routing_predictors_keyperformanceindicators
 
-> [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator) get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group, expand=expand)
+> [**KeyPerformanceIndicatorEntityListing**](KeyPerformanceIndicatorEntityListing) get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group, expand=expand)
 
 
 Get a list of Key Performance Indicators
@@ -2968,7 +2968,7 @@ except ApiException as e:
 
 ### Return type
 
-[**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator)
+[**KeyPerformanceIndicatorEntityListing**](KeyPerformanceIndicatorEntityListing)
 
 
 ## get_routing_predictors_keyperformanceindicatortypes
@@ -6689,6 +6689,8 @@ except ApiException as e:
 
 Create a benefit assessment job.
 
+Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
+
 Wraps POST /api/v2/routing/assessments/jobs 
 
 Requires ANY permissions: 
@@ -9008,4 +9010,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_

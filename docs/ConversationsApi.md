@@ -272,6 +272,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_participant_communication_wrapup**](#post_conversations_message_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_message_participant_monitor**](#post_conversations_message_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_message_participant_replace**](#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_message_participant_takeover**](#post_conversations_message_participant_takeover) | The User performing this action will takeover the conversation from the participant specified.|
 |[**post_conversations_messages**](#post_conversations_messages) | Create an outbound messaging conversation.|
 |[**post_conversations_messages_agentless**](#post_conversations_messages_agentless) | Send an agentless outbound message|
 |[**post_conversations_messages_inbound_open**](#post_conversations_messages_inbound_open) | Send an inbound Open Message|
@@ -13761,6 +13762,57 @@ except ApiException as e:
 void (empty response body)
 
 
+## post_conversations_message_participant_takeover
+
+>  post_conversations_message_participant_takeover(conversation_id, participant_id)
+
+
+The User performing this action will takeover the conversation from the participant specified.
+
+This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/takeover 
+
+Requires ANY permissions: 
+
+* conversation:message:takeover
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | The id of the conversation being taken over
+participant_id = 'participant_id_example' # str | The id of the participant being taken over.
+
+try:
+    # The User performing this action will takeover the conversation from the participant specified.
+    api_instance.post_conversations_message_participant_takeover(conversation_id, participant_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_participant_takeover: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| The id of the conversation being taken over |  |
+| **participant_id** | **str**| The id of the participant being taken over. |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## post_conversations_messages
 
 > [**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse) post_conversations_messages(body)
@@ -16139,4 +16191,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_

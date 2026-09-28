@@ -35,6 +35,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_casemanagement_cases_query_job_results**](#get_casemanagement_cases_query_job_results) | Get results for a case query job|
 |[**get_casemanagement_cases_reference**](#get_casemanagement_cases_reference) | Get a Case by reference.|
 |[**patch_casemanagement_case_datedue**](#patch_casemanagement_case_datedue) | Update the due date of a Case.|
+|[**patch_casemanagement_case_description**](#patch_casemanagement_case_description) | Update the description of a Case.|
+|[**patch_casemanagement_case_externalid**](#patch_casemanagement_case_externalid) | Update the external identifier of a Case.|
 |[**patch_casemanagement_case_owner**](#patch_casemanagement_case_owner) | Update the ownerId of a Case|
 |[**patch_casemanagement_case_priority**](#patch_casemanagement_case_priority) | Update priority of a Case.|
 |[**patch_casemanagement_case_summary**](#patch_casemanagement_case_summary) | Update summary of a Case.|
@@ -1559,6 +1561,110 @@ except ApiException as e:
 [**Case**](Case)
 
 
+## patch_casemanagement_case_description
+
+> [**Case**](Case) patch_casemanagement_case_description(case_id, body)
+
+
+Update the description of a Case.
+
+patch_casemanagement_case_description is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/casemanagement/cases/{caseId}/description 
+
+Requires ANY permissions: 
+
+* caseManagement:caseDescription:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+case_id = 'case_id_example' # str | Case identifier.
+body = PureCloudPlatformClientV2.CaseDescriptionUpdate() # CaseDescriptionUpdate | Description update.
+
+try:
+    # Update the description of a Case.
+    api_response = api_instance.patch_casemanagement_case_description(case_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->patch_casemanagement_case_description: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **case_id** | **str**| Case identifier. |  |
+| **body** | [**CaseDescriptionUpdate**](CaseDescriptionUpdate)| Description update. |  |
+
+### Return type
+
+[**Case**](Case)
+
+
+## patch_casemanagement_case_externalid
+
+> [**Case**](Case) patch_casemanagement_case_externalid(case_id, body)
+
+
+Update the external identifier of a Case.
+
+patch_casemanagement_case_externalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/casemanagement/cases/{caseId}/externalid 
+
+Requires ANY permissions: 
+
+* caseManagement:caseExternalId:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CaseManagementApi()
+case_id = 'case_id_example' # str | Case identifier.
+body = PureCloudPlatformClientV2.CaseExternalIdUpdate() # CaseExternalIdUpdate | External identifier update.
+
+try:
+    # Update the external identifier of a Case.
+    api_response = api_instance.patch_casemanagement_case_externalid(case_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CaseManagementApi->patch_casemanagement_case_externalid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **case_id** | **str**| Case identifier. |  |
+| **body** | [**CaseExternalIdUpdate**](CaseExternalIdUpdate)| External identifier update. |  |
+
+### Return type
+
+[**Case**](Case)
+
+
 ## patch_casemanagement_case_owner
 
 > [**Case**](Case) patch_casemanagement_case_owner(case_id, body)
@@ -2609,4 +2715,4 @@ except ApiException as e:
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_
