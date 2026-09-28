@@ -68,7 +68,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_views_jobs_me**](#get_journey_views_jobs_me) | Get my jobs|
 |[**get_journey_views_schedules**](#get_journey_views_schedules) | Get the journey schedules for an organization.|
 |[**patch_journey_actionmap**](#patch_journey_actionmap) | Update single action map.|
-|[**patch_journey_actiontarget**](#patch_journey_actiontarget) | Deprecated. Update a single action target.|
 |[**patch_journey_actiontemplate**](#patch_journey_actiontemplate) | Update a single action template.|
 |[**patch_journey_externalevents_configuration**](#patch_journey_externalevents_configuration) | Update an external events configuration.|
 |[**patch_journey_outcome**](#patch_journey_outcome) | Deprecated. Update an outcome.|
@@ -1215,7 +1214,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;name,-createdDate). | [optional]  |
-| **media_type** | **str**| Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
+| **media_type** | **str**| Media type | [optional] <br />**Values**: webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
 | **state** | **str**| Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
 | **query_fields** | [**list[str]**](str)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
 | **query_value** | **str**| Value to query on using fuzzy matching. Requires &#39;queryFields&#39; to also be set. | [optional]  |
@@ -3249,61 +3248,6 @@ except ApiException as e:
 [**ActionMap**](ActionMap)
 
 
-## patch_journey_actiontarget
-
-> [**ActionTarget**](ActionTarget) patch_journey_actiontarget(action_target_id, body=body)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-Deprecated. Update a single action target.
-
-ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-
-Wraps PATCH /api/v2/journey/actiontargets/{actionTargetId} 
-
-Requires ANY permissions: 
-
-* journey:actiontarget:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.JourneyApi()
-action_target_id = 'action_target_id_example' # str | ID of the action target.
-body = PureCloudPlatformClientV2.PatchActionTarget() # PatchActionTarget |  (optional)
-
-try:
-    # Deprecated. Update a single action target.
-    api_response = api_instance.patch_journey_actiontarget(action_target_id, body=body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling JourneyApi->patch_journey_actiontarget: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **action_target_id** | **str**| ID of the action target. |  |
-| **body** | [**PatchActionTarget**](PatchActionTarget)|  | [optional]  |
-
-### Return type
-
-[**ActionTarget**](ActionTarget)
-
-
 ## patch_journey_actiontemplate
 
 > [**ActionTemplate**](ActionTemplate) patch_journey_actiontemplate(action_template_id, body=body)
@@ -4903,4 +4847,4 @@ except ApiException as e:
 [**ActivateExternalEventResponse**](ActivateExternalEventResponse)
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_

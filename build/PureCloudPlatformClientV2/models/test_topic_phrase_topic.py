@@ -51,6 +51,7 @@ class TestTopicPhraseTopic(object):
         self.swagger_types = {
             'phrase': 'TestTopicPhrasePhrase',
             'strictness': 'str',
+            'matching_type': 'str',
             'dialect': 'str',
             'participants': 'str'
         }
@@ -58,12 +59,14 @@ class TestTopicPhraseTopic(object):
         self.attribute_map = {
             'phrase': 'phrase',
             'strictness': 'strictness',
+            'matching_type': 'matchingType',
             'dialect': 'dialect',
             'participants': 'participants'
         }
 
         self._phrase = None
         self._strictness = None
+        self._matching_type = None
         self._dialect = None
         self._participants = None
 
@@ -119,6 +122,35 @@ class TestTopicPhraseTopic(object):
             self._strictness = "outdated_sdk_version"
         else:
             self._strictness = strictness
+
+    @property
+    def matching_type(self) -> str:
+        """
+        Gets the matching_type of this TestTopicPhraseTopic.
+        The topic matching type Lexical or Semantic, default value is Semantic
+
+        :return: The matching_type of this TestTopicPhraseTopic.
+        :rtype: str
+        """
+        return self._matching_type
+
+    @matching_type.setter
+    def matching_type(self, matching_type: str) -> None:
+        """
+        Sets the matching_type of this TestTopicPhraseTopic.
+        The topic matching type Lexical or Semantic, default value is Semantic
+
+        :param matching_type: The matching_type of this TestTopicPhraseTopic.
+        :type: str
+        """
+        if isinstance(matching_type, int):
+            matching_type = str(matching_type)
+        allowed_values = ["Lexical", "Semantic"]
+        if matching_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for matching_type -> " + matching_type)
+            self._matching_type = "outdated_sdk_version"
+        else:
+            self._matching_type = matching_type
 
     @property
     def dialect(self) -> str:

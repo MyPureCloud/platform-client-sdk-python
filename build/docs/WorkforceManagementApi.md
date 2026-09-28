@@ -6,8 +6,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_workforcemanagement_adherence_adjustment**](#delete_workforcemanagement_adherence_adjustment) | Delete an adherence adjustment for the current user|
 |[**delete_workforcemanagement_businessunit**](#delete_workforcemanagement_businessunit) | Delete business unit|
 |[**delete_workforcemanagement_businessunit_activitycode**](#delete_workforcemanagement_businessunit_activitycode) | Deletes an activity code|
+|[**delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode**](#delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode) | Delete an adherence adjustment reason code for a business unit|
+|[**delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk**](#delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk) | Delete adherence adjustment reason codes in bulk for a business unit|
 |[**delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory**](#delete_workforcemanagement_businessunit_capacityplan_staffinggroupallocationshistory) | Delete staffing group allocations history created for a capacity plan before the given date|
 |[**delete_workforcemanagement_businessunit_planninggroup**](#delete_workforcemanagement_businessunit_planninggroup) | Deletes the planning group|
 |[**delete_workforcemanagement_businessunit_schedulebid**](#delete_workforcemanagement_businessunit_schedulebid) | Delete a schedule bid|
@@ -28,10 +31,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_managementunit_workplan**](#delete_workforcemanagement_managementunit_workplan) | Delete a work plan|
 |[**delete_workforcemanagement_managementunit_workplanrotation**](#delete_workforcemanagement_managementunit_workplanrotation) | Delete a work plan rotation|
 |[**get_workforcemanagement_adherence**](#get_workforcemanagement_adherence) | Get a list of UserScheduleAdherence records for the requested users|
+|[**get_workforcemanagement_adherence_adjustment**](#get_workforcemanagement_adherence_adjustment) | Get an adherence adjustment for the current user|
 |[**get_workforcemanagement_adherence_explanation**](#get_workforcemanagement_adherence_explanation) | Get an adherence explanation for the current user|
 |[**get_workforcemanagement_adherence_explanations_job**](#get_workforcemanagement_adherence_explanations_job) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adherence_historical_bulk_job**](#get_workforcemanagement_adherence_historical_bulk_job) | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adherence_historical_job**](#get_workforcemanagement_adherence_historical_job) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_agent_adherence_adjustment**](#get_workforcemanagement_agent_adherence_adjustment) | Get an adherence adjustment for the requested agent|
 |[**get_workforcemanagement_agent_adherence_explanation**](#get_workforcemanagement_agent_adherence_explanation) | Get an adherence explanation|
 |[**get_workforcemanagement_agent_managementunit**](#get_workforcemanagement_agent_managementunit) | Get the management unit to which the agent belongs|
 |[**get_workforcemanagement_agents_me_adherence_historical_job**](#get_workforcemanagement_agents_me_adherence_historical_job) | Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status|
@@ -47,9 +52,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_activitycode**](#get_workforcemanagement_businessunit_activitycode) | Get an activity code|
 |[**get_workforcemanagement_businessunit_activitycodes**](#get_workforcemanagement_businessunit_activitycodes) | Get activity codes|
 |[**get_workforcemanagement_businessunit_activityplan**](#get_workforcemanagement_businessunit_activityplan) | Get an activity plan|
+|[**get_workforcemanagement_businessunit_activityplan_deletions_job**](#get_workforcemanagement_businessunit_activityplan_deletions_job) | Gets an activity plan deletion job|
+|[**get_workforcemanagement_businessunit_activityplan_jobs**](#get_workforcemanagement_businessunit_activityplan_jobs) | Gets the latest job for an activity plan in the business unit|
+|[**get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job**](#get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job) | Gets a session users deletion job|
+|[**get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job**](#get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job) | Gets an activity plan sessions deletion job|
+|[**get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job**](#get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job) | Gets an occurrences deletion job|
 |[**get_workforcemanagement_businessunit_activityplan_runs_job**](#get_workforcemanagement_businessunit_activityplan_runs_job) | Gets an activity plan run job|
 |[**get_workforcemanagement_businessunit_activityplans**](#get_workforcemanagement_businessunit_activityplans) | Get activity plans|
 |[**get_workforcemanagement_businessunit_activityplans_jobs**](#get_workforcemanagement_businessunit_activityplans_jobs) | Gets the latest job for all activity plans in the business unit|
+|[**get_workforcemanagement_businessunit_adherence_adjustments_bulk**](#get_workforcemanagement_businessunit_adherence_adjustments_bulk) | Get adherence adjustments in bulk by ID for a business unit|
+|[**get_workforcemanagement_businessunit_adherence_adjustments_query_job**](#get_workforcemanagement_businessunit_adherence_adjustments_query_job) | Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_businessunit_adherence_adjustments_query_jobs**](#get_workforcemanagement_businessunit_adherence_adjustments_query_jobs) | Get query job history for the logged in user.|
+|[**get_workforcemanagement_businessunit_adherence_adjustments_reasoncode**](#get_workforcemanagement_businessunit_adherence_adjustments_reasoncode) | Get an adherence adjustment reason code for a business unit|
+|[**get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes**](#get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes) | Get adherence adjustment reason codes for a business unit|
+|[**get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk**](#get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk) | Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.|
+|[**get_workforcemanagement_businessunit_adherence_adjustments_settings**](#get_workforcemanagement_businessunit_adherence_adjustments_settings) | Get adherence adjustments settings for a business unit|
 |[**get_workforcemanagement_businessunit_alternativeshifts_settings**](#get_workforcemanagement_businessunit_alternativeshifts_settings) | Get alternative shifts settings for a business unit|
 |[**get_workforcemanagement_businessunit_alternativeshifts_trade**](#get_workforcemanagement_businessunit_alternativeshifts_trade) | Get an alternative shifts trade in a business unit for a given trade ID|
 |[**get_workforcemanagement_businessunit_alternativeshifts_trades_search_job**](#get_workforcemanagement_businessunit_alternativeshifts_trades_search_job) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status|
@@ -176,13 +193,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_workplanbid_preferences**](#get_workforcemanagement_workplanbid_preferences) | Gets an agent&#39;s work plan bidding preference|
 |[**get_workforcemanagement_workplanbid_workplans**](#get_workforcemanagement_workplanbid_workplans) | Gets an agent&#39;s work plans for a bid|
 |[**get_workforcemanagement_workplanbids**](#get_workforcemanagement_workplanbids) | Gets the list of work plan bids that belong to an agent|
+|[**patch_workforcemanagement_adherence_adjustment**](#patch_workforcemanagement_adherence_adjustment) | Update an adherence adjustment for the current user|
+|[**patch_workforcemanagement_agent_adherence_adjustment**](#patch_workforcemanagement_agent_adherence_adjustment) | Update an adherence adjustment for the requested agent|
 |[**patch_workforcemanagement_agent_adherence_explanation**](#patch_workforcemanagement_agent_adherence_explanation) | Update an adherence explanation|
+|[**patch_workforcemanagement_agent_unavailabletimes**](#patch_workforcemanagement_agent_unavailabletimes) | Update unavailable times for the requested agent|
 |[**patch_workforcemanagement_alternativeshifts_trade**](#patch_workforcemanagement_alternativeshifts_trade) | Update my alternative shifts trade by trade ID|
 |[**patch_workforcemanagement_alternativeshifts_trades_state_jobs**](#patch_workforcemanagement_alternativeshifts_trades_state_jobs) | Bulk update alternative shift trade states|
 |[**patch_workforcemanagement_businessunit**](#patch_workforcemanagement_businessunit) | Update business unit|
 |[**patch_workforcemanagement_businessunit_activitycode**](#patch_workforcemanagement_businessunit_activitycode) | Update an activity code|
 |[**patch_workforcemanagement_businessunit_activitycodes_bulk**](#patch_workforcemanagement_businessunit_activitycodes_bulk) | Update multiple activity codes|
 |[**patch_workforcemanagement_businessunit_activityplan**](#patch_workforcemanagement_businessunit_activityplan) | Update an activity plan|
+|[**patch_workforcemanagement_businessunit_adherence_adjustments_bulk**](#patch_workforcemanagement_businessunit_adherence_adjustments_bulk) | Update adherence adjustments in bulk for a business unit|
+|[**patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode**](#patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode) | Update an adherence adjustment reason code for a business unit|
+|[**patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk**](#patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk) | Update adherence adjustment reason codes in bulk for a business unit|
+|[**patch_workforcemanagement_businessunit_adherence_adjustments_settings**](#patch_workforcemanagement_businessunit_adherence_adjustments_settings) | Update adherence adjustments settings for a business unit|
 |[**patch_workforcemanagement_businessunit_alternativeshifts_settings**](#patch_workforcemanagement_businessunit_alternativeshifts_settings) | Update alternative shifts settings for a business unit|
 |[**patch_workforcemanagement_businessunit_capacityplan**](#patch_workforcemanagement_businessunit_capacityplan) | Update a capacity plan configuration|
 |[**patch_workforcemanagement_businessunit_minimumstaffing_settings**](#patch_workforcemanagement_businessunit_minimumstaffing_settings) | Update minimum staffing settings for a business unit|
@@ -217,9 +241,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_user_workplanbidranks**](#patch_workforcemanagement_user_workplanbidranks) | Update work plan bid ranks for a user|
 |[**patch_workforcemanagement_users_workplanbidranks_bulk**](#patch_workforcemanagement_users_workplanbidranks_bulk) | Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.|
 |[**patch_workforcemanagement_workplanbid_preferences**](#patch_workforcemanagement_workplanbid_preferences) | Update an agent&#39;s work plan bidding preference|
+|[**post_workforcemanagement_adherence_adjustments**](#post_workforcemanagement_adherence_adjustments) | Submit an adherence adjustment for the current user|
+|[**post_workforcemanagement_adherence_adjustments_query**](#post_workforcemanagement_adherence_adjustments_query) | Query adherence adjustments for the current user|
 |[**post_workforcemanagement_adherence_explanations**](#post_workforcemanagement_adherence_explanations) | Submit an adherence explanation for the current user|
 |[**post_workforcemanagement_adherence_explanations_query**](#post_workforcemanagement_adherence_explanations_query) | Query adherence explanations for the current user|
 |[**post_workforcemanagement_adherence_historical_bulk**](#post_workforcemanagement_adherence_historical_bulk) | Request a historical adherence report in bulk|
+|[**post_workforcemanagement_agent_adherence_adjustments_query**](#post_workforcemanagement_agent_adherence_adjustments_query) | Query adherence adjustments for the requested agent|
 |[**post_workforcemanagement_agent_adherence_explanations**](#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
 |[**post_workforcemanagement_agent_adherence_explanations_query**](#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
 |[**post_workforcemanagement_agent_schedulingpreferences_query**](#post_workforcemanagement_agent_schedulingpreferences_query) | Get agent scheduling preferences|
@@ -237,8 +264,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_alternativeshifts_offers_search_jobs**](#post_workforcemanagement_alternativeshifts_offers_search_jobs) | Request a search of alternative shift offers for a given shift|
 |[**post_workforcemanagement_alternativeshifts_trades**](#post_workforcemanagement_alternativeshifts_trades) | Create my alternative shift trade using an existing offer&#39;s jobId|
 |[**post_workforcemanagement_businessunit_activitycodes**](#post_workforcemanagement_businessunit_activitycodes) | Create a new activity code|
+|[**post_workforcemanagement_businessunit_activityplan_deletions_jobs**](#post_workforcemanagement_businessunit_activityplan_deletions_jobs) | Delete an activity plan|
+|[**post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs**](#post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs) | Triggers a job to delete users from a session in the activity plan occurrence|
+|[**post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs**](#post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs) | Triggers a job to delete sessions for the activity plan occurrence|
+|[**post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs**](#post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs) | Delete occurrences for the activity plan|
 |[**post_workforcemanagement_businessunit_activityplan_runs_jobs**](#post_workforcemanagement_businessunit_activityplan_runs_jobs) | Run an activity plan manually|
 |[**post_workforcemanagement_businessunit_activityplans**](#post_workforcemanagement_businessunit_activityplans) | Create an activity plan|
+|[**post_workforcemanagement_businessunit_adherence_adjustments_query**](#post_workforcemanagement_businessunit_adherence_adjustments_query) | Query adherence adjustments for a business unit. Results will be returned using cursor pagination|
+|[**post_workforcemanagement_businessunit_adherence_adjustments_query_jobs**](#post_workforcemanagement_businessunit_adherence_adjustments_query_jobs) | Creates an async query job for adherence adjustments in a business unit.|
+|[**post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes**](#post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes) | Create an adherence adjustment reason code for a business unit|
+|[**post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk**](#post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk) | Create adherence adjustment reason codes in bulk for a business unit|
 |[**post_workforcemanagement_businessunit_adherence_explanations_query**](#post_workforcemanagement_businessunit_adherence_explanations_query) | Query adherence explanations across an entire business unit for the requested period|
 |[**post_workforcemanagement_businessunit_agentschedules_search**](#post_workforcemanagement_businessunit_agentschedules_search) | Search published schedules|
 |[**post_workforcemanagement_businessunit_alternativeshifts_trades_search**](#post_workforcemanagement_businessunit_alternativeshifts_trades_search) | List alternative shifts trades for a given management unit or agent|
@@ -360,6 +395,53 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 
+## delete_workforcemanagement_adherence_adjustment
+
+>  delete_workforcemanagement_adherence_adjustment(adjustment_id)
+
+
+Delete an adherence adjustment for the current user
+
+Wraps DELETE /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+adjustment_id = 'adjustment_id_example' # str | The ID of the adherence adjustment to delete
+
+try:
+    # Delete an adherence adjustment for the current user
+    api_instance.delete_workforcemanagement_adherence_adjustment(adjustment_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_adherence_adjustment: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **adjustment_id** | **str**| The ID of the adherence adjustment to delete |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## delete_workforcemanagement_businessunit
 
 >  delete_workforcemanagement_businessunit(business_unit_id)
@@ -452,6 +534,104 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
 | **activity_code_id** | **str**| The ID of the activity code to delete |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode
+
+>  delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id)
+
+
+Delete an adherence adjustment reason code for a business unit
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId} 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+reason_code_id = 'reason_code_id_example' # str | The ID of the reason code to delete
+
+try:
+    # Delete an adherence adjustment reason code for a business unit
+    api_instance.delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **reason_code_id** | **str**| The ID of the reason code to delete |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk
+
+>  delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, ids)
+
+
+Delete adherence adjustment reason codes in bulk for a business unit
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+ids = ['ids_example'] # list[str] | The IDs of the reason codes to delete
+
+try:
+    # Delete adherence adjustment reason codes in bulk for a business unit
+    api_instance.delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, ids)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **ids** | [**list[str]**](str)| The IDs of the reason codes to delete |  |
 
 ### Return type
 
@@ -1448,6 +1628,54 @@ except ApiException as e:
 [**list[UserScheduleAdherence]**](UserScheduleAdherence)
 
 
+## get_workforcemanagement_adherence_adjustment
+
+> [**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment) get_workforcemanagement_adherence_adjustment(adjustment_id)
+
+
+Get an adherence adjustment for the current user
+
+Wraps GET /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+adjustment_id = 'adjustment_id_example' # str | The ID of the adherence adjustment
+
+try:
+    # Get an adherence adjustment for the current user
+    api_response = api_instance.get_workforcemanagement_adherence_adjustment(adjustment_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_adherence_adjustment: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **adjustment_id** | **str**| The ID of the adherence adjustment |  |
+
+### Return type
+
+[**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment)
+
+
 ## get_workforcemanagement_adherence_explanation
 
 > [**AdherenceExplanationResponse**](AdherenceExplanationResponse) get_workforcemanagement_adherence_explanation(explanation_id)
@@ -1642,6 +1870,56 @@ except ApiException as e:
 ### Return type
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse)
+
+
+## get_workforcemanagement_agent_adherence_adjustment
+
+> [**AdherenceAdjustment**](AdherenceAdjustment) get_workforcemanagement_agent_adherence_adjustment(agent_id, adjustment_id)
+
+
+Get an adherence adjustment for the requested agent
+
+Wraps GET /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId} 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent
+adjustment_id = 'adjustment_id_example' # str | The ID of the adherence adjustment
+
+try:
+    # Get an adherence adjustment for the requested agent
+    api_response = api_instance.get_workforcemanagement_agent_adherence_adjustment(agent_id, adjustment_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_agent_adherence_adjustment: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent |  |
+| **adjustment_id** | **str**| The ID of the adherence adjustment |  |
+
+### Return type
+
+[**AdherenceAdjustment**](AdherenceAdjustment)
 
 
 ## get_workforcemanagement_agent_adherence_explanation
@@ -2588,6 +2866,270 @@ except ApiException as e:
 [**ActivityPlanResponse**](ActivityPlanResponse)
 
 
+## get_workforcemanagement_businessunit_activityplan_deletions_job
+
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) get_workforcemanagement_businessunit_activityplan_deletions_job(business_unit_id, activity_plan_id, job_id)
+
+
+Gets an activity plan deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanDeletionJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan associated with the deletion job
+job_id = 'job_id_example' # str | The ID of the activity plan deletion job
+
+try:
+    # Gets an activity plan deletion job
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplan_deletions_job(business_unit_id, activity_plan_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplan_deletions_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan associated with the deletion job |  |
+| **job_id** | **str**| The ID of the activity plan deletion job |  |
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+## get_workforcemanagement_businessunit_activityplan_jobs
+
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) get_workforcemanagement_businessunit_activityplan_jobs(business_unit_id, activity_plan_id)
+
+
+Gets the latest job for an activity plan in the business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs 
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan associated with the run job
+
+try:
+    # Gets the latest job for an activity plan in the business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplan_jobs(business_unit_id, activity_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplan_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan associated with the run job |  |
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+## get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job
+
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job(business_unit_id, activity_plan_id, occurrence_id, session_id, job_id)
+
+
+Gets a session users deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceSessionUserDeletionJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan
+occurrence_id = 'occurrence_id_example' # str | The ID of the activity plan occurrence
+session_id = 'session_id_example' # str | The ID of the activity plan occurrence session
+job_id = 'job_id_example' # str | The ID of the activity plan occurrence session users deletion job
+
+try:
+    # Gets a session users deletion job
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job(business_unit_id, activity_plan_id, occurrence_id, session_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan |  |
+| **occurrence_id** | **str**| The ID of the activity plan occurrence |  |
+| **session_id** | **str**| The ID of the activity plan occurrence session |  |
+| **job_id** | **str**| The ID of the activity plan occurrence session users deletion job |  |
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+## get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job
+
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job(business_unit_id, activity_plan_id, occurrence_id, job_id)
+
+
+Gets an activity plan sessions deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceSessionDeletionJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan
+occurrence_id = 'occurrence_id_example' # str | The ID of the activity plan occurrence
+job_id = 'job_id_example' # str | The ID of the activity plan sessions deletion job
+
+try:
+    # Gets an activity plan sessions deletion job
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job(business_unit_id, activity_plan_id, occurrence_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan |  |
+| **occurrence_id** | **str**| The ID of the activity plan occurrence |  |
+| **job_id** | **str**| The ID of the activity plan sessions deletion job |  |
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+## get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job
+
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job(business_unit_id, activity_plan_id, job_id)
+
+
+Gets an occurrences deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceDeletionJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan
+job_id = 'job_id_example' # str | The ID of the activity plan occurrences deletion job
+
+try:
+    # Gets an occurrences deletion job
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job(business_unit_id, activity_plan_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan |  |
+| **job_id** | **str**| The ID of the activity plan occurrences deletion job |  |
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
 ## get_workforcemanagement_businessunit_activityplan_runs_job
 
 > [**ActivityPlanJobResponse**](ActivityPlanJobResponse) get_workforcemanagement_businessunit_activityplan_runs_job(business_unit_id, activity_plan_id, job_id)
@@ -2736,6 +3278,352 @@ except ApiException as e:
 ### Return type
 
 [**ActivityPlanJobListing**](ActivityPlanJobListing)
+
+
+## get_workforcemanagement_businessunit_adherence_adjustments_bulk
+
+> [**AdherenceAdjustmentsListing**](AdherenceAdjustmentsListing) get_workforcemanagement_businessunit_adherence_adjustments_bulk(business_unit_id, adjustment_ids)
+
+
+Get adherence adjustments in bulk by ID for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+adjustment_ids = ['adjustment_ids_example'] # list[str] | The IDs of the adherence adjustments to fetch
+
+try:
+    # Get adherence adjustments in bulk by ID for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_adherence_adjustments_bulk(business_unit_id, adjustment_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_adherence_adjustments_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **adjustment_ids** | [**list[str]**](str)| The IDs of the adherence adjustments to fetch |  |
+
+### Return type
+
+[**AdherenceAdjustmentsListing**](AdherenceAdjustmentsListing)
+
+
+## get_workforcemanagement_businessunit_adherence_adjustments_query_job
+
+> [**BuAdherenceAdjustmentsQueryJob**](BuAdherenceAdjustmentsQueryJob) get_workforcemanagement_businessunit_adherence_adjustments_query_job(business_unit_id, job_id)
+
+
+Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+job_id = 'job_id_example' # str | The ID of the query job
+
+try:
+    # Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_businessunit_adherence_adjustments_query_job(business_unit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_adherence_adjustments_query_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **job_id** | **str**| The ID of the query job |  |
+
+### Return type
+
+[**BuAdherenceAdjustmentsQueryJob**](BuAdherenceAdjustmentsQueryJob)
+
+
+## get_workforcemanagement_businessunit_adherence_adjustments_query_jobs
+
+> [**BuAdherenceAdjustmentsQueryJobsReferenceListing**](BuAdherenceAdjustmentsQueryJobsReferenceListing) get_workforcemanagement_businessunit_adherence_adjustments_query_jobs(business_unit_id)
+
+
+Get query job history for the logged in user.
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get query job history for the logged in user.
+    api_response = api_instance.get_workforcemanagement_businessunit_adherence_adjustments_query_jobs(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_adherence_adjustments_query_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+
+### Return type
+
+[**BuAdherenceAdjustmentsQueryJobsReferenceListing**](BuAdherenceAdjustmentsQueryJobsReferenceListing)
+
+
+## get_workforcemanagement_businessunit_adherence_adjustments_reasoncode
+
+> [**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode) get_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id)
+
+
+Get an adherence adjustment reason code for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId} 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+reason_code_id = 'reason_code_id_example' # str | The ID of the reason code to fetch
+
+try:
+    # Get an adherence adjustment reason code for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_adherence_adjustments_reasoncode: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **reason_code_id** | **str**| The ID of the reason code to fetch |  |
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode)
+
+
+## get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes
+
+> [**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing) get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes(business_unit_id)
+
+
+Get adherence adjustment reason codes for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get adherence adjustment reason codes for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing)
+
+
+## get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk
+
+> [**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing) get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, ids)
+
+
+Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+ids = ['ids_example'] # list[str] | The IDs of the reason codes to fetch
+
+try:
+    # Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+    api_response = api_instance.get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **ids** | [**list[str]**](str)| The IDs of the reason codes to fetch |  |
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing)
+
+
+## get_workforcemanagement_businessunit_adherence_adjustments_settings
+
+> [**BuAdherenceAdjustmentsSettings**](BuAdherenceAdjustmentsSettings) get_workforcemanagement_businessunit_adherence_adjustments_settings(business_unit_id)
+
+
+Get adherence adjustments settings for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get adherence adjustments settings for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_adherence_adjustments_settings(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_adherence_adjustments_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+
+### Return type
+
+[**BuAdherenceAdjustmentsSettings**](BuAdherenceAdjustmentsSettings)
 
 
 ## get_workforcemanagement_businessunit_alternativeshifts_settings
@@ -9276,6 +10164,108 @@ This endpoint does not need any parameters.
 [**AgentWorkPlanBids**](AgentWorkPlanBids)
 
 
+## patch_workforcemanagement_adherence_adjustment
+
+> [**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment) patch_workforcemanagement_adherence_adjustment(adjustment_id, body)
+
+
+Update an adherence adjustment for the current user
+
+Wraps PATCH /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+adjustment_id = 'adjustment_id_example' # str | The ID of the adherence adjustment to update
+body = PureCloudPlatformClientV2.UpdateAdherenceAdjustmentAgentRequest() # UpdateAdherenceAdjustmentAgentRequest | body
+
+try:
+    # Update an adherence adjustment for the current user
+    api_response = api_instance.patch_workforcemanagement_adherence_adjustment(adjustment_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_adherence_adjustment: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **adjustment_id** | **str**| The ID of the adherence adjustment to update |  |
+| **body** | [**UpdateAdherenceAdjustmentAgentRequest**](UpdateAdherenceAdjustmentAgentRequest)| body |  |
+
+### Return type
+
+[**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment)
+
+
+## patch_workforcemanagement_agent_adherence_adjustment
+
+> [**AdherenceAdjustment**](AdherenceAdjustment) patch_workforcemanagement_agent_adherence_adjustment(agent_id, adjustment_id, body)
+
+
+Update an adherence adjustment for the requested agent
+
+Wraps PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId} 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent
+adjustment_id = 'adjustment_id_example' # str | The ID of the adherence adjustment
+body = PureCloudPlatformClientV2.UpdateAdherenceAdjustmentAdminRequest() # UpdateAdherenceAdjustmentAdminRequest | body
+
+try:
+    # Update an adherence adjustment for the requested agent
+    api_response = api_instance.patch_workforcemanagement_agent_adherence_adjustment(agent_id, adjustment_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_agent_adherence_adjustment: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent |  |
+| **adjustment_id** | **str**| The ID of the adherence adjustment |  |
+| **body** | [**UpdateAdherenceAdjustmentAdminRequest**](UpdateAdherenceAdjustmentAdminRequest)| body |  |
+
+### Return type
+
+[**AdherenceAdjustment**](AdherenceAdjustment)
+
+
 ## patch_workforcemanagement_agent_adherence_explanation
 
 > [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse) patch_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id, body)
@@ -9326,6 +10316,58 @@ except ApiException as e:
 ### Return type
 
 [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse)
+
+
+## patch_workforcemanagement_agent_unavailabletimes
+
+> [**BulkUpdateAgentUnavailableTimesResponse**](BulkUpdateAgentUnavailableTimesResponse) patch_workforcemanagement_agent_unavailabletimes(agent_id, body)
+
+
+Update unavailable times for the requested agent
+
+Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+
+Wraps PATCH /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes 
+
+Requires ANY permissions: 
+
+* wfm:unavailableTimes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent
+body = PureCloudPlatformClientV2.UpdateUnavailableTimesRequest() # UpdateUnavailableTimesRequest | body
+
+try:
+    # Update unavailable times for the requested agent
+    api_response = api_instance.patch_workforcemanagement_agent_unavailabletimes(agent_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_agent_unavailabletimes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent |  |
+| **body** | [**UpdateUnavailableTimesRequest**](UpdateUnavailableTimesRequest)| body |  |
+
+### Return type
+
+[**BulkUpdateAgentUnavailableTimesResponse**](BulkUpdateAgentUnavailableTimesResponse)
 
 
 ## patch_workforcemanagement_alternativeshifts_trade
@@ -9632,6 +10674,208 @@ except ApiException as e:
 ### Return type
 
 [**ActivityPlanResponse**](ActivityPlanResponse)
+
+
+## patch_workforcemanagement_businessunit_adherence_adjustments_bulk
+
+> [**AdherenceAdjustmentsListing**](AdherenceAdjustmentsListing) patch_workforcemanagement_businessunit_adherence_adjustments_bulk(business_unit_id, body)
+
+
+Update adherence adjustments in bulk for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.UpdateAdherenceAdjustmentsBulkRequest() # UpdateAdherenceAdjustmentsBulkRequest | body
+
+try:
+    # Update adherence adjustments in bulk for a business unit
+    api_response = api_instance.patch_workforcemanagement_businessunit_adherence_adjustments_bulk(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_adherence_adjustments_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**UpdateAdherenceAdjustmentsBulkRequest**](UpdateAdherenceAdjustmentsBulkRequest)| body |  |
+
+### Return type
+
+[**AdherenceAdjustmentsListing**](AdherenceAdjustmentsListing)
+
+
+## patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode
+
+> [**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode) patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id, body)
+
+
+Update an adherence adjustment reason code for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId} 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+reason_code_id = 'reason_code_id_example' # str | The ID of the reason code to update
+body = PureCloudPlatformClientV2.UpdateAdherenceAdjustmentsReasonCodeRequest() # UpdateAdherenceAdjustmentsReasonCodeRequest | body
+
+try:
+    # Update an adherence adjustment reason code for a business unit
+    api_response = api_instance.patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **reason_code_id** | **str**| The ID of the reason code to update |  |
+| **body** | [**UpdateAdherenceAdjustmentsReasonCodeRequest**](UpdateAdherenceAdjustmentsReasonCodeRequest)| body |  |
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode)
+
+
+## patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk
+
+> [**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing) patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, body)
+
+
+Update adherence adjustment reason codes in bulk for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.UpdateAdherenceAdjustmentsReasonCodesBulkRequest() # UpdateAdherenceAdjustmentsReasonCodesBulkRequest | body
+
+try:
+    # Update adherence adjustment reason codes in bulk for a business unit
+    api_response = api_instance.patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**UpdateAdherenceAdjustmentsReasonCodesBulkRequest**](UpdateAdherenceAdjustmentsReasonCodesBulkRequest)| body |  |
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing)
+
+
+## patch_workforcemanagement_businessunit_adherence_adjustments_settings
+
+> [**BuAdherenceAdjustmentsSettings**](BuAdherenceAdjustmentsSettings) patch_workforcemanagement_businessunit_adherence_adjustments_settings(business_unit_id, body)
+
+
+Update adherence adjustments settings for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.UpdateBuAdherenceAdjustmentsSettingsRequest() # UpdateBuAdherenceAdjustmentsSettingsRequest | body
+
+try:
+    # Update adherence adjustments settings for a business unit
+    api_response = api_instance.patch_workforcemanagement_businessunit_adherence_adjustments_settings(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_adherence_adjustments_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**UpdateBuAdherenceAdjustmentsSettingsRequest**](UpdateBuAdherenceAdjustmentsSettingsRequest)| body |  |
+
+### Return type
+
+[**BuAdherenceAdjustmentsSettings**](BuAdherenceAdjustmentsSettings)
 
 
 ## patch_workforcemanagement_businessunit_alternativeshifts_settings
@@ -11404,6 +12648,108 @@ except ApiException as e:
 [**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse)
 
 
+## post_workforcemanagement_adherence_adjustments
+
+> [**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment) post_workforcemanagement_adherence_adjustments(body)
+
+
+Submit an adherence adjustment for the current user
+
+Wraps POST /api/v2/workforcemanagement/adherence/adjustments 
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AddAdherenceAdjustmentAgentRequest() # AddAdherenceAdjustmentAgentRequest | body
+
+try:
+    # Submit an adherence adjustment for the current user
+    api_response = api_instance.post_workforcemanagement_adherence_adjustments(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_adjustments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AddAdherenceAdjustmentAgentRequest**](AddAdherenceAdjustmentAgentRequest)| body |  |
+
+### Return type
+
+[**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment)
+
+
+## post_workforcemanagement_adherence_adjustments_query
+
+> [**CurrentAgentCursorAdherenceAdjustmentsListing**](CurrentAgentCursorAdherenceAdjustmentsListing) post_workforcemanagement_adherence_adjustments_query(body, before=before, after=after, page_size=page_size)
+
+
+Query adherence adjustments for the current user
+
+Wraps POST /api/v2/workforcemanagement/adherence/adjustments/query 
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AgentQueryAdherenceAdjustmentsRequest() # AgentQueryAdherenceAdjustmentsRequest | body
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = ''25'' # str | The page size for the listing. The maximum page size is 500. (optional) (default to '25')
+
+try:
+    # Query adherence adjustments for the current user
+    api_response = api_instance.post_workforcemanagement_adherence_adjustments_query(body, before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_adjustments_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentQueryAdherenceAdjustmentsRequest**](AgentQueryAdherenceAdjustmentsRequest)| body |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| The page size for the listing. The maximum page size is 500. | [optional] [default to &#39;25&#39;] |
+
+### Return type
+
+[**CurrentAgentCursorAdherenceAdjustmentsListing**](CurrentAgentCursorAdherenceAdjustmentsListing)
+
+
 ## post_workforcemanagement_adherence_explanations
 
 > [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse) post_workforcemanagement_adherence_explanations(body)
@@ -11550,6 +12896,62 @@ except ApiException as e:
 ### Return type
 
 [**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse)
+
+
+## post_workforcemanagement_agent_adherence_adjustments_query
+
+> [**CursorAdherenceAdjustmentsListing**](CursorAdherenceAdjustmentsListing) post_workforcemanagement_agent_adherence_adjustments_query(agent_id, body, before=before, after=after, page_size=page_size)
+
+
+Query adherence adjustments for the requested agent
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent
+body = PureCloudPlatformClientV2.AgentQueryAdherenceAdjustmentsRequest() # AgentQueryAdherenceAdjustmentsRequest | body
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = ''25'' # str | The page size for the listing. The maximum page size is 500. (optional) (default to '25')
+
+try:
+    # Query adherence adjustments for the requested agent
+    api_response = api_instance.post_workforcemanagement_agent_adherence_adjustments_query(agent_id, body, before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agent_adherence_adjustments_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent |  |
+| **body** | [**AgentQueryAdherenceAdjustmentsRequest**](AgentQueryAdherenceAdjustmentsRequest)| body |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| The page size for the listing. The maximum page size is 500. | [optional] [default to &#39;25&#39;] |
+
+### Return type
+
+[**CursorAdherenceAdjustmentsListing**](CursorAdherenceAdjustmentsListing)
 
 
 ## post_workforcemanagement_agent_adherence_explanations
@@ -12403,6 +13805,222 @@ except ApiException as e:
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode)
 
 
+## post_workforcemanagement_businessunit_activityplan_deletions_jobs
+
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) post_workforcemanagement_businessunit_activityplan_deletions_jobs(business_unit_id, activity_plan_id)
+
+
+Delete an activity plan
+
+Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanDeletionJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan to delete
+
+try:
+    # Delete an activity plan
+    api_response = api_instance.post_workforcemanagement_businessunit_activityplan_deletions_jobs(business_unit_id, activity_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activityplan_deletions_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan to delete |  |
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+## post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs
+
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs(business_unit_id, activity_plan_id, occurrence_id, session_id, body)
+
+
+Triggers a job to delete users from a session in the activity plan occurrence
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceSessionUserDeletionJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan
+occurrence_id = 'occurrence_id_example' # str | The ID of the activity plan occurrence
+session_id = 'session_id_example' # str | The ID of the activity plan occurrence session
+body = PureCloudPlatformClientV2.ActivityPlanDeletionSessionUserIds() # ActivityPlanDeletionSessionUserIds | body
+
+try:
+    # Triggers a job to delete users from a session in the activity plan occurrence
+    api_response = api_instance.post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs(business_unit_id, activity_plan_id, occurrence_id, session_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan |  |
+| **occurrence_id** | **str**| The ID of the activity plan occurrence |  |
+| **session_id** | **str**| The ID of the activity plan occurrence session |  |
+| **body** | [**ActivityPlanDeletionSessionUserIds**](ActivityPlanDeletionSessionUserIds)| body |  |
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+## post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs
+
+> [**ActivityPlanJobResponse**](ActivityPlanJobResponse) post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs(business_unit_id, activity_plan_id, occurrence_id, body)
+
+
+Triggers a job to delete sessions for the activity plan occurrence
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceSessionDeletionJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan
+occurrence_id = 'occurrence_id_example' # str | The ID of the activity plan occurrence
+body = PureCloudPlatformClientV2.ActivityPlanDeletionSessionIds() # ActivityPlanDeletionSessionIds | body
+
+try:
+    # Triggers a job to delete sessions for the activity plan occurrence
+    api_response = api_instance.post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs(business_unit_id, activity_plan_id, occurrence_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan |  |
+| **occurrence_id** | **str**| The ID of the activity plan occurrence |  |
+| **body** | [**ActivityPlanDeletionSessionIds**](ActivityPlanDeletionSessionIds)| body |  |
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+## post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs
+
+> [**ActivityPlanOccurrencesDeletionJobResponse**](ActivityPlanOccurrencesDeletionJobResponse) post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs(business_unit_id, activity_plan_id, body)
+
+
+Delete occurrences for the activity plan
+
+Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceDeletionJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan
+body = PureCloudPlatformClientV2.ActivityPlanDeletionOccurrenceIds() # ActivityPlanDeletionOccurrenceIds | body
+
+try:
+    # Delete occurrences for the activity plan
+    api_response = api_instance.post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs(business_unit_id, activity_plan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan |  |
+| **body** | [**ActivityPlanDeletionOccurrenceIds**](ActivityPlanDeletionOccurrenceIds)| body |  |
+
+### Return type
+
+[**ActivityPlanOccurrencesDeletionJobResponse**](ActivityPlanOccurrencesDeletionJobResponse)
+
+
 ## post_workforcemanagement_businessunit_activityplan_runs_jobs
 
 > [**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse) post_workforcemanagement_businessunit_activityplan_runs_jobs(business_unit_id, activity_plan_id)
@@ -12503,6 +14121,212 @@ except ApiException as e:
 ### Return type
 
 [**ActivityPlanResponse**](ActivityPlanResponse)
+
+
+## post_workforcemanagement_businessunit_adherence_adjustments_query
+
+> [**CursorAdherenceAdjustmentsListing**](CursorAdherenceAdjustmentsListing) post_workforcemanagement_businessunit_adherence_adjustments_query(business_unit_id, body, before=before, after=after, page_size=page_size)
+
+
+Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BuQueryAdherenceAdjustmentsRequest() # BuQueryAdherenceAdjustmentsRequest | body
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = ''25'' # str | The page size for the listing. The maximum page size is 500. (optional) (default to '25')
+
+try:
+    # Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+    api_response = api_instance.post_workforcemanagement_businessunit_adherence_adjustments_query(business_unit_id, body, before=before, after=after, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_adherence_adjustments_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BuQueryAdherenceAdjustmentsRequest**](BuQueryAdherenceAdjustmentsRequest)| body |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| The page size for the listing. The maximum page size is 500. | [optional] [default to &#39;25&#39;] |
+
+### Return type
+
+[**CursorAdherenceAdjustmentsListing**](CursorAdherenceAdjustmentsListing)
+
+
+## post_workforcemanagement_businessunit_adherence_adjustments_query_jobs
+
+> [**BuAdherenceAdjustmentsQueryJob**](BuAdherenceAdjustmentsQueryJob) post_workforcemanagement_businessunit_adherence_adjustments_query_jobs(business_unit_id, body)
+
+
+Creates an async query job for adherence adjustments in a business unit.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BuQueryAdherenceAdjustmentsRequest() # BuQueryAdherenceAdjustmentsRequest | body
+
+try:
+    # Creates an async query job for adherence adjustments in a business unit.
+    api_response = api_instance.post_workforcemanagement_businessunit_adherence_adjustments_query_jobs(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_adherence_adjustments_query_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BuQueryAdherenceAdjustmentsRequest**](BuQueryAdherenceAdjustmentsRequest)| body |  |
+
+### Return type
+
+[**BuAdherenceAdjustmentsQueryJob**](BuAdherenceAdjustmentsQueryJob)
+
+
+## post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes
+
+> [**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode) post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes(business_unit_id, body)
+
+
+Create an adherence adjustment reason code for a business unit
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.CreateAdherenceAdjustmentsReasonCodeRequest() # CreateAdherenceAdjustmentsReasonCodeRequest | body
+
+try:
+    # Create an adherence adjustment reason code for a business unit
+    api_response = api_instance.post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**CreateAdherenceAdjustmentsReasonCodeRequest**](CreateAdherenceAdjustmentsReasonCodeRequest)| body |  |
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode)
+
+
+## post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk
+
+> [**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing) post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, body)
+
+
+Create adherence adjustment reason codes in bulk for a business unit
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk 
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.CreateAdherenceAdjustmentsReasonCodesBulkRequest() # CreateAdherenceAdjustmentsReasonCodesBulkRequest | body
+
+try:
+    # Create adherence adjustment reason codes in bulk for a business unit
+    api_response = api_instance.post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**CreateAdherenceAdjustmentsReasonCodesBulkRequest**](CreateAdherenceAdjustmentsReasonCodesBulkRequest)| body |  |
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing)
 
 
 ## post_workforcemanagement_businessunit_adherence_explanations_query
@@ -18645,4 +20469,4 @@ except ApiException as e:
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_

@@ -51,29 +51,41 @@ class TtsVoiceEntity(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'display_name': 'str',
             'gender': 'str',
+            'voice_type': 'str',
             'language': 'str',
             'engine': 'TtsEngineEntity',
             'is_default': 'bool',
+            'supported_models': 'list[str]',
+            'provider': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'display_name': 'displayName',
             'gender': 'gender',
+            'voice_type': 'voiceType',
             'language': 'language',
             'engine': 'engine',
             'is_default': 'isDefault',
+            'supported_models': 'supportedModels',
+            'provider': 'provider',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._display_name = None
         self._gender = None
+        self._voice_type = None
         self._language = None
         self._engine = None
         self._is_default = None
+        self._supported_models = None
+        self._provider = None
         self._self_uri = None
 
     @property
@@ -125,6 +137,30 @@ class TtsVoiceEntity(object):
         self._name = name
 
     @property
+    def display_name(self) -> str:
+        """
+        Gets the display_name of this TtsVoiceEntity.
+        The display name of the TTS voice
+
+        :return: The display_name of this TtsVoiceEntity.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name: str) -> None:
+        """
+        Sets the display_name of this TtsVoiceEntity.
+        The display name of the TTS voice
+
+        :param display_name: The display_name of this TtsVoiceEntity.
+        :type: str
+        """
+        
+
+        self._display_name = display_name
+
+    @property
     def gender(self) -> str:
         """
         Gets the gender of this TtsVoiceEntity.
@@ -147,6 +183,35 @@ class TtsVoiceEntity(object):
         
 
         self._gender = gender
+
+    @property
+    def voice_type(self) -> str:
+        """
+        Gets the voice_type of this TtsVoiceEntity.
+        The type of the TTS voice
+
+        :return: The voice_type of this TtsVoiceEntity.
+        :rtype: str
+        """
+        return self._voice_type
+
+    @voice_type.setter
+    def voice_type(self, voice_type: str) -> None:
+        """
+        Sets the voice_type of this TtsVoiceEntity.
+        The type of the TTS voice
+
+        :param voice_type: The voice_type of this TtsVoiceEntity.
+        :type: str
+        """
+        if isinstance(voice_type, int):
+            voice_type = str(voice_type)
+        allowed_values = ["Standard", "Neural", "Wavenet", "Generative", "Chirp3", "Gemini"]
+        if voice_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for voice_type -> " + voice_type)
+            self._voice_type = "outdated_sdk_version"
+        else:
+            self._voice_type = voice_type
 
     @property
     def language(self) -> str:
@@ -219,6 +284,54 @@ class TtsVoiceEntity(object):
         
 
         self._is_default = is_default
+
+    @property
+    def supported_models(self) -> List[str]:
+        """
+        Gets the supported_models of this TtsVoiceEntity.
+        The models supported by the TTS voice
+
+        :return: The supported_models of this TtsVoiceEntity.
+        :rtype: list[str]
+        """
+        return self._supported_models
+
+    @supported_models.setter
+    def supported_models(self, supported_models: List[str]) -> None:
+        """
+        Sets the supported_models of this TtsVoiceEntity.
+        The models supported by the TTS voice
+
+        :param supported_models: The supported_models of this TtsVoiceEntity.
+        :type: list[str]
+        """
+        
+
+        self._supported_models = supported_models
+
+    @property
+    def provider(self) -> str:
+        """
+        Gets the provider of this TtsVoiceEntity.
+        The provider of the TTS voice
+
+        :return: The provider of this TtsVoiceEntity.
+        :rtype: str
+        """
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider: str) -> None:
+        """
+        Sets the provider of this TtsVoiceEntity.
+        The provider of the TTS voice
+
+        :param provider: The provider of this TtsVoiceEntity.
+        :type: str
+        """
+        
+
+        self._provider = provider
 
     @property
     def self_uri(self) -> str:

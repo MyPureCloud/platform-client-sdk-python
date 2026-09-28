@@ -54,12 +54,16 @@ from ..models import GeneralProgramJobRequest
 from ..models import GeneralTopicsEntityListing
 from ..models import InsightsSettingsRequest
 from ..models import JsonSearchResponse
+from ..models import ProcessingSettingsRequest
 from ..models import Program
 from ..models import ProgramInsightsSettings
 from ..models import ProgramInsightsSettingsEntityListing
 from ..models import ProgramJob
 from ..models import ProgramJobRequest
 from ..models import ProgramMappingsRequest
+from ..models import ProgramProcessingSettings
+from ..models import ProgramProcessingSettingsEntityListing
+from ..models import ProgramProcessingSettingsPatchResponse
 from ..models import ProgramRequest
 from ..models import ProgramTopicLinksJob
 from ..models import ProgramTranscriptionEngines
@@ -1703,6 +1707,84 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_speechandtextanalytics_program_settings_processing(self, program_id: str, **kwargs) -> 'ProgramProcessingSettings':
+        """
+        Get program processing settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_program_settings_processing(program_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: The id of the program (required)
+        :return: ProgramProcessingSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_program_settings_processing" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `get_speechandtextanalytics_program_settings_processing`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/{programId}/settings/processing'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramProcessingSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_speechandtextanalytics_program_transcriptionengines(self, program_id: str, **kwargs) -> 'ProgramTranscriptionEngines':
         """
         Get transcription engine settings of a program
@@ -2185,6 +2267,87 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ProgramInsightsSettingsEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_programs_settings_processing(self, **kwargs) -> 'ProgramProcessingSettingsEntityListing':
+        """
+        Get the list of program processing settings for the organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_programs_settings_processing(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The page size for the listing. The max that will be returned is 100.
+        :param int page_number: The page number for the listing
+        :param list[str] program_ids: Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+        :return: ProgramProcessingSettingsEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'program_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_programs_settings_processing" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/settings/processing'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'program_ids' in params:
+            query_params['programIds'] = params['program_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramProcessingSettingsEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3670,6 +3833,90 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TranslateSupportedLanguageList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_speechandtextanalytics_program_settings_processing(self, program_id: str, body: 'ProcessingSettingsRequest', **kwargs) -> 'ProgramProcessingSettingsPatchResponse':
+        """
+        Update program processing settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_speechandtextanalytics_program_settings_processing(program_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str program_id: The id of the program (required)
+        :param ProcessingSettingsRequest body: Program processing settings (required)
+        :return: ProgramProcessingSettingsPatchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['program_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_speechandtextanalytics_program_settings_processing" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'program_id' is set
+        if ('program_id' not in params) or (params['program_id'] is None):
+            raise ValueError("Missing the required parameter `program_id` when calling `patch_speechandtextanalytics_program_settings_processing`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_speechandtextanalytics_program_settings_processing`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/programs/{programId}/settings/processing'.replace('{format}', 'json')
+        path_params = {}
+        if 'program_id' in params:
+            path_params['programId'] = params['program_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ProgramProcessingSettingsPatchResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

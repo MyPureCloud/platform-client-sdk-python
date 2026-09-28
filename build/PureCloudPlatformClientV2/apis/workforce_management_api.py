@@ -36,16 +36,25 @@ from typing import Any
 
 from ..models import Empty
 from ..models import ActivityCodeContainer
+from ..models import ActivityPlanDeletionOccurrenceIds
+from ..models import ActivityPlanDeletionSessionIds
+from ..models import ActivityPlanDeletionSessionUserIds
 from ..models import ActivityPlanJobListing
 from ..models import ActivityPlanJobResponse
 from ..models import ActivityPlanListing
+from ..models import ActivityPlanOccurrencesDeletionJobResponse
 from ..models import ActivityPlanResponse
 from ..models import ActivityPlanRunJobResponse
+from ..models import AddAdherenceAdjustmentAgentRequest
 from ..models import AddAdherenceExplanationAdminRequest
 from ..models import AddAdherenceExplanationAgentRequest
 from ..models import AddShiftTradeJobRequest
 from ..models import AddShiftTradeRequest
 from ..models import AddWorkPlanRotationRequest
+from ..models import AdherenceAdjustment
+from ..models import AdherenceAdjustmentsListing
+from ..models import AdherenceAdjustmentsReasonCode
+from ..models import AdherenceAdjustmentsReasonCodesListing
 from ..models import AdherenceExplanationAsyncResponse
 from ..models import AdherenceExplanationJob
 from ..models import AdherenceExplanationResponse
@@ -64,6 +73,7 @@ from ..models import AgentMuQueryResponse
 from ..models import AgentMuScheduleQuery
 from ..models import AgentPossibleWorkShiftsRequest
 from ..models import AgentPossibleWorkShiftsResponse
+from ..models import AgentQueryAdherenceAdjustmentsRequest
 from ..models import AgentQueryAdherenceExplanationsRequest
 from ..models import AgentQueryAdherenceExplanationsResponse
 from ..models import AgentQueryOpportunitiesResponse
@@ -99,6 +109,9 @@ from ..models import AsyncForecastOperationResult
 from ..models import AsyncIntradayResponse
 from ..models import AvailableTimeOffRequest
 from ..models import AvailableTimeOffResponse
+from ..models import BuAdherenceAdjustmentsQueryJob
+from ..models import BuAdherenceAdjustmentsQueryJobsReferenceListing
+from ..models import BuAdherenceAdjustmentsSettings
 from ..models import BuAgentScheduleHistoryResponse
 from ..models import BuAlternativeShiftJobResponse
 from ..models import BuAsyncAgentSchedulesQueryResponse
@@ -122,6 +135,7 @@ from ..models import BuHeadcountForecastResponse
 from ..models import BuImportTimeOffLimitValuesRequest
 from ..models import BuImportTimeOffLimitValuesUploadResponse
 from ..models import BuListAlternativeShiftTradesResponse
+from ..models import BuQueryAdherenceAdjustmentsRequest
 from ..models import BuQueryAdherenceExplanationsRequest
 from ..models import BuQueryAdherenceExplanationsResponse
 from ..models import BuQueryAgentSchedulesRequest
@@ -158,6 +172,7 @@ from ..models import BulkRemoveOpportunitiesResponse
 from ..models import BulkShiftTradeStateUpdateRequest
 from ..models import BulkUpdateActivityCodeRequest
 from ..models import BulkUpdateActivityCodeResponse
+from ..models import BulkUpdateAgentUnavailableTimesResponse
 from ..models import BulkUpdateOpportunityEnrollmentsStatusResponse
 from ..models import BulkUpdateShiftTradeListJobRequest
 from ..models import BulkUpdateShiftTradeStateResponse
@@ -187,6 +202,8 @@ from ..models import CopyWorkPlanBid
 from ..models import CopyWorkPlanRotationRequest
 from ..models import CreateActivityCodeRequest
 from ..models import CreateActivityPlanRequest
+from ..models import CreateAdherenceAdjustmentsReasonCodeRequest
+from ..models import CreateAdherenceAdjustmentsReasonCodesBulkRequest
 from ..models import CreateAdminTimeOffRequest
 from ..models import CreateAgentTimeOffRequest
 from ..models import CreateAlternativeShiftTradeRequest
@@ -201,8 +218,11 @@ from ..models import CreateTimeOffLimitRequest
 from ..models import CreateTimeOffPlanRequest
 from ..models import CreateWorkPlan
 from ..models import CreateWorkPlanBid
+from ..models import CurrentAgentAdherenceAdjustment
+from ..models import CurrentAgentCursorAdherenceAdjustmentsListing
 from ..models import CurrentUserScheduleRequestBody
 from ..models import CurrentUserTimeOffIntegrationStatusRequest
+from ..models import CursorAdherenceAdjustmentsListing
 from ..models import DecisionMetricsResponse
 from ..models import DecisionMetricsUpdateJobRequest
 from ..models import DecisionMetricsUpdateJobResponse
@@ -327,11 +347,17 @@ from ..models import TimeOffRequestResponse
 from ..models import UnavailableTimeListing
 from ..models import UpdateActivityCodeRequest
 from ..models import UpdateActivityPlanRequest
+from ..models import UpdateAdherenceAdjustmentAdminRequest
+from ..models import UpdateAdherenceAdjustmentAgentRequest
+from ..models import UpdateAdherenceAdjustmentsBulkRequest
+from ..models import UpdateAdherenceAdjustmentsReasonCodeRequest
+from ..models import UpdateAdherenceAdjustmentsReasonCodesBulkRequest
 from ..models import UpdateAdherenceExplanationStatusRequest
 from ..models import UpdateAgentScheduleBiddingPreference
 from ..models import UpdateAgentSchedulingPreferencesRequest
 from ..models import UpdateAgentWorkPlanBiddingPreference
 from ..models import UpdateAlternativeShiftBuSettingsRequest
+from ..models import UpdateBuAdherenceAdjustmentsSettingsRequest
 from ..models import UpdateBusinessUnitRequest
 from ..models import UpdateBusinessUnitSchedulingPreferencesSettingsRequest
 from ..models import UpdateCapacityPlanRequest
@@ -416,6 +442,84 @@ class WorkforceManagementApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_workforcemanagement_adherence_adjustment(self, adjustment_id: str, **kwargs) -> None:
+        """
+        Delete an adherence adjustment for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_workforcemanagement_adherence_adjustment(adjustment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str adjustment_id: The ID of the adherence adjustment to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['adjustment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_workforcemanagement_adherence_adjustment" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'adjustment_id' is set
+        if ('adjustment_id' not in params) or (params['adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `adjustment_id` when calling `delete_workforcemanagement_adherence_adjustment`")
+
+
+        resource_path = '/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'adjustment_id' in params:
+            path_params['adjustmentId'] = params['adjustment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_workforcemanagement_businessunit(self, business_unit_id: str, **kwargs) -> None:
         """
@@ -546,6 +650,174 @@ class WorkforceManagementApi(object):
             path_params['activityCodeId'] = params['activity_code_id']
 
         query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode(self, business_unit_id: str, reason_code_id: str, **kwargs) -> None:
+        """
+        Delete an adherence adjustment reason code for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str reason_code_id: The ID of the reason code to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'reason_code_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode`")
+        # verify the required parameter 'reason_code_id' is set
+        if ('reason_code_id' not in params) or (params['reason_code_id'] is None):
+            raise ValueError("Missing the required parameter `reason_code_id` when calling `delete_workforcemanagement_businessunit_adherence_adjustments_reasoncode`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'reason_code_id' in params:
+            path_params['reasonCodeId'] = params['reason_code_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(self, business_unit_id: str, ids: List['str'], **kwargs) -> None:
+        """
+        Delete adherence adjustment reason codes in bulk for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param list[str] ids: The IDs of the reason codes to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk`")
+        # verify the required parameter 'ids' is set
+        if ('ids' not in params) or (params['ids'] is None):
+            raise ValueError("Missing the required parameter `ids` when calling `delete_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
 
         header_params = {}
 
@@ -2264,6 +2536,84 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_adherence_adjustment(self, adjustment_id: str, **kwargs) -> 'CurrentAgentAdherenceAdjustment':
+        """
+        Get an adherence adjustment for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_adherence_adjustment(adjustment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str adjustment_id: The ID of the adherence adjustment (required)
+        :return: CurrentAgentAdherenceAdjustment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['adjustment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_adherence_adjustment" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'adjustment_id' is set
+        if ('adjustment_id' not in params) or (params['adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `adjustment_id` when calling `get_workforcemanagement_adherence_adjustment`")
+
+
+        resource_path = '/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'adjustment_id' in params:
+            path_params['adjustmentId'] = params['adjustment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CurrentAgentAdherenceAdjustment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_adherence_explanation(self, explanation_id: str, **kwargs) -> 'AdherenceExplanationResponse':
         """
         Get an adherence explanation for the current user
@@ -2572,6 +2922,90 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='WfmHistoricalAdherenceResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_agent_adherence_adjustment(self, agent_id: str, adjustment_id: str, **kwargs) -> 'AdherenceAdjustment':
+        """
+        Get an adherence adjustment for the requested agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_agent_adherence_adjustment(agent_id, adjustment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_id: The ID of the agent (required)
+        :param str adjustment_id: The ID of the adherence adjustment (required)
+        :return: AdherenceAdjustment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_id', 'adjustment_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_agent_adherence_adjustment" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_id' is set
+        if ('agent_id' not in params) or (params['agent_id'] is None):
+            raise ValueError("Missing the required parameter `agent_id` when calling `get_workforcemanagement_agent_adherence_adjustment`")
+        # verify the required parameter 'adjustment_id' is set
+        if ('adjustment_id' not in params) or (params['adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `adjustment_id` when calling `get_workforcemanagement_agent_adherence_adjustment`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_id' in params:
+            path_params['agentId'] = params['agent_id']
+        if 'adjustment_id' in params:
+            path_params['adjustmentId'] = params['adjustment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustment',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3758,6 +4192,468 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_businessunit_activityplan_deletions_job(self, business_unit_id: str, activity_plan_id: str, job_id: str, **kwargs) -> 'ActivityPlanJobResponse':
+        """
+        Gets an activity plan deletion job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_activityplan_deletions_job(business_unit_id, activity_plan_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan associated with the deletion job (required)
+        :param str job_id: The ID of the activity plan deletion job (required)
+        :return: ActivityPlanJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_activityplan_deletions_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_activityplan_deletions_job`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `get_workforcemanagement_businessunit_activityplan_deletions_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_activityplan_deletions_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_activityplan_jobs(self, business_unit_id: str, activity_plan_id: str, **kwargs) -> 'ActivityPlanJobResponse':
+        """
+        Gets the latest job for an activity plan in the business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_activityplan_jobs(business_unit_id, activity_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan associated with the run job (required)
+        :return: ActivityPlanJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_activityplan_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_activityplan_jobs`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `get_workforcemanagement_businessunit_activityplan_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job(self, business_unit_id: str, activity_plan_id: str, occurrence_id: str, session_id: str, job_id: str, **kwargs) -> 'ActivityPlanJobResponse':
+        """
+        Gets a session users deletion job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job(business_unit_id, activity_plan_id, occurrence_id, session_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan (required)
+        :param str occurrence_id: The ID of the activity plan occurrence (required)
+        :param str session_id: The ID of the activity plan occurrence session (required)
+        :param str job_id: The ID of the activity plan occurrence session users deletion job (required)
+        :return: ActivityPlanJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id', 'occurrence_id', 'session_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job`")
+        # verify the required parameter 'occurrence_id' is set
+        if ('occurrence_id' not in params) or (params['occurrence_id'] is None):
+            raise ValueError("Missing the required parameter `occurrence_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job`")
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+        if 'occurrence_id' in params:
+            path_params['occurrenceId'] = params['occurrence_id']
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job(self, business_unit_id: str, activity_plan_id: str, occurrence_id: str, job_id: str, **kwargs) -> 'ActivityPlanJobResponse':
+        """
+        Gets an activity plan sessions deletion job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job(business_unit_id, activity_plan_id, occurrence_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan (required)
+        :param str occurrence_id: The ID of the activity plan occurrence (required)
+        :param str job_id: The ID of the activity plan sessions deletion job (required)
+        :return: ActivityPlanJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id', 'occurrence_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job`")
+        # verify the required parameter 'occurrence_id' is set
+        if ('occurrence_id' not in params) or (params['occurrence_id'] is None):
+            raise ValueError("Missing the required parameter `occurrence_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+        if 'occurrence_id' in params:
+            path_params['occurrenceId'] = params['occurrence_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job(self, business_unit_id: str, activity_plan_id: str, job_id: str, **kwargs) -> 'ActivityPlanJobResponse':
+        """
+        Gets an occurrences deletion job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job(business_unit_id, activity_plan_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan (required)
+        :param str job_id: The ID of the activity plan occurrences deletion job (required)
+        :return: ActivityPlanJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_activityplan_occurrences_deletions_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_businessunit_activityplan_runs_job(self, business_unit_id: str, activity_plan_id: str, job_id: str, **kwargs) -> 'ActivityPlanJobResponse':
         """
         Gets an activity plan run job
@@ -4003,6 +4899,576 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActivityPlanJobListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_adherence_adjustments_bulk(self, business_unit_id: str, adjustment_ids: List['str'], **kwargs) -> 'AdherenceAdjustmentsListing':
+        """
+        Get adherence adjustments in bulk by ID for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_adherence_adjustments_bulk(business_unit_id, adjustment_ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param list[str] adjustment_ids: The IDs of the adherence adjustments to fetch (required)
+        :return: AdherenceAdjustmentsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'adjustment_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_adherence_adjustments_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_bulk`")
+        # verify the required parameter 'adjustment_ids' is set
+        if ('adjustment_ids' not in params) or (params['adjustment_ids'] is None):
+            raise ValueError("Missing the required parameter `adjustment_ids` when calling `get_workforcemanagement_businessunit_adherence_adjustments_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'adjustment_ids' in params:
+            query_params['adjustmentIds'] = params['adjustment_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_adherence_adjustments_query_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'BuAdherenceAdjustmentsQueryJob':
+        """
+        Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_adherence_adjustments_query_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The ID of the query job (required)
+        :return: BuAdherenceAdjustmentsQueryJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_adherence_adjustments_query_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_query_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_query_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuAdherenceAdjustmentsQueryJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_adherence_adjustments_query_jobs(self, business_unit_id: str, **kwargs) -> 'BuAdherenceAdjustmentsQueryJobsReferenceListing':
+        """
+        Get query job history for the logged in user.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_adherence_adjustments_query_jobs(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :return: BuAdherenceAdjustmentsQueryJobsReferenceListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_adherence_adjustments_query_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_query_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuAdherenceAdjustmentsQueryJobsReferenceListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_adherence_adjustments_reasoncode(self, business_unit_id: str, reason_code_id: str, **kwargs) -> 'AdherenceAdjustmentsReasonCode':
+        """
+        Get an adherence adjustment reason code for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str reason_code_id: The ID of the reason code to fetch (required)
+        :return: AdherenceAdjustmentsReasonCode
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'reason_code_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_adherence_adjustments_reasoncode" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_reasoncode`")
+        # verify the required parameter 'reason_code_id' is set
+        if ('reason_code_id' not in params) or (params['reason_code_id'] is None):
+            raise ValueError("Missing the required parameter `reason_code_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_reasoncode`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'reason_code_id' in params:
+            path_params['reasonCodeId'] = params['reason_code_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsReasonCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes(self, business_unit_id: str, **kwargs) -> 'AdherenceAdjustmentsReasonCodesListing':
+        """
+        Get adherence adjustment reason codes for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :return: AdherenceAdjustmentsReasonCodesListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsReasonCodesListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(self, business_unit_id: str, ids: List['str'], **kwargs) -> 'AdherenceAdjustmentsReasonCodesListing':
+        """
+        Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param list[str] ids: The IDs of the reason codes to fetch (required)
+        :return: AdherenceAdjustmentsReasonCodesListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk`")
+        # verify the required parameter 'ids' is set
+        if ('ids' not in params) or (params['ids'] is None):
+            raise ValueError("Missing the required parameter `ids` when calling `get_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsReasonCodesListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_adherence_adjustments_settings(self, business_unit_id: str, **kwargs) -> 'BuAdherenceAdjustmentsSettings':
+        """
+        Get adherence adjustments settings for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_adherence_adjustments_settings(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :return: BuAdherenceAdjustmentsSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_adherence_adjustments_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_adherence_adjustments_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuAdherenceAdjustmentsSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -14478,6 +15944,180 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_adherence_adjustment(self, adjustment_id: str, body: 'UpdateAdherenceAdjustmentAgentRequest', **kwargs) -> 'CurrentAgentAdherenceAdjustment':
+        """
+        Update an adherence adjustment for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_adherence_adjustment(adjustment_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str adjustment_id: The ID of the adherence adjustment to update (required)
+        :param UpdateAdherenceAdjustmentAgentRequest body: body (required)
+        :return: CurrentAgentAdherenceAdjustment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['adjustment_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_adherence_adjustment" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'adjustment_id' is set
+        if ('adjustment_id' not in params) or (params['adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `adjustment_id` when calling `patch_workforcemanagement_adherence_adjustment`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_adherence_adjustment`")
+
+
+        resource_path = '/api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'adjustment_id' in params:
+            path_params['adjustmentId'] = params['adjustment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CurrentAgentAdherenceAdjustment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_agent_adherence_adjustment(self, agent_id: str, adjustment_id: str, body: 'UpdateAdherenceAdjustmentAdminRequest', **kwargs) -> 'AdherenceAdjustment':
+        """
+        Update an adherence adjustment for the requested agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_agent_adherence_adjustment(agent_id, adjustment_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_id: The ID of the agent (required)
+        :param str adjustment_id: The ID of the adherence adjustment (required)
+        :param UpdateAdherenceAdjustmentAdminRequest body: body (required)
+        :return: AdherenceAdjustment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_id', 'adjustment_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_agent_adherence_adjustment" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_id' is set
+        if ('agent_id' not in params) or (params['agent_id'] is None):
+            raise ValueError("Missing the required parameter `agent_id` when calling `patch_workforcemanagement_agent_adherence_adjustment`")
+        # verify the required parameter 'adjustment_id' is set
+        if ('adjustment_id' not in params) or (params['adjustment_id'] is None):
+            raise ValueError("Missing the required parameter `adjustment_id` when calling `patch_workforcemanagement_agent_adherence_adjustment`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_agent_adherence_adjustment`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_id' in params:
+            path_params['agentId'] = params['agent_id']
+        if 'adjustment_id' in params:
+            path_params['adjustmentId'] = params['adjustment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_agent_adherence_explanation(self, agent_id: str, explanation_id: str, body: 'UpdateAdherenceExplanationStatusRequest', **kwargs) -> 'AdherenceExplanationAsyncResponse':
         """
         Update an adherence explanation
@@ -14564,6 +16204,90 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AdherenceExplanationAsyncResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_agent_unavailabletimes(self, agent_id: str, body: 'UpdateUnavailableTimesRequest', **kwargs) -> 'BulkUpdateAgentUnavailableTimesResponse':
+        """
+        Update unavailable times for the requested agent
+        Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_agent_unavailabletimes(agent_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_id: The ID of the agent (required)
+        :param UpdateUnavailableTimesRequest body: body (required)
+        :return: BulkUpdateAgentUnavailableTimesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_agent_unavailabletimes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_id' is set
+        if ('agent_id' not in params) or (params['agent_id'] is None):
+            raise ValueError("Missing the required parameter `agent_id` when calling `patch_workforcemanagement_agent_unavailabletimes`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_agent_unavailabletimes`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/{agentId}/unavailabletimes'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_id' in params:
+            path_params['agentId'] = params['agent_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkUpdateAgentUnavailableTimesResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -15077,6 +16801,348 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActivityPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_adherence_adjustments_bulk(self, business_unit_id: str, body: 'UpdateAdherenceAdjustmentsBulkRequest', **kwargs) -> 'AdherenceAdjustmentsListing':
+        """
+        Update adherence adjustments in bulk for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_adherence_adjustments_bulk(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param UpdateAdherenceAdjustmentsBulkRequest body: body (required)
+        :return: AdherenceAdjustmentsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_adherence_adjustments_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_bulk`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode(self, business_unit_id: str, reason_code_id: str, body: 'UpdateAdherenceAdjustmentsReasonCodeRequest', **kwargs) -> 'AdherenceAdjustmentsReasonCode':
+        """
+        Update an adherence adjustment reason code for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode(business_unit_id, reason_code_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str reason_code_id: The ID of the reason code to update (required)
+        :param UpdateAdherenceAdjustmentsReasonCodeRequest body: body (required)
+        :return: AdherenceAdjustmentsReasonCode
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'reason_code_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode`")
+        # verify the required parameter 'reason_code_id' is set
+        if ('reason_code_id' not in params) or (params['reason_code_id'] is None):
+            raise ValueError("Missing the required parameter `reason_code_id` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_reasoncode`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'reason_code_id' in params:
+            path_params['reasonCodeId'] = params['reason_code_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsReasonCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(self, business_unit_id: str, body: 'UpdateAdherenceAdjustmentsReasonCodesBulkRequest', **kwargs) -> 'AdherenceAdjustmentsReasonCodesListing':
+        """
+        Update adherence adjustment reason codes in bulk for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param UpdateAdherenceAdjustmentsReasonCodesBulkRequest body: body (required)
+        :return: AdherenceAdjustmentsReasonCodesListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsReasonCodesListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_adherence_adjustments_settings(self, business_unit_id: str, body: 'UpdateBuAdherenceAdjustmentsSettingsRequest', **kwargs) -> 'BuAdherenceAdjustmentsSettings':
+        """
+        Update adherence adjustments settings for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_adherence_adjustments_settings(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param UpdateBuAdherenceAdjustmentsSettingsRequest body: body (required)
+        :return: BuAdherenceAdjustmentsSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_adherence_adjustments_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_settings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_adherence_adjustments_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuAdherenceAdjustmentsSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -18089,6 +20155,175 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_adherence_adjustments(self, body: 'AddAdherenceAdjustmentAgentRequest', **kwargs) -> 'CurrentAgentAdherenceAdjustment':
+        """
+        Submit an adherence adjustment for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_adherence_adjustments(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AddAdherenceAdjustmentAgentRequest body: body (required)
+        :return: CurrentAgentAdherenceAdjustment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_adherence_adjustments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_adherence_adjustments`")
+
+
+        resource_path = '/api/v2/workforcemanagement/adherence/adjustments'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CurrentAgentAdherenceAdjustment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_adherence_adjustments_query(self, body: 'AgentQueryAdherenceAdjustmentsRequest', **kwargs) -> 'CurrentAgentCursorAdherenceAdjustmentsListing':
+        """
+        Query adherence adjustments for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_adherence_adjustments_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AgentQueryAdherenceAdjustmentsRequest body: body (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: The page size for the listing. The maximum page size is 500.
+        :return: CurrentAgentCursorAdherenceAdjustmentsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_adherence_adjustments_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_adherence_adjustments_query`")
+
+        if 'page_size' in params and params['page_size'] > 500: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `post_workforcemanagement_adherence_adjustments_query`, must be a value less than or equal to  `500`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `post_workforcemanagement_adherence_adjustments_query`, must be a value greater than or equal to `1`")
+
+        resource_path = '/api/v2/workforcemanagement/adherence/adjustments/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CurrentAgentCursorAdherenceAdjustmentsListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_adherence_explanations(self, body: 'AddAdherenceExplanationAgentRequest', **kwargs) -> 'AdherenceExplanationAsyncResponse':
         """
         Submit an adherence explanation for the current user
@@ -18325,6 +20560,103 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='WfmHistoricalAdherenceBulkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_agent_adherence_adjustments_query(self, agent_id: str, body: 'AgentQueryAdherenceAdjustmentsRequest', **kwargs) -> 'CursorAdherenceAdjustmentsListing':
+        """
+        Query adherence adjustments for the requested agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agent_adherence_adjustments_query(agent_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_id: The ID of the agent (required)
+        :param AgentQueryAdherenceAdjustmentsRequest body: body (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: The page size for the listing. The maximum page size is 500.
+        :return: CursorAdherenceAdjustmentsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_id', 'body', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agent_adherence_adjustments_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_id' is set
+        if ('agent_id' not in params) or (params['agent_id'] is None):
+            raise ValueError("Missing the required parameter `agent_id` when calling `post_workforcemanagement_agent_adherence_adjustments_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_agent_adherence_adjustments_query`")
+
+        if 'page_size' in params and params['page_size'] > 500: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `post_workforcemanagement_agent_adherence_adjustments_query`, must be a value less than or equal to  `500`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `post_workforcemanagement_agent_adherence_adjustments_query`, must be a value greater than or equal to `1`")
+
+        resource_path = '/api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_id' in params:
+            path_params['agentId'] = params['agent_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CursorAdherenceAdjustmentsListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -19704,6 +22036,378 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_businessunit_activityplan_deletions_jobs(self, business_unit_id: str, activity_plan_id: str, **kwargs) -> 'ActivityPlanJobResponse':
+        """
+        Delete an activity plan
+        Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_activityplan_deletions_jobs(business_unit_id, activity_plan_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan to delete (required)
+        :return: ActivityPlanJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_activityplan_deletions_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_activityplan_deletions_jobs`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `post_workforcemanagement_businessunit_activityplan_deletions_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs(self, business_unit_id: str, activity_plan_id: str, occurrence_id: str, session_id: str, body: 'ActivityPlanDeletionSessionUserIds', **kwargs) -> 'ActivityPlanJobResponse':
+        """
+        Triggers a job to delete users from a session in the activity plan occurrence
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs(business_unit_id, activity_plan_id, occurrence_id, session_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan (required)
+        :param str occurrence_id: The ID of the activity plan occurrence (required)
+        :param str session_id: The ID of the activity plan occurrence session (required)
+        :param ActivityPlanDeletionSessionUserIds body: body (required)
+        :return: ActivityPlanJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id', 'occurrence_id', 'session_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs`")
+        # verify the required parameter 'occurrence_id' is set
+        if ('occurrence_id' not in params) or (params['occurrence_id'] is None):
+            raise ValueError("Missing the required parameter `occurrence_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs`")
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_session_users_deletions_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+        if 'occurrence_id' in params:
+            path_params['occurrenceId'] = params['occurrence_id']
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs(self, business_unit_id: str, activity_plan_id: str, occurrence_id: str, body: 'ActivityPlanDeletionSessionIds', **kwargs) -> 'ActivityPlanJobResponse':
+        """
+        Triggers a job to delete sessions for the activity plan occurrence
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs(business_unit_id, activity_plan_id, occurrence_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan (required)
+        :param str occurrence_id: The ID of the activity plan occurrence (required)
+        :param ActivityPlanDeletionSessionIds body: body (required)
+        :return: ActivityPlanJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id', 'occurrence_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs`")
+        # verify the required parameter 'occurrence_id' is set
+        if ('occurrence_id' not in params) or (params['occurrence_id'] is None):
+            raise ValueError("Missing the required parameter `occurrence_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_activityplan_occurrence_sessions_deletions_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+        if 'occurrence_id' in params:
+            path_params['occurrenceId'] = params['occurrence_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs(self, business_unit_id: str, activity_plan_id: str, body: 'ActivityPlanDeletionOccurrenceIds', **kwargs) -> 'ActivityPlanOccurrencesDeletionJobResponse':
+        """
+        Delete occurrences for the activity plan
+        Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs(business_unit_id, activity_plan_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str activity_plan_id: The ID of the activity plan (required)
+        :param ActivityPlanDeletionOccurrenceIds body: body (required)
+        :return: ActivityPlanOccurrencesDeletionJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'activity_plan_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs`")
+        # verify the required parameter 'activity_plan_id' is set
+        if ('activity_plan_id' not in params) or (params['activity_plan_id'] is None):
+            raise ValueError("Missing the required parameter `activity_plan_id` when calling `post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_activityplan_occurrences_deletions_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'activity_plan_id' in params:
+            path_params['activityPlanId'] = params['activity_plan_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActivityPlanOccurrencesDeletionJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_businessunit_activityplan_runs_jobs(self, business_unit_id: str, activity_plan_id: str, **kwargs) -> 'ActivityPlanRunJobResponse':
         """
         Run an activity plan manually
@@ -19868,6 +22572,355 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActivityPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_adherence_adjustments_query(self, business_unit_id: str, body: 'BuQueryAdherenceAdjustmentsRequest', **kwargs) -> 'CursorAdherenceAdjustmentsListing':
+        """
+        Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_adherence_adjustments_query(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BuQueryAdherenceAdjustmentsRequest body: body (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: The page size for the listing. The maximum page size is 500.
+        :return: CursorAdherenceAdjustmentsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'before', 'after', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_adherence_adjustments_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_adherence_adjustments_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_adherence_adjustments_query`")
+
+        if 'page_size' in params and params['page_size'] > 500: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `post_workforcemanagement_businessunit_adherence_adjustments_query`, must be a value less than or equal to  `500`")
+        if 'page_size' in params and params['page_size'] < 1: 
+            raise ValueError("Invalid value for parameter `page_size` when calling `post_workforcemanagement_businessunit_adherence_adjustments_query`, must be a value greater than or equal to `1`")
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CursorAdherenceAdjustmentsListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_adherence_adjustments_query_jobs(self, business_unit_id: str, body: 'BuQueryAdherenceAdjustmentsRequest', **kwargs) -> 'BuAdherenceAdjustmentsQueryJob':
+        """
+        Creates an async query job for adherence adjustments in a business unit.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_adherence_adjustments_query_jobs(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param BuQueryAdherenceAdjustmentsRequest body: body (required)
+        :return: BuAdherenceAdjustmentsQueryJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_adherence_adjustments_query_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_adherence_adjustments_query_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_adherence_adjustments_query_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuAdherenceAdjustmentsQueryJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes(self, business_unit_id: str, body: 'CreateAdherenceAdjustmentsReasonCodeRequest', **kwargs) -> 'AdherenceAdjustmentsReasonCode':
+        """
+        Create an adherence adjustment reason code for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param CreateAdherenceAdjustmentsReasonCodeRequest body: body (required)
+        :return: AdherenceAdjustmentsReasonCode
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsReasonCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(self, business_unit_id: str, body: 'CreateAdherenceAdjustmentsReasonCodesBulkRequest', **kwargs) -> 'AdherenceAdjustmentsReasonCodesListing':
+        """
+        Create adherence adjustment reason codes in bulk for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param CreateAdherenceAdjustmentsReasonCodesBulkRequest body: body (required)
+        :return: AdherenceAdjustmentsReasonCodesListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_adherence_adjustments_reasoncodes_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdherenceAdjustmentsReasonCodesListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

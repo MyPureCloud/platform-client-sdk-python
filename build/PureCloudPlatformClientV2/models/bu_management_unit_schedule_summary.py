@@ -99,7 +99,7 @@ class BuManagementUnitScheduleSummary(object):
     def agent_count(self) -> int:
         """
         Gets the agent_count of this BuManagementUnitScheduleSummary.
-        The number of agents from this management unit that are in the schedule
+        The number of agents from this management unit that are in the schedule. On update requests, this reflects the number of agents whose schedules were actually modified
 
         :return: The agent_count of this BuManagementUnitScheduleSummary.
         :rtype: int
@@ -110,7 +110,7 @@ class BuManagementUnitScheduleSummary(object):
     def agent_count(self, agent_count: int) -> None:
         """
         Sets the agent_count of this BuManagementUnitScheduleSummary.
-        The number of agents from this management unit that are in the schedule
+        The number of agents from this management unit that are in the schedule. On update requests, this reflects the number of agents whose schedules were actually modified
 
         :param agent_count: The agent_count of this BuManagementUnitScheduleSummary.
         :type: int

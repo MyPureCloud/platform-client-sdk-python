@@ -53,6 +53,7 @@ class TopicRequest(object):
             'description': 'str',
             'strictness': 'str',
             'program_ids': 'list[str]',
+            'matching_type': 'str',
             'tags': 'list[str]',
             'dialect': 'str',
             'participants': 'str',
@@ -64,6 +65,7 @@ class TopicRequest(object):
             'description': 'description',
             'strictness': 'strictness',
             'program_ids': 'programIds',
+            'matching_type': 'matchingType',
             'tags': 'tags',
             'dialect': 'dialect',
             'participants': 'participants',
@@ -74,6 +76,7 @@ class TopicRequest(object):
         self._description = None
         self._strictness = None
         self._program_ids = None
+        self._matching_type = None
         self._tags = None
         self._dialect = None
         self._participants = None
@@ -179,6 +182,35 @@ class TopicRequest(object):
         
 
         self._program_ids = program_ids
+
+    @property
+    def matching_type(self) -> str:
+        """
+        Gets the matching_type of this TopicRequest.
+        The topic matching type Lexical or Semantic, default value is Semantic
+
+        :return: The matching_type of this TopicRequest.
+        :rtype: str
+        """
+        return self._matching_type
+
+    @matching_type.setter
+    def matching_type(self, matching_type: str) -> None:
+        """
+        Sets the matching_type of this TopicRequest.
+        The topic matching type Lexical or Semantic, default value is Semantic
+
+        :param matching_type: The matching_type of this TopicRequest.
+        :type: str
+        """
+        if isinstance(matching_type, int):
+            matching_type = str(matching_type)
+        allowed_values = ["Lexical", "Semantic"]
+        if matching_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for matching_type -> " + matching_type)
+            self._matching_type = "outdated_sdk_version"
+        else:
+            self._matching_type = matching_type
 
     @property
     def tags(self) -> List[str]:

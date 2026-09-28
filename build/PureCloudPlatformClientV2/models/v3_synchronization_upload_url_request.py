@@ -74,7 +74,7 @@ class V3SynchronizationUploadUrlRequest(object):
     def file_name(self) -> str:
         """
         Gets the file_name of this V3SynchronizationUploadUrlRequest.
-        Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
+        Path and name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
 
         :return: The file_name of this V3SynchronizationUploadUrlRequest.
         :rtype: str
@@ -85,7 +85,7 @@ class V3SynchronizationUploadUrlRequest(object):
     def file_name(self, file_name: str) -> None:
         """
         Sets the file_name of this V3SynchronizationUploadUrlRequest.
-        Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
+        Path and name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
 
         :param file_name: The file_name of this V3SynchronizationUploadUrlRequest.
         :type: str

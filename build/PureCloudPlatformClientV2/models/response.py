@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import AppleInvitation
     from . import DomainEntityRef
     from . import FooterTemplate
+    from . import Form
     from . import JsonSchemaDocument
     from . import MessagingTemplate
     from . import ResponseSubstitution
@@ -71,6 +72,7 @@ class Response(object):
             'messaging_template': 'MessagingTemplate',
             'assets': 'list[RmsAssetAddressableRef]',
             'footer': 'FooterTemplate',
+            'form': 'Form',
             'apple_invitation': 'AppleInvitation',
             'self_uri': 'str'
         }
@@ -90,6 +92,7 @@ class Response(object):
             'messaging_template': 'messagingTemplate',
             'assets': 'assets',
             'footer': 'footer',
+            'form': 'form',
             'apple_invitation': 'appleInvitation',
             'self_uri': 'selfUri'
         }
@@ -108,6 +111,7 @@ class Response(object):
         self._messaging_template = None
         self._assets = None
         self._footer = None
+        self._form = None
         self._apple_invitation = None
         self._self_uri = None
 
@@ -456,6 +460,30 @@ class Response(object):
         
 
         self._footer = footer
+
+    @property
+    def form(self) -> 'Form':
+        """
+        Gets the form of this Response.
+        Form template definition for responseType.Form.
+
+        :return: The form of this Response.
+        :rtype: Form
+        """
+        return self._form
+
+    @form.setter
+    def form(self, form: 'Form') -> None:
+        """
+        Sets the form of this Response.
+        Form template definition for responseType.Form.
+
+        :param form: The form of this Response.
+        :type: Form
+        """
+        
+
+        self._form = form
 
     @property
     def apple_invitation(self) -> 'AppleInvitation':

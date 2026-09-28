@@ -3621,7 +3621,6 @@ class AnalyticsApi(object):
         """
         Get analytics data warehouse file download
         
-	    get_analytics_dataextraction_download is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3700,7 +3699,6 @@ class AnalyticsApi(object):
         """
         Get metadata on files available for extraction
         
-	    get_analytics_dataextraction_downloads_metadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8091,7 +8089,6 @@ class AnalyticsApi(object):
         """
         Get download URLs for analytics data warehouse files
         
-	    post_analytics_dataextraction_downloads_bulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

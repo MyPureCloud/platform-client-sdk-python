@@ -96,7 +96,7 @@ class ColumnDataTypeSpecification(object):
     def column_data_type(self) -> str:
         """
         Gets the column_data_type of this ColumnDataTypeSpecification.
-        The data type of the column selected for dynamic queueing (TEXT, NUMERIC or TIMESTAMP)
+        The data type of the column selected for dynamic queueing (TEXT, NUMERIC, TIMESTAMP or DATETIME). DATETIME supports dates from 1000-01-01 to 9999-12-31; TIMESTAMP is limited to 1970-01-01 through 2038-01-19.
 
         :return: The column_data_type of this ColumnDataTypeSpecification.
         :rtype: str
@@ -107,14 +107,14 @@ class ColumnDataTypeSpecification(object):
     def column_data_type(self, column_data_type: str) -> None:
         """
         Sets the column_data_type of this ColumnDataTypeSpecification.
-        The data type of the column selected for dynamic queueing (TEXT, NUMERIC or TIMESTAMP)
+        The data type of the column selected for dynamic queueing (TEXT, NUMERIC, TIMESTAMP or DATETIME). DATETIME supports dates from 1000-01-01 to 9999-12-31; TIMESTAMP is limited to 1970-01-01 through 2038-01-19.
 
         :param column_data_type: The column_data_type of this ColumnDataTypeSpecification.
         :type: str
         """
         if isinstance(column_data_type, int):
             column_data_type = str(column_data_type)
-        allowed_values = ["NUMERIC", "TEXT", "TIMESTAMP"]
+        allowed_values = ["NUMERIC", "TEXT", "TIMESTAMP", "DATETIME"]
         if column_data_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for column_data_type -> " + column_data_type)
             self._column_data_type = "outdated_sdk_version"

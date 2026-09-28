@@ -8,13 +8,10 @@
 |------------ | ------------- | ------------- | -------------|
 | **action_template** | [ActionMapActionTemplate](ActionMapActionTemplate) | Action template associated with the action map. | [optional] |
 | **media_type** | str | Media type of action. | [optional] |
-| **action_target_id** | str | Deprecated. Action target ID. | [optional] |
-| **is_pacing_enabled** | bool | Deprecated. Whether this action should be throttled. | [optional] |
-| **props** | [ActionProperties](ActionProperties) | Deprecated. Additional properties. | [optional] |
 | **architect_flow_fields** | [ArchitectFlowFields](ArchitectFlowFields) | Architect Flow Id and input contract. | [optional] |
 | **web_messaging_offer_fields** | [WebMessagingOfferFields](WebMessagingOfferFields) | Admin-configurable fields of a web messaging offer action. | [optional] |
 | **open_action_fields** | [OpenActionFields](OpenActionFields) | Admin-configurable fields of an open action. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_

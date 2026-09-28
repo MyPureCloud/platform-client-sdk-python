@@ -33,7 +33,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ActionEventActionMap
-    from . import AddressableEntityRef
     from . import Browser
     from . import Device
     from . import EventAction
@@ -58,7 +57,6 @@ class WebActionEvent(object):
         self.swagger_types = {
             'action': 'EventAction',
             'action_map': 'ActionEventActionMap',
-            'action_target': 'AddressableEntityRef',
             'time_to_disposition': 'int',
             'error_code': 'str',
             'error_message': 'str',
@@ -75,7 +73,6 @@ class WebActionEvent(object):
         self.attribute_map = {
             'action': 'action',
             'action_map': 'actionMap',
-            'action_target': 'actionTarget',
             'time_to_disposition': 'timeToDisposition',
             'error_code': 'errorCode',
             'error_message': 'errorMessage',
@@ -91,7 +88,6 @@ class WebActionEvent(object):
 
         self._action = None
         self._action_map = None
-        self._action_target = None
         self._time_to_disposition = None
         self._error_code = None
         self._error_message = None
@@ -151,30 +147,6 @@ class WebActionEvent(object):
         
 
         self._action_map = action_map
-
-    @property
-    def action_target(self) -> 'AddressableEntityRef':
-        """
-        Gets the action_target of this WebActionEvent.
-        Deprecated. The target for engagement actions.
-
-        :return: The action_target of this WebActionEvent.
-        :rtype: AddressableEntityRef
-        """
-        return self._action_target
-
-    @action_target.setter
-    def action_target(self, action_target: 'AddressableEntityRef') -> None:
-        """
-        Sets the action_target of this WebActionEvent.
-        Deprecated. The target for engagement actions.
-
-        :param action_target: The action_target of this WebActionEvent.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._action_target = action_target
 
     @property
     def time_to_disposition(self) -> int:

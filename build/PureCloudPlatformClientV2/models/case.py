@@ -59,8 +59,10 @@ class Case(object):
             'division': 'StarrableDivision',
             'version': 'int',
             'reference': 'str',
+            'external_id': 'str',
             'caseplan': 'CaseplanReference',
             'summary': 'str',
+            'description': 'str',
             'owner': 'CaseUserReference',
             'status': 'str',
             'priority': 'str',
@@ -84,8 +86,10 @@ class Case(object):
             'division': 'division',
             'version': 'version',
             'reference': 'reference',
+            'external_id': 'externalId',
             'caseplan': 'caseplan',
             'summary': 'summary',
+            'description': 'description',
             'owner': 'owner',
             'status': 'status',
             'priority': 'priority',
@@ -108,8 +112,10 @@ class Case(object):
         self._division = None
         self._version = None
         self._reference = None
+        self._external_id = None
         self._caseplan = None
         self._summary = None
+        self._description = None
         self._owner = None
         self._status = None
         self._priority = None
@@ -247,6 +253,30 @@ class Case(object):
         self._reference = reference
 
     @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this Case.
+        The identifier of the Case in an external system.
+
+        :return: The external_id of this Case.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this Case.
+        The identifier of the Case in an external system.
+
+        :param external_id: The external_id of this Case.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
+
+    @property
     def caseplan(self) -> 'CaseplanReference':
         """
         Gets the caseplan of this Case.
@@ -293,6 +323,30 @@ class Case(object):
         
 
         self._summary = summary
+
+    @property
+    def description(self) -> str:
+        """
+        Gets the description of this Case.
+        The description of the Case.
+
+        :return: The description of this Case.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: str) -> None:
+        """
+        Sets the description of this Case.
+        The description of the Case.
+
+        :param description: The description of this Case.
+        :type: str
+        """
+        
+
+        self._description = description
 
     @property
     def owner(self) -> 'CaseUserReference':

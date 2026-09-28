@@ -67,6 +67,7 @@ from ..models import InboundDomainPatchRequest
 from ..models import InboundRoute
 from ..models import InboundRouteEntityListing
 from ..models import KeyPerformanceIndicator
+from ..models import KeyPerformanceIndicatorEntityListing
 from ..models import KeyPerformanceIndicatorType
 from ..models import Language
 from ..models import LanguageEntityListing
@@ -4626,7 +4627,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_predictors_keyperformanceindicators(self, **kwargs) -> List['KeyPerformanceIndicator']:
+    def get_routing_predictors_keyperformanceindicators(self, **kwargs) -> 'KeyPerformanceIndicatorEntityListing':
         """
         Get a list of Key Performance Indicators
         
@@ -4643,7 +4644,7 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str kpi_group: The Group of Key Performance Indicators to return
         :param list[str] expand: Parameter to request additional data to return in KPI payload
-        :return: list[KeyPerformanceIndicator]
+        :return: KeyPerformanceIndicatorEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4699,7 +4700,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[KeyPerformanceIndicator]',
+                                            response_type='KeyPerformanceIndicatorEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10680,7 +10681,7 @@ class RoutingApi(object):
     def post_routing_assessments_jobs(self, **kwargs) -> 'BenefitAssessmentJob':
         """
         Create a benefit assessment job.
-        
+        Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

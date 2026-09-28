@@ -33,7 +33,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ActionMapActionTemplate
-    from . import ActionProperties
     from . import ArchitectFlowFields
     from . import OpenActionFields
     from . import WebMessagingOfferFields
@@ -55,9 +54,6 @@ class ActionMapAction(object):
         self.swagger_types = {
             'action_template': 'ActionMapActionTemplate',
             'media_type': 'str',
-            'action_target_id': 'str',
-            'is_pacing_enabled': 'bool',
-            'props': 'ActionProperties',
             'architect_flow_fields': 'ArchitectFlowFields',
             'web_messaging_offer_fields': 'WebMessagingOfferFields',
             'open_action_fields': 'OpenActionFields'
@@ -66,9 +62,6 @@ class ActionMapAction(object):
         self.attribute_map = {
             'action_template': 'actionTemplate',
             'media_type': 'mediaType',
-            'action_target_id': 'actionTargetId',
-            'is_pacing_enabled': 'isPacingEnabled',
-            'props': 'props',
             'architect_flow_fields': 'architectFlowFields',
             'web_messaging_offer_fields': 'webMessagingOfferFields',
             'open_action_fields': 'openActionFields'
@@ -76,9 +69,6 @@ class ActionMapAction(object):
 
         self._action_template = None
         self._media_type = None
-        self._action_target_id = None
-        self._is_pacing_enabled = None
-        self._props = None
         self._architect_flow_fields = None
         self._web_messaging_offer_fields = None
         self._open_action_fields = None
@@ -129,84 +119,12 @@ class ActionMapAction(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["webchat", "webMessagingOffer", "contentOffer", "integrationAction", "architectFlow", "openAction"]
+        allowed_values = ["webMessagingOffer", "contentOffer", "integrationAction", "architectFlow", "openAction"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
-
-    @property
-    def action_target_id(self) -> str:
-        """
-        Gets the action_target_id of this ActionMapAction.
-        Deprecated. Action target ID.
-
-        :return: The action_target_id of this ActionMapAction.
-        :rtype: str
-        """
-        return self._action_target_id
-
-    @action_target_id.setter
-    def action_target_id(self, action_target_id: str) -> None:
-        """
-        Sets the action_target_id of this ActionMapAction.
-        Deprecated. Action target ID.
-
-        :param action_target_id: The action_target_id of this ActionMapAction.
-        :type: str
-        """
-        
-
-        self._action_target_id = action_target_id
-
-    @property
-    def is_pacing_enabled(self) -> bool:
-        """
-        Gets the is_pacing_enabled of this ActionMapAction.
-        Deprecated. Whether this action should be throttled.
-
-        :return: The is_pacing_enabled of this ActionMapAction.
-        :rtype: bool
-        """
-        return self._is_pacing_enabled
-
-    @is_pacing_enabled.setter
-    def is_pacing_enabled(self, is_pacing_enabled: bool) -> None:
-        """
-        Sets the is_pacing_enabled of this ActionMapAction.
-        Deprecated. Whether this action should be throttled.
-
-        :param is_pacing_enabled: The is_pacing_enabled of this ActionMapAction.
-        :type: bool
-        """
-        
-
-        self._is_pacing_enabled = is_pacing_enabled
-
-    @property
-    def props(self) -> 'ActionProperties':
-        """
-        Gets the props of this ActionMapAction.
-        Deprecated. Additional properties.
-
-        :return: The props of this ActionMapAction.
-        :rtype: ActionProperties
-        """
-        return self._props
-
-    @props.setter
-    def props(self, props: 'ActionProperties') -> None:
-        """
-        Sets the props of this ActionMapAction.
-        Deprecated. Additional properties.
-
-        :param props: The props of this ActionMapAction.
-        :type: ActionProperties
-        """
-        
-
-        self._props = props
 
     @property
     def architect_flow_fields(self) -> 'ArchitectFlowFields':

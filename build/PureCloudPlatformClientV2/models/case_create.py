@@ -52,6 +52,8 @@ class CaseCreate(object):
             'caseplan_id': 'str',
             'owner_id': 'str',
             'summary': 'str',
+            'description': 'str',
+            'external_id': 'str',
             'external_contact_id': 'str',
             'conversation_id': 'str',
             'workitem_id': 'str',
@@ -63,6 +65,8 @@ class CaseCreate(object):
             'caseplan_id': 'caseplanId',
             'owner_id': 'ownerId',
             'summary': 'summary',
+            'description': 'description',
+            'external_id': 'externalId',
             'external_contact_id': 'externalContactId',
             'conversation_id': 'conversationId',
             'workitem_id': 'workitemId',
@@ -73,6 +77,8 @@ class CaseCreate(object):
         self._caseplan_id = None
         self._owner_id = None
         self._summary = None
+        self._description = None
+        self._external_id = None
         self._external_contact_id = None
         self._conversation_id = None
         self._workitem_id = None
@@ -162,6 +168,66 @@ class CaseCreate(object):
 
 
         self._summary = summary
+
+    @property
+    def description(self) -> str:
+        """
+        Gets the description of this CaseCreate.
+        The description of the Case. Maximum length of 512 characters.
+
+        :return: The description of this CaseCreate.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: str) -> None:
+        """
+        Sets the description of this CaseCreate.
+        The description of the Case. Maximum length of 512 characters.
+
+        :param description: The description of this CaseCreate.
+        :type: str
+        """
+        
+        if len(description) > 512:
+            raise ValueError("Invalid value for `description`, length must be less than `512`")
+
+        if len(description) < 0:
+            raise ValueError("Invalid value for `description`, length must be greater than or equal to `0`")
+
+
+        self._description = description
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this CaseCreate.
+        The identifier of the Case in an external system. Minimum length is 1 character. Maximum length of 64 characters.
+
+        :return: The external_id of this CaseCreate.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this CaseCreate.
+        The identifier of the Case in an external system. Minimum length is 1 character. Maximum length of 64 characters.
+
+        :param external_id: The external_id of this CaseCreate.
+        :type: str
+        """
+        
+        if len(external_id) > 64:
+            raise ValueError("Invalid value for `external_id`, length must be less than `64`")
+
+        if len(external_id) < 1:
+            raise ValueError("Invalid value for `external_id`, length must be greater than or equal to `1`")
+
+
+        self._external_id = external_id
 
     @property
     def external_contact_id(self) -> str:

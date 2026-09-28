@@ -43,6 +43,8 @@ from ..models import CaseAssociationQuery
 from ..models import CaseAssociationQueryEntityListing
 from ..models import CaseCreate
 from ..models import CaseDateDueUpdate
+from ..models import CaseDescriptionUpdate
+from ..models import CaseExternalIdUpdate
 from ..models import CaseListing
 from ..models import CaseOwnerUpdate
 from ..models import CasePriorityUpdate
@@ -2619,6 +2621,176 @@ class CaseManagementApi(object):
 
 
         resource_path = '/api/v2/casemanagement/cases/{caseId}/datedue'.replace('{format}', 'json')
+        path_params = {}
+        if 'case_id' in params:
+            path_params['caseId'] = params['case_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Case',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_casemanagement_case_description(self, case_id: str, body: 'CaseDescriptionUpdate', **kwargs) -> 'Case':
+        """
+        Update the description of a Case.
+        
+	    patch_casemanagement_case_description is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_casemanagement_case_description(case_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str case_id: Case identifier. (required)
+        :param CaseDescriptionUpdate body: Description update. (required)
+        :return: Case
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['case_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_casemanagement_case_description" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'case_id' is set
+        if ('case_id' not in params) or (params['case_id'] is None):
+            raise ValueError("Missing the required parameter `case_id` when calling `patch_casemanagement_case_description`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_casemanagement_case_description`")
+
+
+        resource_path = '/api/v2/casemanagement/cases/{caseId}/description'.replace('{format}', 'json')
+        path_params = {}
+        if 'case_id' in params:
+            path_params['caseId'] = params['case_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Case',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_casemanagement_case_externalid(self, case_id: str, body: 'CaseExternalIdUpdate', **kwargs) -> 'Case':
+        """
+        Update the external identifier of a Case.
+        
+	    patch_casemanagement_case_externalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_casemanagement_case_externalid(case_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str case_id: Case identifier. (required)
+        :param CaseExternalIdUpdate body: External identifier update. (required)
+        :return: Case
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['case_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_casemanagement_case_externalid" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'case_id' is set
+        if ('case_id' not in params) or (params['case_id'] is None):
+            raise ValueError("Missing the required parameter `case_id` when calling `patch_casemanagement_case_externalid`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_casemanagement_case_externalid`")
+
+
+        resource_path = '/api/v2/casemanagement/cases/{caseId}/externalid'.replace('{format}', 'json')
         path_params = {}
         if 'case_id' in params:
             path_params['caseId'] = params['case_id']

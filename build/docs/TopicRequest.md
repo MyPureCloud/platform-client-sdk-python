@@ -10,6 +10,7 @@
 | **description** | str | The topic description | [optional] |
 | **strictness** | str | The topic strictness, default value is 72 | [optional] |
 | **program_ids** | list[str] | The ids of programs associated to the topic | [optional] |
+| **matching_type** | str | The topic matching type Lexical or Semantic, default value is Semantic | [optional] |
 | **tags** | list[str] | The topic tags | [optional] |
 | **dialect** | str | The topic dialect | |
 | **participants** | str | The topic participants, default value is All | [optional] |
@@ -17,4 +18,4 @@
 
 
 
-_PureCloudPlatformClientV2 267.0.0_
+_PureCloudPlatformClientV2 268.0.0_
