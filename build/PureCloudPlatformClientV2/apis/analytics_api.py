@@ -732,7 +732,6 @@ class AnalyticsApi(object):
         """
         Delete/cancel an async request for copilot aggregates
         
-	    delete_analytics_copilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3460,7 +3459,6 @@ class AnalyticsApi(object):
         """
         Get status for async query for copilot aggregates
         
-	    get_analytics_copilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3539,7 +3537,6 @@ class AnalyticsApi(object):
         """
         Fetch a page of results for an async aggregates query
         
-	    get_analytics_copilots_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7931,7 +7928,6 @@ class AnalyticsApi(object):
         """
         Query for copilot aggregates asynchronously
         
-	    post_analytics_copilots_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8010,7 +8006,6 @@ class AnalyticsApi(object):
         """
         Query for copilot aggregates
         
-	    post_analytics_copilots_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

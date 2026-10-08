@@ -33,7 +33,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import JourneyOutcomeEventsNotificationExternalContact
-    from . import JourneyOutcomeEventsNotificationOutcomeAchievedMessage
     from . import JourneyOutcomeEventsNotificationOutcomeAttributionMessage
     from . import JourneyOutcomeEventsNotificationSession
 
@@ -60,7 +59,6 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
             'customer_id_type': 'str',
             'session': 'JourneyOutcomeEventsNotificationSession',
             'event_type': 'str',
-            'outcome_achieved_event': 'JourneyOutcomeEventsNotificationOutcomeAchievedMessage',
             'outcome_attribution_event_message': 'JourneyOutcomeEventsNotificationOutcomeAttributionMessage'
         }
 
@@ -73,7 +71,6 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
             'customer_id_type': 'customerIdType',
             'session': 'session',
             'event_type': 'eventType',
-            'outcome_achieved_event': 'outcomeAchievedEvent',
             'outcome_attribution_event_message': 'outcomeAttributionEventMessage'
         }
 
@@ -85,7 +82,6 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         self._customer_id_type = None
         self._session = None
         self._event_type = None
-        self._outcome_achieved_event = None
         self._outcome_attribution_event_message = None
 
     @property
@@ -278,36 +274,12 @@ class JourneyOutcomeEventsNotificationOutcomeEventsNotification(object):
         """
         if isinstance(event_type, int):
             event_type = str(event_type)
-        allowed_values = ["OutcomeAchievedEvent", "OutcomeAttributionEvent"]
+        allowed_values = ["OutcomeAttributionEvent"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
         else:
             self._event_type = event_type
-
-    @property
-    def outcome_achieved_event(self) -> 'JourneyOutcomeEventsNotificationOutcomeAchievedMessage':
-        """
-        Gets the outcome_achieved_event of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
-
-
-        :return: The outcome_achieved_event of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
-        :rtype: JourneyOutcomeEventsNotificationOutcomeAchievedMessage
-        """
-        return self._outcome_achieved_event
-
-    @outcome_achieved_event.setter
-    def outcome_achieved_event(self, outcome_achieved_event: 'JourneyOutcomeEventsNotificationOutcomeAchievedMessage') -> None:
-        """
-        Sets the outcome_achieved_event of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
-
-
-        :param outcome_achieved_event: The outcome_achieved_event of this JourneyOutcomeEventsNotificationOutcomeEventsNotification.
-        :type: JourneyOutcomeEventsNotificationOutcomeAchievedMessage
-        """
-        
-
-        self._outcome_achieved_event = outcome_achieved_event
 
     @property
     def outcome_attribution_event_message(self) -> 'JourneyOutcomeEventsNotificationOutcomeAttributionMessage':

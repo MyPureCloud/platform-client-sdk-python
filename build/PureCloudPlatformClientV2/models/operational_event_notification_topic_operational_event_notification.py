@@ -62,6 +62,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'entity_token': 'str',
             'phone_number': 'str',
             'external_contact_id': 'str',
+            'entity_modified_date': 'datetime',
+            'entity_modified_by': 'str',
             'timestamp': 'int'
         }
 
@@ -79,6 +81,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'entity_token': 'entityToken',
             'phone_number': 'phoneNumber',
             'external_contact_id': 'externalContactId',
+            'entity_modified_date': 'entityModifiedDate',
+            'entity_modified_by': 'entityModifiedBy',
             'timestamp': 'timestamp'
         }
 
@@ -95,6 +99,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         self._entity_token = None
         self._phone_number = None
         self._external_contact_id = None
+        self._entity_modified_date = None
+        self._entity_modified_by = None
         self._timestamp = None
 
     @property
@@ -408,6 +414,54 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         
 
         self._external_contact_id = external_contact_id
+
+    @property
+    def entity_modified_date(self) -> datetime:
+        """
+        Gets the entity_modified_date of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The entity_modified_date of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: datetime
+        """
+        return self._entity_modified_date
+
+    @entity_modified_date.setter
+    def entity_modified_date(self, entity_modified_date: datetime) -> None:
+        """
+        Sets the entity_modified_date of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param entity_modified_date: The entity_modified_date of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: datetime
+        """
+        
+
+        self._entity_modified_date = entity_modified_date
+
+    @property
+    def entity_modified_by(self) -> str:
+        """
+        Gets the entity_modified_by of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The entity_modified_by of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._entity_modified_by
+
+    @entity_modified_by.setter
+    def entity_modified_by(self, entity_modified_by: str) -> None:
+        """
+        Sets the entity_modified_by of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param entity_modified_by: The entity_modified_by of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._entity_modified_by = entity_modified_by
 
     @property
     def timestamp(self) -> int:

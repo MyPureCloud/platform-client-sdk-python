@@ -34,7 +34,6 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import JourneyAppEventsNotificationAppMessage
     from . import JourneyAppEventsNotificationExternalContact
-    from . import JourneyAppEventsNotificationOutcomeAchievedMessage
     from . import JourneyAppEventsNotificationSegmentAssignmentMessage
     from . import JourneyAppEventsNotificationSession
     from . import JourneyAppEventsNotificationWebActionMessage
@@ -63,7 +62,6 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
             'session': 'JourneyAppEventsNotificationSession',
             'event_type': 'str',
             'app_event': 'JourneyAppEventsNotificationAppMessage',
-            'outcome_achieved_event': 'JourneyAppEventsNotificationOutcomeAchievedMessage',
             'segment_assignment_event': 'JourneyAppEventsNotificationSegmentAssignmentMessage',
             'web_action_event': 'JourneyAppEventsNotificationWebActionMessage'
         }
@@ -78,7 +76,6 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
             'session': 'session',
             'event_type': 'eventType',
             'app_event': 'appEvent',
-            'outcome_achieved_event': 'outcomeAchievedEvent',
             'segment_assignment_event': 'segmentAssignmentEvent',
             'web_action_event': 'webActionEvent'
         }
@@ -92,7 +89,6 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
         self._session = None
         self._event_type = None
         self._app_event = None
-        self._outcome_achieved_event = None
         self._segment_assignment_event = None
         self._web_action_event = None
 
@@ -286,7 +282,7 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
         """
         if isinstance(event_type, int):
             event_type = str(event_type)
-        allowed_values = ["AppEvent", "OutcomeAchievedEvent", "SegmentAssignmentEvent", "WebActionEvent"]
+        allowed_values = ["AppEvent", "SegmentAssignmentEvent", "WebActionEvent"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -316,30 +312,6 @@ class JourneyAppEventsNotificationAppEventsNotification(object):
         
 
         self._app_event = app_event
-
-    @property
-    def outcome_achieved_event(self) -> 'JourneyAppEventsNotificationOutcomeAchievedMessage':
-        """
-        Gets the outcome_achieved_event of this JourneyAppEventsNotificationAppEventsNotification.
-
-
-        :return: The outcome_achieved_event of this JourneyAppEventsNotificationAppEventsNotification.
-        :rtype: JourneyAppEventsNotificationOutcomeAchievedMessage
-        """
-        return self._outcome_achieved_event
-
-    @outcome_achieved_event.setter
-    def outcome_achieved_event(self, outcome_achieved_event: 'JourneyAppEventsNotificationOutcomeAchievedMessage') -> None:
-        """
-        Sets the outcome_achieved_event of this JourneyAppEventsNotificationAppEventsNotification.
-
-
-        :param outcome_achieved_event: The outcome_achieved_event of this JourneyAppEventsNotificationAppEventsNotification.
-        :type: JourneyAppEventsNotificationOutcomeAchievedMessage
-        """
-        
-
-        self._outcome_achieved_event = outcome_achieved_event
 
     @property
     def segment_assignment_event(self) -> 'JourneyAppEventsNotificationSegmentAssignmentMessage':

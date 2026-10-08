@@ -1367,7 +1367,7 @@ class RecordingApi(object):
 
     def get_orphanrecordings(self, **kwargs) -> 'OrphanRecordingListing':
         """
-        Gets all orphan recordings
+        Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1386,7 +1386,7 @@ class RecordingApi(object):
         :param list[str] expand: variable name requested by expand list
         :param str next_page: next page token
         :param str previous_page: Previous page token
-        :param bool has_conversation: Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
+        :param bool has_conversation: Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results.
         :param str media: Filter resulting orphans based on their media type
         :return: OrphanRecordingListing
                  If the method is called asynchronously,

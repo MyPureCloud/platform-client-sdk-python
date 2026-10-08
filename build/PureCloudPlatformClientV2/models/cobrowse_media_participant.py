@@ -615,7 +615,7 @@ class CobrowseMediaParticipant(object):
     def queue(self) -> 'DomainEntityRef':
         """
         Gets the queue of this CobrowseMediaParticipant.
-        The PureCloud queue for this participant.
+        The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.
 
         :return: The queue of this CobrowseMediaParticipant.
         :rtype: DomainEntityRef
@@ -626,7 +626,7 @@ class CobrowseMediaParticipant(object):
     def queue(self, queue: 'DomainEntityRef') -> None:
         """
         Sets the queue of this CobrowseMediaParticipant.
-        The PureCloud queue for this participant.
+        The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.
 
         :param queue: The queue of this CobrowseMediaParticipant.
         :type: DomainEntityRef

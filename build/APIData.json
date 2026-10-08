@@ -8144,7 +8144,7 @@
   "get_authorization_subject": {
     "operationId": "get_authorization_subject",
     "functionName": "get_authorization_subject",
-    "signature": "get_authorization_subject(subject_id, include_duplicates)",
+    "signature": "get_authorization_subject(subject_id, include_duplicates, include_full_roles)",
     "parameters": [
       {
         "name": "subject_id",
@@ -8155,24 +8155,34 @@
         "name": "include_duplicates",
         "type": "bool",
         "required": "false"
-      }
-    ],
-    "return": "AuthzSubject",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nsubject_id = 'subject_id_example' # str | Subject ID (user or group)\ninclude_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)\n\ntry:\n    # Returns a listing of roles and permissions for a user.\n    api_response = api_instance.get_authorization_subject(subject_id, include_duplicates=include_duplicates)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_authorization_subject: %s\\n\" % e)"
-  },
-  "get_authorization_subjects_me": {
-    "operationId": "get_authorization_subjects_me",
-    "functionName": "get_authorization_subjects_me",
-    "signature": "get_authorization_subjects_me(include_duplicates)",
-    "parameters": [
+      },
       {
-        "name": "include_duplicates",
+        "name": "include_full_roles",
         "type": "bool",
         "required": "false"
       }
     ],
     "return": "AuthzSubject",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\ninclude_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)\n\ntry:\n    # Returns a listing of roles and permissions for the currently authenticated user.\n    api_response = api_instance.get_authorization_subjects_me(include_duplicates=include_duplicates)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_authorization_subjects_me: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nsubject_id = 'subject_id_example' # str | Subject ID (user or group)\ninclude_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)\ninclude_full_roles = True # bool | Include full role data with permission policies for each grant (optional) (default to True)\n\ntry:\n    # Returns a listing of roles and permissions for a user.\n    api_response = api_instance.get_authorization_subject(subject_id, include_duplicates=include_duplicates, include_full_roles=include_full_roles)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_authorization_subject: %s\\n\" % e)"
+  },
+  "get_authorization_subjects_me": {
+    "operationId": "get_authorization_subjects_me",
+    "functionName": "get_authorization_subjects_me",
+    "signature": "get_authorization_subjects_me(include_duplicates, include_full_roles)",
+    "parameters": [
+      {
+        "name": "include_duplicates",
+        "type": "bool",
+        "required": "false"
+      },
+      {
+        "name": "include_full_roles",
+        "type": "bool",
+        "required": "false"
+      }
+    ],
+    "return": "AuthzSubject",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\ninclude_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)\ninclude_full_roles = True # bool | Include full role data with permission policies for each grant (optional) (default to True)\n\ntry:\n    # Returns a listing of roles and permissions for the currently authenticated user.\n    api_response = api_instance.get_authorization_subjects_me(include_duplicates=include_duplicates, include_full_roles=include_full_roles)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_authorization_subjects_me: %s\\n\" % e)"
   },
   "get_authorization_subjects_rolecounts": {
     "operationId": "get_authorization_subjects_rolecounts",
@@ -42310,7 +42320,7 @@
       }
     ],
     "return": "OrphanRecordingListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nhas_conversation = False # bool | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional) (default to False)\nmedia = 'media_example' # str | Filter resulting orphans based on their media type (optional)\n\ntry:\n    # Gets all orphan recordings\n    api_response = api_instance.get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RecordingApi->get_orphanrecordings: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nhas_conversation = False # bool | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. (optional) (default to False)\nmedia = 'media_example' # str | Filter resulting orphans based on their media type (optional)\n\ntry:\n    # Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings\n    api_response = api_instance.get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RecordingApi->get_orphanrecordings: %s\\n\" % e)"
   },
   "get_recording_batchrequest": {
     "operationId": "get_recording_batchrequest",

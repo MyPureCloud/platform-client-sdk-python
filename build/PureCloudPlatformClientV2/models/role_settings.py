@@ -50,6 +50,7 @@ class RoleSettings(object):
             'id': 'str',
             'backfill_enabled': 'bool',
             'authorization_grant_division_aware': 'bool',
+            'genesys_org_policy_bypass': 'bool',
             'self_uri': 'str'
         }
 
@@ -57,12 +58,14 @@ class RoleSettings(object):
             'id': 'id',
             'backfill_enabled': 'backfillEnabled',
             'authorization_grant_division_aware': 'authorizationGrantDivisionAware',
+            'genesys_org_policy_bypass': 'genesysOrgPolicyBypass',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._backfill_enabled = None
         self._authorization_grant_division_aware = None
+        self._genesys_org_policy_bypass = None
         self._self_uri = None
 
     @property
@@ -136,6 +139,30 @@ class RoleSettings(object):
         
 
         self._authorization_grant_division_aware = authorization_grant_division_aware
+
+    @property
+    def genesys_org_policy_bypass(self) -> bool:
+        """
+        Gets the genesys_org_policy_bypass of this RoleSettings.
+        Boolean enabling skip of attribute-based access control policy enforcement when enabled and the organization is on the Genesys bypass list
+
+        :return: The genesys_org_policy_bypass of this RoleSettings.
+        :rtype: bool
+        """
+        return self._genesys_org_policy_bypass
+
+    @genesys_org_policy_bypass.setter
+    def genesys_org_policy_bypass(self, genesys_org_policy_bypass: bool) -> None:
+        """
+        Sets the genesys_org_policy_bypass of this RoleSettings.
+        Boolean enabling skip of attribute-based access control policy enforcement when enabled and the organization is on the Genesys bypass list
+
+        :param genesys_org_policy_bypass: The genesys_org_policy_bypass of this RoleSettings.
+        :type: bool
+        """
+        
+
+        self._genesys_org_policy_bypass = genesys_org_policy_bypass
 
     @property
     def self_uri(self) -> str:

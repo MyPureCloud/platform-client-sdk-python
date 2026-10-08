@@ -35,6 +35,7 @@ if TYPE_CHECKING:
     from . import ListWrapperRequiredDateRange
     from . import ValueWrapperDate
     from . import ValueWrapperShiftTradeTargetRequestItem
+    from . import ValueWrapperString
     from . import WfmVersionedEntityMetadata
 
 class UpdateShiftTradeJobRequest(object):
@@ -56,6 +57,7 @@ class UpdateShiftTradeJobRequest(object):
             'target': 'ValueWrapperShiftTradeTargetRequestItem',
             'expiration_date': 'ValueWrapperDate',
             'acceptable_intervals': 'ListWrapperRequiredDateRange',
+            'review_note': 'ValueWrapperString',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -64,6 +66,7 @@ class UpdateShiftTradeJobRequest(object):
             'target': 'target',
             'expiration_date': 'expirationDate',
             'acceptable_intervals': 'acceptableIntervals',
+            'review_note': 'reviewNote',
             'metadata': 'metadata'
         }
 
@@ -71,6 +74,7 @@ class UpdateShiftTradeJobRequest(object):
         self._target = None
         self._expiration_date = None
         self._acceptable_intervals = None
+        self._review_note = None
         self._metadata = None
 
     @property
@@ -168,6 +172,30 @@ class UpdateShiftTradeJobRequest(object):
         
 
         self._acceptable_intervals = acceptable_intervals
+
+    @property
+    def review_note(self) -> 'ValueWrapperString':
+        """
+        Gets the review_note of this UpdateShiftTradeJobRequest.
+        Optional note from the initiating user for shift trade review
+
+        :return: The review_note of this UpdateShiftTradeJobRequest.
+        :rtype: ValueWrapperString
+        """
+        return self._review_note
+
+    @review_note.setter
+    def review_note(self, review_note: 'ValueWrapperString') -> None:
+        """
+        Sets the review_note of this UpdateShiftTradeJobRequest.
+        Optional note from the initiating user for shift trade review
+
+        :param review_note: The review_note of this UpdateShiftTradeJobRequest.
+        :type: ValueWrapperString
+        """
+        
+
+        self._review_note = review_note
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

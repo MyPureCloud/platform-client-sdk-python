@@ -55,7 +55,7 @@ class ConversationCallbackEventTopicConversationRoutingData(object):
             'priority': 'int',
             'skills': 'list[ConversationCallbackEventTopicUriReference]',
             'scored_agents': 'list[ConversationCallbackEventTopicScoredAgent]',
-            'skill_expression_id': 'ConversationCallbackEventTopicUriReference'
+            'skill_expression_id': 'str'
         }
 
         self.attribute_map = {
@@ -195,24 +195,24 @@ class ConversationCallbackEventTopicConversationRoutingData(object):
         self._scored_agents = scored_agents
 
     @property
-    def skill_expression_id(self) -> 'ConversationCallbackEventTopicUriReference':
+    def skill_expression_id(self) -> str:
         """
         Gets the skill_expression_id of this ConversationCallbackEventTopicConversationRoutingData.
-        A UriReference for a resource
+        The skill expression to use for routing decisions. If specified, it takes priority over skills.
 
         :return: The skill_expression_id of this ConversationCallbackEventTopicConversationRoutingData.
-        :rtype: ConversationCallbackEventTopicUriReference
+        :rtype: str
         """
         return self._skill_expression_id
 
     @skill_expression_id.setter
-    def skill_expression_id(self, skill_expression_id: 'ConversationCallbackEventTopicUriReference') -> None:
+    def skill_expression_id(self, skill_expression_id: str) -> None:
         """
         Sets the skill_expression_id of this ConversationCallbackEventTopicConversationRoutingData.
-        A UriReference for a resource
+        The skill expression to use for routing decisions. If specified, it takes priority over skills.
 
         :param skill_expression_id: The skill_expression_id of this ConversationCallbackEventTopicConversationRoutingData.
-        :type: ConversationCallbackEventTopicUriReference
+        :type: str
         """
         
 

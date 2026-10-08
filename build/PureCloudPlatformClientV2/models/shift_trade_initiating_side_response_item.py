@@ -55,20 +55,23 @@ class ShiftTradeInitiatingSideResponseItem(object):
             'user': 'UserReference',
             'management_unit': 'ManagementUnitReference',
             'schedule': 'ScheduleReferenceWithBusinessUnit',
-            'shift': 'ShiftTradeShiftResponseItem'
+            'shift': 'ShiftTradeShiftResponseItem',
+            'review_note': 'str'
         }
 
         self.attribute_map = {
             'user': 'user',
             'management_unit': 'managementUnit',
             'schedule': 'schedule',
-            'shift': 'shift'
+            'shift': 'shift',
+            'review_note': 'reviewNote'
         }
 
         self._user = None
         self._management_unit = None
         self._schedule = None
         self._shift = None
+        self._review_note = None
 
     @property
     def user(self) -> 'UserReference':
@@ -165,6 +168,30 @@ class ShiftTradeInitiatingSideResponseItem(object):
         
 
         self._shift = shift
+
+    @property
+    def review_note(self) -> str:
+        """
+        Gets the review_note of this ShiftTradeInitiatingSideResponseItem.
+        Optional note from the initiating user for shift trade review
+
+        :return: The review_note of this ShiftTradeInitiatingSideResponseItem.
+        :rtype: str
+        """
+        return self._review_note
+
+    @review_note.setter
+    def review_note(self, review_note: str) -> None:
+        """
+        Sets the review_note of this ShiftTradeInitiatingSideResponseItem.
+        Optional note from the initiating user for shift trade review
+
+        :param review_note: The review_note of this ShiftTradeInitiatingSideResponseItem.
+        :type: str
+        """
+        
+
+        self._review_note = review_note
 
     def to_dict(self):
         """

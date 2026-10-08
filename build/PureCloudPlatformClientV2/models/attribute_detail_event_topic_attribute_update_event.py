@@ -55,7 +55,8 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
             'attributes': 'dict(str, str)',
             'conversation_external_contact_ids': 'list[str]',
             'conversation_external_organization_ids': 'list[str]',
-            'communications': 'list[AttributeDetailEventTopicCommunication]'
+            'communications': 'list[AttributeDetailEventTopicCommunication]',
+            'participant_start_time': 'int'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
             'attributes': 'attributes',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
-            'communications': 'communications'
+            'communications': 'communications',
+            'participant_start_time': 'participantStartTime'
         }
 
         self._event_time = None
@@ -75,6 +77,7 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
         self._communications = None
+        self._participant_start_time = None
 
     @property
     def event_time(self) -> int:
@@ -243,6 +246,30 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         
 
         self._communications = communications
+
+    @property
+    def participant_start_time(self) -> int:
+        """
+        Gets the participant_start_time of this AttributeDetailEventTopicAttributeUpdateEvent.
+
+
+        :return: The participant_start_time of this AttributeDetailEventTopicAttributeUpdateEvent.
+        :rtype: int
+        """
+        return self._participant_start_time
+
+    @participant_start_time.setter
+    def participant_start_time(self, participant_start_time: int) -> None:
+        """
+        Sets the participant_start_time of this AttributeDetailEventTopicAttributeUpdateEvent.
+
+
+        :param participant_start_time: The participant_start_time of this AttributeDetailEventTopicAttributeUpdateEvent.
+        :type: int
+        """
+        
+
+        self._participant_start_time = participant_start_time
 
     def to_dict(self):
         """

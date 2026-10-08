@@ -96,7 +96,7 @@ class WhatsAppEmbeddedSignupIntegrationActivationRequest(object):
     def name(self) -> str:
         """
         Gets the name of this WhatsAppEmbeddedSignupIntegrationActivationRequest.
-        WhatsApp Integration name
+        The WhatsApp integration name. Required for Embedded Signup v4 activation; not used in v2.
 
         :return: The name of this WhatsAppEmbeddedSignupIntegrationActivationRequest.
         :rtype: str
@@ -107,7 +107,7 @@ class WhatsAppEmbeddedSignupIntegrationActivationRequest(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this WhatsAppEmbeddedSignupIntegrationActivationRequest.
-        WhatsApp Integration name
+        The WhatsApp integration name. Required for Embedded Signup v4 activation; not used in v2.
 
         :param name: The name of this WhatsAppEmbeddedSignupIntegrationActivationRequest.
         :type: str

@@ -619,7 +619,7 @@ class EmailMediaParticipant(object):
     def queue(self) -> 'DomainEntityRef':
         """
         Gets the queue of this EmailMediaParticipant.
-        The PureCloud queue for this participant.
+        The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.
 
         :return: The queue of this EmailMediaParticipant.
         :rtype: DomainEntityRef
@@ -630,7 +630,7 @@ class EmailMediaParticipant(object):
     def queue(self, queue: 'DomainEntityRef') -> None:
         """
         Sets the queue of this EmailMediaParticipant.
-        The PureCloud queue for this participant.
+        The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.
 
         :param queue: The queue of this EmailMediaParticipant.
         :type: DomainEntityRef

@@ -33,7 +33,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import JourneyWebEventsNotificationExternalContact
-    from . import JourneyWebEventsNotificationOutcomeAchievedMessage
     from . import JourneyWebEventsNotificationSegmentAssignmentMessage
     from . import JourneyWebEventsNotificationSession
     from . import JourneyWebEventsNotificationWebActionMessage
@@ -64,7 +63,6 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
             'event_type': 'str',
             'web_event': 'JourneyWebEventsNotificationWebMessage',
             'web_action_event': 'JourneyWebEventsNotificationWebActionMessage',
-            'outcome_achieved_event': 'JourneyWebEventsNotificationOutcomeAchievedMessage',
             'segment_assignment_event': 'JourneyWebEventsNotificationSegmentAssignmentMessage'
         }
 
@@ -79,7 +77,6 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
             'event_type': 'eventType',
             'web_event': 'webEvent',
             'web_action_event': 'webActionEvent',
-            'outcome_achieved_event': 'outcomeAchievedEvent',
             'segment_assignment_event': 'segmentAssignmentEvent'
         }
 
@@ -93,7 +90,6 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         self._event_type = None
         self._web_event = None
         self._web_action_event = None
-        self._outcome_achieved_event = None
         self._segment_assignment_event = None
 
     @property
@@ -286,7 +282,7 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         """
         if isinstance(event_type, int):
             event_type = str(event_type)
-        allowed_values = ["WebEvent", "WebActionEvent", "OutcomeAchievedEvent", "SegmentAssignmentEvent"]
+        allowed_values = ["WebEvent", "WebActionEvent", "SegmentAssignmentEvent"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -340,30 +336,6 @@ class JourneyWebEventsNotificationWebEventsNotification(object):
         
 
         self._web_action_event = web_action_event
-
-    @property
-    def outcome_achieved_event(self) -> 'JourneyWebEventsNotificationOutcomeAchievedMessage':
-        """
-        Gets the outcome_achieved_event of this JourneyWebEventsNotificationWebEventsNotification.
-
-
-        :return: The outcome_achieved_event of this JourneyWebEventsNotificationWebEventsNotification.
-        :rtype: JourneyWebEventsNotificationOutcomeAchievedMessage
-        """
-        return self._outcome_achieved_event
-
-    @outcome_achieved_event.setter
-    def outcome_achieved_event(self, outcome_achieved_event: 'JourneyWebEventsNotificationOutcomeAchievedMessage') -> None:
-        """
-        Sets the outcome_achieved_event of this JourneyWebEventsNotificationWebEventsNotification.
-
-
-        :param outcome_achieved_event: The outcome_achieved_event of this JourneyWebEventsNotificationWebEventsNotification.
-        :type: JourneyWebEventsNotificationOutcomeAchievedMessage
-        """
-        
-
-        self._outcome_achieved_event = outcome_achieved_event
 
     @property
     def segment_assignment_event(self) -> 'JourneyWebEventsNotificationSegmentAssignmentMessage':

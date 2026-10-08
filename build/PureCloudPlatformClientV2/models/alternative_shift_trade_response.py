@@ -62,6 +62,7 @@ class AlternativeShiftTradeResponse(object):
             'user': 'UserReference',
             'week_date': 'date',
             'expiration_date': 'datetime',
+            'review_note': 'str',
             'state': 'str',
             'processing_status': 'str',
             'system_date_reviewed': 'datetime',
@@ -82,6 +83,7 @@ class AlternativeShiftTradeResponse(object):
             'user': 'user',
             'week_date': 'weekDate',
             'expiration_date': 'expirationDate',
+            'review_note': 'reviewNote',
             'state': 'state',
             'processing_status': 'processingStatus',
             'system_date_reviewed': 'systemDateReviewed',
@@ -101,6 +103,7 @@ class AlternativeShiftTradeResponse(object):
         self._user = None
         self._week_date = None
         self._expiration_date = None
+        self._review_note = None
         self._state = None
         self._processing_status = None
         self._system_date_reviewed = None
@@ -325,6 +328,30 @@ class AlternativeShiftTradeResponse(object):
         
 
         self._expiration_date = expiration_date
+
+    @property
+    def review_note(self) -> str:
+        """
+        Gets the review_note of this AlternativeShiftTradeResponse.
+        Optional note from the initiating user for shift trade review
+
+        :return: The review_note of this AlternativeShiftTradeResponse.
+        :rtype: str
+        """
+        return self._review_note
+
+    @review_note.setter
+    def review_note(self, review_note: str) -> None:
+        """
+        Sets the review_note of this AlternativeShiftTradeResponse.
+        Optional note from the initiating user for shift trade review
+
+        :param review_note: The review_note of this AlternativeShiftTradeResponse.
+        :type: str
+        """
+        
+
+        self._review_note = review_note
 
     @property
     def state(self) -> str:

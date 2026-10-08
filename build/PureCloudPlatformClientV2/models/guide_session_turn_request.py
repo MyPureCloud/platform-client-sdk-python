@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import GuideSessionInputEvent
+    from . import GuideSessionTurnRequestContext
     from . import GuideSessionVariable
     from . import KnowledgeSettings
 
@@ -55,7 +56,8 @@ class GuideSessionTurnRequest(object):
             'language_code': 'str',
             'version': 'str',
             'input_variables': 'list[GuideSessionVariable]',
-            'knowledge_settings': 'KnowledgeSettings'
+            'knowledge_settings': 'KnowledgeSettings',
+            'context': 'GuideSessionTurnRequestContext'
         }
 
         self.attribute_map = {
@@ -63,7 +65,8 @@ class GuideSessionTurnRequest(object):
             'language_code': 'languageCode',
             'version': 'version',
             'input_variables': 'inputVariables',
-            'knowledge_settings': 'knowledgeSettings'
+            'knowledge_settings': 'knowledgeSettings',
+            'context': 'context'
         }
 
         self._input_event = None
@@ -71,6 +74,7 @@ class GuideSessionTurnRequest(object):
         self._version = None
         self._input_variables = None
         self._knowledge_settings = None
+        self._context = None
 
     @property
     def input_event(self) -> 'GuideSessionInputEvent':
@@ -191,6 +195,30 @@ class GuideSessionTurnRequest(object):
         
 
         self._knowledge_settings = knowledge_settings
+
+    @property
+    def context(self) -> 'GuideSessionTurnRequestContext':
+        """
+        Gets the context of this GuideSessionTurnRequest.
+        The context for this turn, including conversation custom attributes and messages.
+
+        :return: The context of this GuideSessionTurnRequest.
+        :rtype: GuideSessionTurnRequestContext
+        """
+        return self._context
+
+    @context.setter
+    def context(self, context: 'GuideSessionTurnRequestContext') -> None:
+        """
+        Sets the context of this GuideSessionTurnRequest.
+        The context for this turn, including conversation custom attributes and messages.
+
+        :param context: The context of this GuideSessionTurnRequest.
+        :type: GuideSessionTurnRequestContext
+        """
+        
+
+        self._context = context
 
     def to_dict(self):
         """

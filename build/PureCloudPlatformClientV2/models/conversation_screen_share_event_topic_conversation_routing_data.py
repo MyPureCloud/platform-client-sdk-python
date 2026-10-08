@@ -55,7 +55,7 @@ class ConversationScreenShareEventTopicConversationRoutingData(object):
             'priority': 'int',
             'skills': 'list[ConversationScreenShareEventTopicUriReference]',
             'scored_agents': 'list[ConversationScreenShareEventTopicScoredAgent]',
-            'skill_expression_id': 'ConversationScreenShareEventTopicUriReference'
+            'skill_expression_id': 'str'
         }
 
         self.attribute_map = {
@@ -195,24 +195,24 @@ class ConversationScreenShareEventTopicConversationRoutingData(object):
         self._scored_agents = scored_agents
 
     @property
-    def skill_expression_id(self) -> 'ConversationScreenShareEventTopicUriReference':
+    def skill_expression_id(self) -> str:
         """
         Gets the skill_expression_id of this ConversationScreenShareEventTopicConversationRoutingData.
-        A UriReference for a resource
+        The skill expression to use for routing decisions. If specified, it takes priority over skills.
 
         :return: The skill_expression_id of this ConversationScreenShareEventTopicConversationRoutingData.
-        :rtype: ConversationScreenShareEventTopicUriReference
+        :rtype: str
         """
         return self._skill_expression_id
 
     @skill_expression_id.setter
-    def skill_expression_id(self, skill_expression_id: 'ConversationScreenShareEventTopicUriReference') -> None:
+    def skill_expression_id(self, skill_expression_id: str) -> None:
         """
         Sets the skill_expression_id of this ConversationScreenShareEventTopicConversationRoutingData.
-        A UriReference for a resource
+        The skill expression to use for routing decisions. If specified, it takes priority over skills.
 
         :param skill_expression_id: The skill_expression_id of this ConversationScreenShareEventTopicConversationRoutingData.
-        :type: ConversationScreenShareEventTopicUriReference
+        :type: str
         """
         
 

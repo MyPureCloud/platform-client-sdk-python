@@ -48,16 +48,19 @@ class SummarySettingParticipantLabels(object):
         """
         self.swagger_types = {
             'internal': 'str',
-            'external': 'str'
+            'external': 'str',
+            'virtual_agent': 'str'
         }
 
         self.attribute_map = {
             'internal': 'internal',
-            'external': 'external'
+            'external': 'external',
+            'virtual_agent': 'virtualAgent'
         }
 
         self._internal = None
         self._external = None
+        self._virtual_agent = None
 
     @property
     def internal(self) -> str:
@@ -106,6 +109,30 @@ class SummarySettingParticipantLabels(object):
         
 
         self._external = external
+
+    @property
+    def virtual_agent(self) -> str:
+        """
+        Gets the virtual_agent of this SummarySettingParticipantLabels.
+        Specify how to refer the virtual agent of the interaction.
+
+        :return: The virtual_agent of this SummarySettingParticipantLabels.
+        :rtype: str
+        """
+        return self._virtual_agent
+
+    @virtual_agent.setter
+    def virtual_agent(self, virtual_agent: str) -> None:
+        """
+        Sets the virtual_agent of this SummarySettingParticipantLabels.
+        Specify how to refer the virtual agent of the interaction.
+
+        :param virtual_agent: The virtual_agent of this SummarySettingParticipantLabels.
+        :type: str
+        """
+        
+
+        self._virtual_agent = virtual_agent
 
     def to_dict(self):
         """

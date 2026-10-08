@@ -6700,4 +6700,4 @@ except ApiException as e:
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

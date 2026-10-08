@@ -58,7 +58,8 @@ class SuggestionContext(object):
             'external_contact': 'AddressableEntityRef',
             'utterance': 'Entity',
             'message': 'AddressableEntityRef',
-            'query_statement': 'str'
+            'query_statement': 'str',
+            'language': 'str'
         }
 
         self.attribute_map = {
@@ -69,7 +70,8 @@ class SuggestionContext(object):
             'external_contact': 'externalContact',
             'utterance': 'utterance',
             'message': 'message',
-            'query_statement': 'queryStatement'
+            'query_statement': 'queryStatement',
+            'language': 'language'
         }
 
         self._queue = None
@@ -80,6 +82,7 @@ class SuggestionContext(object):
         self._utterance = None
         self._message = None
         self._query_statement = None
+        self._language = None
 
     @property
     def queue(self) -> 'AddressableEntityRef':
@@ -282,6 +285,30 @@ class SuggestionContext(object):
         
 
         self._query_statement = query_statement
+
+    @property
+    def language(self) -> str:
+        """
+        Gets the language of this SuggestionContext.
+        The language of the conversation for which the suggestion was generated, in lower case, for example: 'en-us'.
+
+        :return: The language of this SuggestionContext.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language: str) -> None:
+        """
+        Sets the language of this SuggestionContext.
+        The language of the conversation for which the suggestion was generated, in lower case, for example: 'en-us'.
+
+        :param language: The language of this SuggestionContext.
+        :type: str
+        """
+        
+
+        self._language = language
 
     def to_dict(self):
         """

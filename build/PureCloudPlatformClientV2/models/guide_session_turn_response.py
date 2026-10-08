@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import GuideSessionTurnInvocationResponse
+    from . import GuideSessionTurnResponseContext
     from . import GuideSessionTurnResponseData
     from . import GuideSessionVariable
 
@@ -56,7 +57,8 @@ class GuideSessionTurnResponse(object):
             'result': 'str',
             'output_variables': 'list[GuideSessionVariable]',
             'invocation_id': 'str',
-            'invocations': 'list[GuideSessionTurnInvocationResponse]'
+            'invocations': 'list[GuideSessionTurnInvocationResponse]',
+            'context': 'GuideSessionTurnResponseContext'
         }
 
         self.attribute_map = {
@@ -65,7 +67,8 @@ class GuideSessionTurnResponse(object):
             'result': 'result',
             'output_variables': 'outputVariables',
             'invocation_id': 'invocationId',
-            'invocations': 'invocations'
+            'invocations': 'invocations',
+            'context': 'context'
         }
 
         self._response = None
@@ -74,6 +77,7 @@ class GuideSessionTurnResponse(object):
         self._output_variables = None
         self._invocation_id = None
         self._invocations = None
+        self._context = None
 
     @property
     def response(self) -> 'GuideSessionTurnResponseData':
@@ -231,6 +235,30 @@ class GuideSessionTurnResponse(object):
         
 
         self._invocations = invocations
+
+    @property
+    def context(self) -> 'GuideSessionTurnResponseContext':
+        """
+        Gets the context of this GuideSessionTurnResponse.
+        The context for this turn, including conversation custom attribute updates.
+
+        :return: The context of this GuideSessionTurnResponse.
+        :rtype: GuideSessionTurnResponseContext
+        """
+        return self._context
+
+    @context.setter
+    def context(self, context: 'GuideSessionTurnResponseContext') -> None:
+        """
+        Sets the context of this GuideSessionTurnResponse.
+        The context for this turn, including conversation custom attribute updates.
+
+        :param context: The context of this GuideSessionTurnResponse.
+        :type: GuideSessionTurnResponseContext
+        """
+        
+
+        self._context = context
 
     def to_dict(self):
         """

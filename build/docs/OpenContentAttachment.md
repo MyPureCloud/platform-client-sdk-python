@@ -13,7 +13,8 @@
 | **text** | str | Text associated with attachment such as an image caption. | [optional] |
 | **sha256** | str | Secure hash of the attachment content. | [optional] |
 | **filename** | str | Suggested file name for attachment. | [optional] |
+| **thumbnail** | [OpenContentThumbnail](OpenContentThumbnail) | Thumbnail image for the attachment content. Not always available. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

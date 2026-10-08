@@ -155,7 +155,7 @@ class Contact(object):
     def type(self) -> str:
         """
         Gets the type of this Contact.
-
+        The type of this contact entry. Note: the PRIMARY email address cannot be changed via PATCH /api/v2/users/{userId}; submitting a modified value for the PRIMARY entry returns a 400 error.
 
         :return: The type of this Contact.
         :rtype: str
@@ -166,7 +166,7 @@ class Contact(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this Contact.
-
+        The type of this contact entry. Note: the PRIMARY email address cannot be changed via PATCH /api/v2/users/{userId}; submitting a modified value for the PRIMARY entry returns a 400 error.
 
         :param type: The type of this Contact.
         :type: str

@@ -55,7 +55,6 @@ class Case(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'division': 'StarrableDivision',
             'version': 'int',
             'reference': 'str',
@@ -82,7 +81,6 @@ class Case(object):
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'division': 'division',
             'version': 'version',
             'reference': 'reference',
@@ -108,7 +106,6 @@ class Case(object):
         }
 
         self._id = None
-        self._name = None
         self._division = None
         self._version = None
         self._reference = None
@@ -155,30 +152,6 @@ class Case(object):
         
 
         self._id = id
-
-    @property
-    def name(self) -> str:
-        """
-        Gets the name of this Case.
-        The name of the Case.
-
-        :return: The name of this Case.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: str) -> None:
-        """
-        Sets the name of this Case.
-        The name of the Case.
-
-        :param name: The name of this Case.
-        :type: str
-        """
-        
-
-        self._name = name
 
     @property
     def division(self) -> 'StarrableDivision':

@@ -2157,12 +2157,13 @@ class UsersApi(object):
             for asynchronous request. (optional)
         :param str subject_id: Subject ID (user or group) (required)
         :param bool include_duplicates: Include multiple entries with the same role and division but different subjects
+        :param bool include_full_roles: Include full role data with permission policies for each grant
         :return: AuthzSubject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['subject_id', 'include_duplicates']
+        all_params = ['subject_id', 'include_duplicates', 'include_full_roles']
         all_params.append('callback')
 
         params = locals()
@@ -2188,6 +2189,8 @@ class UsersApi(object):
         query_params = {}
         if 'include_duplicates' in params:
             query_params['includeDuplicates'] = params['include_duplicates']
+        if 'include_full_roles' in params:
+            query_params['includeFullRoles'] = params['include_full_roles']
 
         header_params = {}
 
@@ -2237,12 +2240,13 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param bool include_duplicates: Include multiple entries with the same role and division but different subjects
+        :param bool include_full_roles: Include full role data with permission policies for each grant
         :return: AuthzSubject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['include_duplicates']
+        all_params = ['include_duplicates', 'include_full_roles']
         all_params.append('callback')
 
         params = locals()
@@ -2263,6 +2267,8 @@ class UsersApi(object):
         query_params = {}
         if 'include_duplicates' in params:
             query_params['includeDuplicates'] = params['include_duplicates']
+        if 'include_full_roles' in params:
+            query_params['includeFullRoles'] = params['include_full_roles']
 
         header_params = {}
 

@@ -15169,7 +15169,7 @@ class ConversationsApi(object):
     def patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id(self, integration_id: str, body: 'WhatsAppEmbeddedSignupIntegrationActivationRequest', **kwargs) -> 'WhatsAppIntegration':
         """
         Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
-        Supply the two-step verification PIN. Embedded Signup v2: phoneNumber (E.164 from availablePhoneNumbers) and pin. Embedded Signup v4: pin only. Poll GET until status is Active.
+        Supply the two-step verification PIN. Embedded Signup v2: phoneNumber (E.164 from availablePhoneNumbers) and pin. Embedded Signup v4: pin and name are required; the name replaces the temporary name the backend assigned at creation with the desired integration name. Poll GET until status is Active.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

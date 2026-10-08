@@ -211,7 +211,7 @@ class ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent(
         """
         if isinstance(trigger_type, int):
             trigger_type = str(trigger_type)
-        allowed_values = ["Unknown", "Fallback", "ConversationStart", "ConversationTransfer", "ConversationEnd", "Intent"]
+        allowed_values = ["Unknown", "Fallback", "ConversationStart", "ConversationTransfer", "ConversationEnd", "Intent", "Sentiment"]
         if trigger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for trigger_type -> " + trigger_type)
             self._trigger_type = "outdated_sdk_version"

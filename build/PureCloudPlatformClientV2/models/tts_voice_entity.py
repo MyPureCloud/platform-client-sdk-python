@@ -206,7 +206,7 @@ class TtsVoiceEntity(object):
         """
         if isinstance(voice_type, int):
             voice_type = str(voice_type)
-        allowed_values = ["Standard", "Neural", "Wavenet", "Generative", "Chirp3", "Gemini"]
+        allowed_values = ["Standard", "Neural", "Wavenet", "Generative", "Chirp3", "Gemini", "LongForm", "Unknown"]
         if voice_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for voice_type -> " + voice_type)
             self._voice_type = "outdated_sdk_version"

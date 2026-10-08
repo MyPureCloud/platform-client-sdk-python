@@ -275,7 +275,7 @@ class UpdateUser(object):
     def addresses(self) -> List['Contact']:
         """
         Gets the addresses of this UpdateUser.
-        Email address, phone number, and/or extension for this user. One entry is allowed per media type
+        Email address, phone number, and/or extension for this user. One entry is allowed per media type. The PRIMARY email address cannot be changed through this field; submitting a modified value for the PRIMARY entry returns a 400 error.
 
         :return: The addresses of this UpdateUser.
         :rtype: list[Contact]
@@ -286,7 +286,7 @@ class UpdateUser(object):
     def addresses(self, addresses: List['Contact']) -> None:
         """
         Sets the addresses of this UpdateUser.
-        Email address, phone number, and/or extension for this user. One entry is allowed per media type
+        Email address, phone number, and/or extension for this user. One entry is allowed per media type. The PRIMARY email address cannot be changed through this field; submitting a modified value for the PRIMARY entry returns a 400 error.
 
         :param addresses: The addresses of this UpdateUser.
         :type: list[Contact]
@@ -323,7 +323,7 @@ class UpdateUser(object):
     def username(self) -> str:
         """
         Gets the username of this UpdateUser.
-
+        This value is ignored; the username cannot be changed through this endpoint.
 
         :return: The username of this UpdateUser.
         :rtype: str
@@ -334,7 +334,7 @@ class UpdateUser(object):
     def username(self, username: str) -> None:
         """
         Sets the username of this UpdateUser.
-
+        This value is ignored; the username cannot be changed through this endpoint.
 
         :param username: The username of this UpdateUser.
         :type: str

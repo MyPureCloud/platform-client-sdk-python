@@ -51,7 +51,8 @@ class CreateAlternativeShiftTradeRequest(object):
             'drop_shift_reference_keys': 'list[str]',
             'pickup_shift_reference_keys': 'list[str]',
             'alternative_shift_trade_granularity': 'str',
-            'expiration_date': 'datetime'
+            'expiration_date': 'datetime',
+            'review_note': 'str'
         }
 
         self.attribute_map = {
@@ -59,7 +60,8 @@ class CreateAlternativeShiftTradeRequest(object):
             'drop_shift_reference_keys': 'dropShiftReferenceKeys',
             'pickup_shift_reference_keys': 'pickupShiftReferenceKeys',
             'alternative_shift_trade_granularity': 'alternativeShiftTradeGranularity',
-            'expiration_date': 'expirationDate'
+            'expiration_date': 'expirationDate',
+            'review_note': 'reviewNote'
         }
 
         self._job_id = None
@@ -67,6 +69,7 @@ class CreateAlternativeShiftTradeRequest(object):
         self._pickup_shift_reference_keys = None
         self._alternative_shift_trade_granularity = None
         self._expiration_date = None
+        self._review_note = None
 
     @property
     def job_id(self) -> str:
@@ -192,6 +195,30 @@ class CreateAlternativeShiftTradeRequest(object):
         
 
         self._expiration_date = expiration_date
+
+    @property
+    def review_note(self) -> str:
+        """
+        Gets the review_note of this CreateAlternativeShiftTradeRequest.
+        Optional note for supervisors to review during alternative shift trade approval
+
+        :return: The review_note of this CreateAlternativeShiftTradeRequest.
+        :rtype: str
+        """
+        return self._review_note
+
+    @review_note.setter
+    def review_note(self, review_note: str) -> None:
+        """
+        Sets the review_note of this CreateAlternativeShiftTradeRequest.
+        Optional note for supervisors to review during alternative shift trade approval
+
+        :param review_note: The review_note of this CreateAlternativeShiftTradeRequest.
+        :type: str
+        """
+        
+
+        self._review_note = review_note
 
     def to_dict(self):
         """

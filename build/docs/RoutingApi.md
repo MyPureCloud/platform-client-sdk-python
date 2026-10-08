@@ -2654,7 +2654,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, whatsapp, open, instagram, apple |
+| **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, whatsapp, open, instagram, apple, linkedin |
 | **name** | **str**| Recipient Name | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
@@ -9010,4 +9010,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

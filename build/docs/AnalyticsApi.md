@@ -487,8 +487,6 @@ void (empty response body)
 
 Delete/cancel an async request for copilot aggregates
 
-delete_analytics_copilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/copilots/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -2177,8 +2175,6 @@ This endpoint does not need any parameters.
 
 Get status for async query for copilot aggregates
 
-get_analytics_copilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/copilots/aggregates/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -2226,8 +2222,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async aggregates query
-
-get_analytics_copilots_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/copilots/aggregates/jobs/{jobId}/results 
 
@@ -4943,8 +4937,6 @@ except ApiException as e:
 
 Query for copilot aggregates asynchronously
 
-post_analytics_copilots_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/copilots/aggregates/jobs 
 
 Requires ANY permissions: 
@@ -4992,8 +4984,6 @@ except ApiException as e:
 
 
 Query for copilot aggregates
-
-post_analytics_copilots_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/copilots/aggregates/query 
 
@@ -6931,4 +6921,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

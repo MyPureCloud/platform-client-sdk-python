@@ -54,20 +54,23 @@ class AddShiftTradeJobRequest(object):
             'initiating_shift': 'InitiatingShiftRequestItem',
             'acceptable_intervals': 'list[RequiredDateRange]',
             'target': 'ShiftTradeTargetRequestItem',
-            'expiration_date': 'datetime'
+            'expiration_date': 'datetime',
+            'review_note': 'str'
         }
 
         self.attribute_map = {
             'initiating_shift': 'initiatingShift',
             'acceptable_intervals': 'acceptableIntervals',
             'target': 'target',
-            'expiration_date': 'expirationDate'
+            'expiration_date': 'expirationDate',
+            'review_note': 'reviewNote'
         }
 
         self._initiating_shift = None
         self._acceptable_intervals = None
         self._target = None
         self._expiration_date = None
+        self._review_note = None
 
     @property
     def initiating_shift(self) -> 'InitiatingShiftRequestItem':
@@ -164,6 +167,30 @@ class AddShiftTradeJobRequest(object):
         
 
         self._expiration_date = expiration_date
+
+    @property
+    def review_note(self) -> str:
+        """
+        Gets the review_note of this AddShiftTradeJobRequest.
+        Optional note from the initiating user for shift trade review
+
+        :return: The review_note of this AddShiftTradeJobRequest.
+        :rtype: str
+        """
+        return self._review_note
+
+    @review_note.setter
+    def review_note(self, review_note: str) -> None:
+        """
+        Sets the review_note of this AddShiftTradeJobRequest.
+        Optional note from the initiating user for shift trade review
+
+        :param review_note: The review_note of this AddShiftTradeJobRequest.
+        :type: str
+        """
+        
+
+        self._review_note = review_note
 
     def to_dict(self):
         """

@@ -14,9 +14,8 @@
 | **customer_id_type** | str |  | [optional] |
 | **session** | [JourneyOutcomeEventsNotificationSession](JourneyOutcomeEventsNotificationSession) |  | [optional] |
 | **event_type** | str |  | [optional] |
-| **outcome_achieved_event** | [JourneyOutcomeEventsNotificationOutcomeAchievedMessage](JourneyOutcomeEventsNotificationOutcomeAchievedMessage) |  | [optional] |
 | **outcome_attribution_event_message** | [JourneyOutcomeEventsNotificationOutcomeAttributionMessage](JourneyOutcomeEventsNotificationOutcomeAttributionMessage) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

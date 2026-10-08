@@ -663,7 +663,7 @@ class CallMediaParticipant(object):
     def queue(self) -> 'DomainEntityRef':
         """
         Gets the queue of this CallMediaParticipant.
-        The PureCloud queue for this participant.
+        The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.
 
         :return: The queue of this CallMediaParticipant.
         :rtype: DomainEntityRef
@@ -674,7 +674,7 @@ class CallMediaParticipant(object):
     def queue(self, queue: 'DomainEntityRef') -> None:
         """
         Sets the queue of this CallMediaParticipant.
-        The PureCloud queue for this participant.
+        The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.
 
         :param queue: The queue of this CallMediaParticipant.
         :type: DomainEntityRef

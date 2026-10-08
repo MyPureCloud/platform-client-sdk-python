@@ -31,6 +31,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import OpenContentThumbnail
 
 class OpenContentAttachment(object):
     """
@@ -53,7 +55,8 @@ class OpenContentAttachment(object):
             'mime': 'str',
             'text': 'str',
             'sha256': 'str',
-            'filename': 'str'
+            'filename': 'str',
+            'thumbnail': 'OpenContentThumbnail'
         }
 
         self.attribute_map = {
@@ -63,7 +66,8 @@ class OpenContentAttachment(object):
             'mime': 'mime',
             'text': 'text',
             'sha256': 'sha256',
-            'filename': 'filename'
+            'filename': 'filename',
+            'thumbnail': 'thumbnail'
         }
 
         self._id = None
@@ -73,6 +77,7 @@ class OpenContentAttachment(object):
         self._text = None
         self._sha256 = None
         self._filename = None
+        self._thumbnail = None
 
     @property
     def id(self) -> str:
@@ -246,6 +251,30 @@ class OpenContentAttachment(object):
         
 
         self._filename = filename
+
+    @property
+    def thumbnail(self) -> 'OpenContentThumbnail':
+        """
+        Gets the thumbnail of this OpenContentAttachment.
+        Thumbnail image for the attachment content. Not always available.
+
+        :return: The thumbnail of this OpenContentAttachment.
+        :rtype: OpenContentThumbnail
+        """
+        return self._thumbnail
+
+    @thumbnail.setter
+    def thumbnail(self, thumbnail: 'OpenContentThumbnail') -> None:
+        """
+        Sets the thumbnail of this OpenContentAttachment.
+        Thumbnail image for the attachment content. Not always available.
+
+        :param thumbnail: The thumbnail of this OpenContentAttachment.
+        :type: OpenContentThumbnail
+        """
+        
+
+        self._thumbnail = thumbnail
 
     def to_dict(self):
         """

@@ -50,15 +50,18 @@ class AgentUpdateAlternativeShiftTradeRequest(object):
         """
         self.swagger_types = {
             'state': 'str',
+            'review_note': 'str',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
             'state': 'state',
+            'review_note': 'reviewNote',
             'metadata': 'metadata'
         }
 
         self._state = None
+        self._review_note = None
         self._metadata = None
 
     @property
@@ -89,6 +92,30 @@ class AgentUpdateAlternativeShiftTradeRequest(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def review_note(self) -> str:
+        """
+        Gets the review_note of this AgentUpdateAlternativeShiftTradeRequest.
+        Optional note for supervisors to review during alternative shift trade approval
+
+        :return: The review_note of this AgentUpdateAlternativeShiftTradeRequest.
+        :rtype: str
+        """
+        return self._review_note
+
+    @review_note.setter
+    def review_note(self, review_note: str) -> None:
+        """
+        Sets the review_note of this AgentUpdateAlternativeShiftTradeRequest.
+        Optional note for supervisors to review during alternative shift trade approval
+
+        :param review_note: The review_note of this AgentUpdateAlternativeShiftTradeRequest.
+        :type: str
+        """
+        
+
+        self._review_note = review_note
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

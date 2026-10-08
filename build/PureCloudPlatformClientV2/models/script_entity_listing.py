@@ -54,9 +54,9 @@ class ScriptEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'truncated_divisions': 'bool',
+            'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
-            'last_uri': 'str',
             'next_uri': 'str',
             'previous_uri': 'str',
             'page_count': 'int'
@@ -68,9 +68,9 @@ class ScriptEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'truncated_divisions': 'truncatedDivisions',
+            'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'last_uri': 'lastUri',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
             'page_count': 'pageCount'
@@ -81,9 +81,9 @@ class ScriptEntityListing(object):
         self._page_number = None
         self._total = None
         self._truncated_divisions = None
+        self._last_uri = None
         self._first_uri = None
         self._self_uri = None
-        self._last_uri = None
         self._next_uri = None
         self._previous_uri = None
         self._page_count = None
@@ -209,6 +209,30 @@ class ScriptEntityListing(object):
         self._truncated_divisions = truncated_divisions
 
     @property
+    def last_uri(self) -> str:
+        """
+        Gets the last_uri of this ScriptEntityListing.
+
+
+        :return: The last_uri of this ScriptEntityListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
+        """
+        Sets the last_uri of this ScriptEntityListing.
+
+
+        :param last_uri: The last_uri of this ScriptEntityListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
+
+    @property
     def first_uri(self) -> str:
         """
         Gets the first_uri of this ScriptEntityListing.
@@ -255,30 +279,6 @@ class ScriptEntityListing(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def last_uri(self) -> str:
-        """
-        Gets the last_uri of this ScriptEntityListing.
-
-
-        :return: The last_uri of this ScriptEntityListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri: str) -> None:
-        """
-        Sets the last_uri of this ScriptEntityListing.
-
-
-        :param last_uri: The last_uri of this ScriptEntityListing.
-        :type: str
-        """
-        
-
-        self._last_uri = last_uri
 
     @property
     def next_uri(self) -> str:
