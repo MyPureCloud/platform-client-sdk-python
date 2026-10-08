@@ -16,9 +16,8 @@
 | **event_type** | str |  | [optional] |
 | **web_event** | [JourneyWebEventsNotificationWebMessage](JourneyWebEventsNotificationWebMessage) |  | [optional] |
 | **web_action_event** | [JourneyWebEventsNotificationWebActionMessage](JourneyWebEventsNotificationWebActionMessage) |  | [optional] |
-| **outcome_achieved_event** | [JourneyWebEventsNotificationOutcomeAchievedMessage](JourneyWebEventsNotificationOutcomeAchievedMessage) |  | [optional] |
 | **segment_assignment_event** | [JourneyWebEventsNotificationSegmentAssignmentMessage](JourneyWebEventsNotificationSegmentAssignmentMessage) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

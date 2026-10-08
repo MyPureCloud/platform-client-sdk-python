@@ -23,7 +23,7 @@
 | **wrapup_prompt** | str | The wrap-up prompt indicating the type of wrap-up to be performed. | [optional] |
 | **media_roles** | list[str] | List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc | [optional] |
 | **user** | [DomainEntityRef](DomainEntityRef) | The PureCloud user for this participant. | [optional] |
-| **queue** | [DomainEntityRef](DomainEntityRef) | The PureCloud queue for this participant. | [optional] |
+| **queue** | [DomainEntityRef](DomainEntityRef) | The PureCloud queue for this participant. Id and selfUri will be populated, name is optional. | [optional] |
 | **team** | [DomainEntityRef](DomainEntityRef) | The PureCloud team for this participant. | [optional] |
 | **attributes** | dict(str, str) | A list of ad-hoc attributes for the participant. | [optional] |
 | **error_info** | [ErrorInfo](ErrorInfo) | If the conversation ends in error, contains additional error details. | [optional] |
@@ -56,4 +56,4 @@
 
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

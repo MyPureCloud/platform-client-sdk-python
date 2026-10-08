@@ -11,7 +11,8 @@
 | **version** | str | The version for this turn. | |
 | **input_variables** | [list[GuideSessionVariable]](GuideSessionVariable) | The input variables for this turn. | [optional] |
 | **knowledge_settings** | [KnowledgeSettings](KnowledgeSettings) | The knowledge settings for this turn. | [optional] |
+| **context** | [GuideSessionTurnRequestContext](GuideSessionTurnRequestContext) | The context for this turn, including conversation custom attributes and messages. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

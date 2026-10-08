@@ -7,7 +7,6 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | str | The globally unique identifier for the object. | [optional] |
-| **name** | str | The name of the Case. | [optional] |
 | **division** | [StarrableDivision](StarrableDivision) | The division to which this entity belongs. | [optional] |
 | **version** | int | The version of the Case. | [optional] |
 | **reference** | str | The reference identifier of the Case. | [optional] |
@@ -33,4 +32,4 @@
 
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

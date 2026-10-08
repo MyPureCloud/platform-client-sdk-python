@@ -1358,7 +1358,7 @@ except ApiException as e:
 
 ## get_authorization_subject
 
-> [**AuthzSubject**](AuthzSubject) get_authorization_subject(subject_id, include_duplicates=include_duplicates)
+> [**AuthzSubject**](AuthzSubject) get_authorization_subject(subject_id, include_duplicates=include_duplicates, include_full_roles=include_full_roles)
 
 
 Returns a listing of roles and permissions for a user.
@@ -1384,10 +1384,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.UsersApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
 include_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)
+include_full_roles = True # bool | Include full role data with permission policies for each grant (optional) (default to True)
 
 try:
     # Returns a listing of roles and permissions for a user.
-    api_response = api_instance.get_authorization_subject(subject_id, include_duplicates=include_duplicates)
+    api_response = api_instance.get_authorization_subject(subject_id, include_duplicates=include_duplicates, include_full_roles=include_full_roles)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_authorization_subject: %s\n" % e)
@@ -1400,6 +1401,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **include_duplicates** | **bool**| Include multiple entries with the same role and division but different subjects | [optional] [default to False]<br />**Values**: true, false |
+| **include_full_roles** | **bool**| Include full role data with permission policies for each grant | [optional] [default to True]<br />**Values**: true, false |
 
 ### Return type
 
@@ -1408,7 +1410,7 @@ except ApiException as e:
 
 ## get_authorization_subjects_me
 
-> [**AuthzSubject**](AuthzSubject) get_authorization_subjects_me(include_duplicates=include_duplicates)
+> [**AuthzSubject**](AuthzSubject) get_authorization_subjects_me(include_duplicates=include_duplicates, include_full_roles=include_full_roles)
 
 
 Returns a listing of roles and permissions for the currently authenticated user.
@@ -1432,10 +1434,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 include_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)
+include_full_roles = True # bool | Include full role data with permission policies for each grant (optional) (default to True)
 
 try:
     # Returns a listing of roles and permissions for the currently authenticated user.
-    api_response = api_instance.get_authorization_subjects_me(include_duplicates=include_duplicates)
+    api_response = api_instance.get_authorization_subjects_me(include_duplicates=include_duplicates, include_full_roles=include_full_roles)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_authorization_subjects_me: %s\n" % e)
@@ -1447,6 +1450,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **include_duplicates** | **bool**| Include multiple entries with the same role and division but different subjects | [optional] [default to False]<br />**Values**: true, false |
+| **include_full_roles** | **bool**| Include full role data with permission policies for each grant | [optional] [default to True]<br />**Values**: true, false |
 
 ### Return type
 
@@ -6661,4 +6665,4 @@ except ApiException as e:
 void (empty response body)
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

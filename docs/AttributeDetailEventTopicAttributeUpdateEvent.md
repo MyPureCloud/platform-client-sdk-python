@@ -13,7 +13,8 @@
 | **conversation_external_contact_ids** | list[str] |  | [optional] |
 | **conversation_external_organization_ids** | list[str] |  | [optional] |
 | **communications** | [list[AttributeDetailEventTopicCommunication]](AttributeDetailEventTopicCommunication) |  | [optional] |
+| **participant_start_time** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

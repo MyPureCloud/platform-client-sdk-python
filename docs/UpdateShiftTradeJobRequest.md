@@ -10,8 +10,9 @@
 | **target** | [ValueWrapperShiftTradeTargetRequestItem](ValueWrapperShiftTradeTargetRequestItem) | Target of the shift trade, if applicable | [optional] |
 | **expiration_date** | [ValueWrapperDate](ValueWrapperDate) | When this shift trade will expire. Date time is represented as an ISO-8601 string | [optional] |
 | **acceptable_intervals** | [ListWrapperRequiredDateRange](ListWrapperRequiredDateRange) | Time frames when the initiating user is willing to accept a shift in exchange. Setting the enclosed list to empty will make this a one sided trade request. | [optional] |
+| **review_note** | [ValueWrapperString](ValueWrapperString) | Optional note from the initiating user for shift trade review | [optional] |
 | **metadata** | [WfmVersionedEntityMetadata](WfmVersionedEntityMetadata) | Version metadata for the shift trade | |
 
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_

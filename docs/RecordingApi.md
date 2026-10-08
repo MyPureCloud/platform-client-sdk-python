@@ -21,7 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_recordings**](#get_conversation_recordings) | Get all of a Conversation&#39;s Recordings.|
 |[**get_orphanrecording**](#get_orphanrecording) | Gets a single orphan recording|
 |[**get_orphanrecording_media**](#get_orphanrecording_media) | Gets the media of a single orphan recording|
-|[**get_orphanrecordings**](#get_orphanrecordings) | Gets all orphan recordings|
+|[**get_orphanrecordings**](#get_orphanrecordings) | Gets all orphan recordings. When querying without &#39;hasConversation &#x3D; true&#39;, the results are capped at 500 orphan recordings|
 |[**get_recording_batchrequest**](#get_recording_batchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.|
 |[**get_recording_crossplatform_mediaretentionpolicies**](#get_recording_crossplatform_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
 |[**get_recording_crossplatform_mediaretentionpolicy**](#get_recording_crossplatform_mediaretentionpolicy) | Get a media retention policy|
@@ -875,7 +875,7 @@ except ApiException as e:
 > [**OrphanRecordingListing**](OrphanRecordingListing) get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)
 
 
-Gets all orphan recordings
+Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
 
 Wraps GET /api/v2/orphanrecordings 
 
@@ -902,11 +902,11 @@ sort_by = 'sort_by_example' # str | variable name requested to sort by (optional
 expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
-has_conversation = False # bool | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional) (default to False)
+has_conversation = False # bool | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. (optional) (default to False)
 media = 'media_example' # str | Filter resulting orphans based on their media type (optional)
 
 try:
-    # Gets all orphan recordings
+    # Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
     api_response = api_instance.get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)
     pprint(api_response)
 except ApiException as e:
@@ -924,7 +924,7 @@ except ApiException as e:
 | **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to False] |
+| **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. | [optional] [default to False] |
 | **media** | **str**| Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
 
 ### Return type
@@ -3030,4 +3030,4 @@ except ApiException as e:
 [**ManageDeleteProtectionResult**](ManageDeleteProtectionResult)
 
 
-_PureCloudPlatformClientV2 268.0.0_
+_PureCloudPlatformClientV2 269.0.0_
