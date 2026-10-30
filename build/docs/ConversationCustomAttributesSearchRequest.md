@@ -7,6 +7,8 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **expand** | list[str] | Expand your search with bulk lookups | [optional] |
+| **query_reserved_fields** | [list[ConversationCustomAttributesSearchCriteria]](ConversationCustomAttributesSearchCriteria) | The search criteria for reserved fields | [optional] |
+| **query_custom_attributes** | [list[ConversationCustomAttributesSearchCriteria]](ConversationCustomAttributesSearchCriteria) | The search criteria for custom attributes | [optional] |
 | **page_size** | int | The number of results per page | [optional] |
 | **page_number** | int | The page of resources you want to retrieve | [optional] |
 | **sort** | [list[SearchSort]](SearchSort) | Multi-value sort order, list of multiple sort values | [optional] |
@@ -15,4 +17,4 @@
 
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

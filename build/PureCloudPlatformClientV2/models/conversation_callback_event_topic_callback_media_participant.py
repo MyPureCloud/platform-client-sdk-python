@@ -104,7 +104,8 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'external_campaign': 'bool',
             'timeout_seconds': 'int',
             'callback_scheduled_time': 'datetime',
-            'automated_callback_config_id': 'str'
+            'automated_callback_config_id': 'str',
+            'public_ip_address': 'str'
         }
 
         self.attribute_map = {
@@ -156,7 +157,8 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'external_campaign': 'externalCampaign',
             'timeout_seconds': 'timeoutSeconds',
             'callback_scheduled_time': 'callbackScheduledTime',
-            'automated_callback_config_id': 'automatedCallbackConfigId'
+            'automated_callback_config_id': 'automatedCallbackConfigId',
+            'public_ip_address': 'publicIpAddress'
         }
 
         self._id = None
@@ -208,6 +210,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         self._timeout_seconds = None
         self._callback_scheduled_time = None
         self._automated_callback_config_id = None
+        self._public_ip_address = None
 
     @property
     def id(self) -> str:
@@ -1409,6 +1412,30 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         
 
         self._automated_callback_config_id = automated_callback_config_id
+
+    @property
+    def public_ip_address(self) -> str:
+        """
+        Gets the public_ip_address of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The public_ip_address of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: str
+        """
+        return self._public_ip_address
+
+    @public_ip_address.setter
+    def public_ip_address(self, public_ip_address: str) -> None:
+        """
+        Sets the public_ip_address of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param public_ip_address: The public_ip_address of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: str
+        """
+        
+
+        self._public_ip_address = public_ip_address
 
     def to_dict(self):
         """

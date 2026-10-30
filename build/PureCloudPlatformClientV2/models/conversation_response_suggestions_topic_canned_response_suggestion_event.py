@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationResponseSuggestionsTopicActiveSentiment
     from . import ConversationResponseSuggestionsTopicSuggestedCannedResponse
     from . import ConversationResponseSuggestionsTopicSuggestedIntent
     from . import ConversationResponseSuggestionsTopicSuggestionContext
@@ -61,7 +62,8 @@ class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent(object):
             'context': 'ConversationResponseSuggestionsTopicSuggestionContext',
             'feedback': 'ConversationResponseSuggestionsTopicSuggestionFeedback',
             'canned_response': 'ConversationResponseSuggestionsTopicSuggestedCannedResponse',
-            'active_intent': 'ConversationResponseSuggestionsTopicSuggestedIntent'
+            'active_intent': 'ConversationResponseSuggestionsTopicSuggestedIntent',
+            'active_sentiment': 'ConversationResponseSuggestionsTopicActiveSentiment'
         }
 
         self.attribute_map = {
@@ -74,7 +76,8 @@ class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent(object):
             'context': 'context',
             'feedback': 'feedback',
             'canned_response': 'cannedResponse',
-            'active_intent': 'activeIntent'
+            'active_intent': 'activeIntent',
+            'active_sentiment': 'activeSentiment'
         }
 
         self._event_time = None
@@ -87,6 +90,7 @@ class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent(object):
         self._feedback = None
         self._canned_response = None
         self._active_intent = None
+        self._active_sentiment = None
 
     @property
     def event_time(self) -> datetime:
@@ -342,6 +346,30 @@ class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent(object):
         
 
         self._active_intent = active_intent
+
+    @property
+    def active_sentiment(self) -> 'ConversationResponseSuggestionsTopicActiveSentiment':
+        """
+        Gets the active_sentiment of this ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent.
+
+
+        :return: The active_sentiment of this ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent.
+        :rtype: ConversationResponseSuggestionsTopicActiveSentiment
+        """
+        return self._active_sentiment
+
+    @active_sentiment.setter
+    def active_sentiment(self, active_sentiment: 'ConversationResponseSuggestionsTopicActiveSentiment') -> None:
+        """
+        Sets the active_sentiment of this ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent.
+
+
+        :param active_sentiment: The active_sentiment of this ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent.
+        :type: ConversationResponseSuggestionsTopicActiveSentiment
+        """
+        
+
+        self._active_sentiment = active_sentiment
 
     def to_dict(self):
         """

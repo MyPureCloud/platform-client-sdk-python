@@ -163,7 +163,7 @@ class CaseplanQueryRequest(object):
     def filters(self) -> List['CaseplanFilter']:
         """
         Gets the filters of this CaseplanQueryRequest.
-        List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId'. Multiple filters are combined with AND logic.
+        List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId', 'published'. Multiple filters are combined with AND logic.
 
         :return: The filters of this CaseplanQueryRequest.
         :rtype: list[CaseplanFilter]
@@ -174,7 +174,7 @@ class CaseplanQueryRequest(object):
     def filters(self, filters: List['CaseplanFilter']) -> None:
         """
         Sets the filters of this CaseplanQueryRequest.
-        List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId'. Multiple filters are combined with AND logic.
+        List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId', 'published'. Multiple filters are combined with AND logic.
 
         :param filters: The filters of this CaseplanQueryRequest.
         :type: list[CaseplanFilter]

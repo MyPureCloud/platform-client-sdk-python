@@ -62,6 +62,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'entity_token': 'str',
             'phone_number': 'str',
             'external_contact_id': 'str',
+            'reference_id': 'str',
+            'reference_type': 'str',
             'entity_modified_date': 'datetime',
             'entity_modified_by': 'str',
             'timestamp': 'int'
@@ -81,6 +83,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'entity_token': 'entityToken',
             'phone_number': 'phoneNumber',
             'external_contact_id': 'externalContactId',
+            'reference_id': 'referenceId',
+            'reference_type': 'referenceType',
             'entity_modified_date': 'entityModifiedDate',
             'entity_modified_by': 'entityModifiedBy',
             'timestamp': 'timestamp'
@@ -99,6 +103,8 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         self._entity_token = None
         self._phone_number = None
         self._external_contact_id = None
+        self._reference_id = None
+        self._reference_type = None
         self._entity_modified_date = None
         self._entity_modified_by = None
         self._timestamp = None
@@ -414,6 +420,59 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         
 
         self._external_contact_id = external_contact_id
+
+    @property
+    def reference_id(self) -> str:
+        """
+        Gets the reference_id of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The reference_id of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._reference_id
+
+    @reference_id.setter
+    def reference_id(self, reference_id: str) -> None:
+        """
+        Sets the reference_id of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param reference_id: The reference_id of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._reference_id = reference_id
+
+    @property
+    def reference_type(self) -> str:
+        """
+        Gets the reference_type of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The reference_type of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._reference_type
+
+    @reference_type.setter
+    def reference_type(self, reference_type: str) -> None:
+        """
+        Sets the reference_type of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param reference_type: The reference_type of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        if isinstance(reference_type, int):
+            reference_type = str(reference_type)
+        allowed_values = ["UNKNOWN", "SALESFORCE"]
+        if reference_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for reference_type -> " + reference_type)
+            self._reference_type = "outdated_sdk_version"
+        else:
+            self._reference_type = reference_type
 
     @property
     def entity_modified_date(self) -> datetime:

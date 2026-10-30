@@ -61,7 +61,10 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
             'division_id': 'str',
             'conversation_external_contact_ids': 'list[str]',
             'conversation_external_organization_ids': 'list[str]',
-            'utilization_label': 'str'
+            'utilization_label': 'str',
+            'outbound_campaign_id': 'str',
+            'outbound_contact_list_id': 'str',
+            'outbound_contact_id': 'str'
         }
 
         self.attribute_map = {
@@ -79,7 +82,10 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
             'division_id': 'divisionId',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
-            'utilization_label': 'utilizationLabel'
+            'utilization_label': 'utilizationLabel',
+            'outbound_campaign_id': 'outboundCampaignId',
+            'outbound_contact_list_id': 'outboundContactListId',
+            'outbound_contact_id': 'outboundContactId'
         }
 
         self._event_time = None
@@ -97,6 +103,9 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
         self._utilization_label = None
+        self._outbound_campaign_id = None
+        self._outbound_contact_list_id = None
+        self._outbound_contact_id = None
 
     @property
     def event_time(self) -> int:
@@ -467,6 +476,78 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
         
 
         self._utilization_label = utilization_label
+
+    @property
+    def outbound_campaign_id(self) -> str:
+        """
+        Gets the outbound_campaign_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :return: The outbound_campaign_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :rtype: str
+        """
+        return self._outbound_campaign_id
+
+    @outbound_campaign_id.setter
+    def outbound_campaign_id(self, outbound_campaign_id: str) -> None:
+        """
+        Sets the outbound_campaign_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :param outbound_campaign_id: The outbound_campaign_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :type: str
+        """
+        
+
+        self._outbound_campaign_id = outbound_campaign_id
+
+    @property
+    def outbound_contact_list_id(self) -> str:
+        """
+        Gets the outbound_contact_list_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :return: The outbound_contact_list_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :rtype: str
+        """
+        return self._outbound_contact_list_id
+
+    @outbound_contact_list_id.setter
+    def outbound_contact_list_id(self, outbound_contact_list_id: str) -> None:
+        """
+        Sets the outbound_contact_list_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :param outbound_contact_list_id: The outbound_contact_list_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :type: str
+        """
+        
+
+        self._outbound_contact_list_id = outbound_contact_list_id
+
+    @property
+    def outbound_contact_id(self) -> str:
+        """
+        Gets the outbound_contact_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :return: The outbound_contact_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :rtype: str
+        """
+        return self._outbound_contact_id
+
+    @outbound_contact_id.setter
+    def outbound_contact_id(self, outbound_contact_id: str) -> None:
+        """
+        Sets the outbound_contact_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :param outbound_contact_id: The outbound_contact_id of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :type: str
+        """
+        
+
+        self._outbound_contact_id = outbound_contact_id
 
     def to_dict(self):
         """

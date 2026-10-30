@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import Attachment
     from . import EmailAddress
+    from . import RecipientWarning
 
 class EmailMessageReply(object):
     """
@@ -62,7 +63,8 @@ class EmailMessageReply(object):
             'time': 'datetime',
             'history_included': 'bool',
             'email_size_bytes': 'int',
-            'max_email_size_bytes': 'int'
+            'max_email_size_bytes': 'int',
+            'recipient_warnings': 'list[RecipientWarning]'
         }
 
         self.attribute_map = {
@@ -78,7 +80,8 @@ class EmailMessageReply(object):
             'time': 'time',
             'history_included': 'historyIncluded',
             'email_size_bytes': 'emailSizeBytes',
-            'max_email_size_bytes': 'maxEmailSizeBytes'
+            'max_email_size_bytes': 'maxEmailSizeBytes',
+            'recipient_warnings': 'recipientWarnings'
         }
 
         self._to = None
@@ -94,6 +97,7 @@ class EmailMessageReply(object):
         self._history_included = None
         self._email_size_bytes = None
         self._max_email_size_bytes = None
+        self._recipient_warnings = None
 
     @property
     def to(self) -> List['EmailAddress']:
@@ -406,6 +410,30 @@ class EmailMessageReply(object):
         
 
         self._max_email_size_bytes = max_email_size_bytes
+
+    @property
+    def recipient_warnings(self) -> List['RecipientWarning']:
+        """
+        Gets the recipient_warnings of this EmailMessageReply.
+        The recipients that failed validation. Advisory only; recipient policy is enforced at send time.
+
+        :return: The recipient_warnings of this EmailMessageReply.
+        :rtype: list[RecipientWarning]
+        """
+        return self._recipient_warnings
+
+    @recipient_warnings.setter
+    def recipient_warnings(self, recipient_warnings: List['RecipientWarning']) -> None:
+        """
+        Sets the recipient_warnings of this EmailMessageReply.
+        The recipients that failed validation. Advisory only; recipient policy is enforced at send time.
+
+        :param recipient_warnings: The recipient_warnings of this EmailMessageReply.
+        :type: list[RecipientWarning]
+        """
+        
+
+        self._recipient_warnings = recipient_warnings
 
     def to_dict(self):
         """

@@ -52,7 +52,8 @@ class RecordingSettings(object):
             'regional_recording_storage_enabled': 'bool',
             'recording_playback_url_ttl': 'int',
             'recording_batch_download_url_ttl': 'int',
-            'stop_recording_when_only_external_participants': 'bool'
+            'stop_recording_when_only_external_participants': 'bool',
+            'hierarchy_access_control_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -61,7 +62,8 @@ class RecordingSettings(object):
             'regional_recording_storage_enabled': 'regionalRecordingStorageEnabled',
             'recording_playback_url_ttl': 'recordingPlaybackUrlTtl',
             'recording_batch_download_url_ttl': 'recordingBatchDownloadUrlTtl',
-            'stop_recording_when_only_external_participants': 'stopRecordingWhenOnlyExternalParticipants'
+            'stop_recording_when_only_external_participants': 'stopRecordingWhenOnlyExternalParticipants',
+            'hierarchy_access_control_enabled': 'hierarchyAccessControlEnabled'
         }
 
         self._max_simultaneous_streams = None
@@ -70,6 +72,7 @@ class RecordingSettings(object):
         self._recording_playback_url_ttl = None
         self._recording_batch_download_url_ttl = None
         self._stop_recording_when_only_external_participants = None
+        self._hierarchy_access_control_enabled = None
 
     @property
     def max_simultaneous_streams(self) -> int:
@@ -214,6 +217,30 @@ class RecordingSettings(object):
         
 
         self._stop_recording_when_only_external_participants = stop_recording_when_only_external_participants
+
+    @property
+    def hierarchy_access_control_enabled(self) -> bool:
+        """
+        Gets the hierarchy_access_control_enabled of this RecordingSettings.
+        Whether hierarchy access control using the Reports To management chain is enabled for the organization
+
+        :return: The hierarchy_access_control_enabled of this RecordingSettings.
+        :rtype: bool
+        """
+        return self._hierarchy_access_control_enabled
+
+    @hierarchy_access_control_enabled.setter
+    def hierarchy_access_control_enabled(self, hierarchy_access_control_enabled: bool) -> None:
+        """
+        Sets the hierarchy_access_control_enabled of this RecordingSettings.
+        Whether hierarchy access control using the Reports To management chain is enabled for the organization
+
+        :param hierarchy_access_control_enabled: The hierarchy_access_control_enabled of this RecordingSettings.
+        :type: bool
+        """
+        
+
+        self._hierarchy_access_control_enabled = hierarchy_access_control_enabled
 
     def to_dict(self):
         """

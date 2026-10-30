@@ -48,19 +48,31 @@ class WfmShiftTradingJobCompleteEventWfmVersionMetadata(object):
         """
         self.swagger_types = {
             'version': 'int',
+            'created_by': 'str',
+            'date_created': 'str',
             'modified_by': 'str',
-            'date_modified': 'str'
+            'date_modified': 'str',
+            'deleted_by': 'str',
+            'date_deleted': 'str'
         }
 
         self.attribute_map = {
             'version': 'version',
+            'created_by': 'createdBy',
+            'date_created': 'dateCreated',
             'modified_by': 'modifiedBy',
-            'date_modified': 'dateModified'
+            'date_modified': 'dateModified',
+            'deleted_by': 'deletedBy',
+            'date_deleted': 'dateDeleted'
         }
 
         self._version = None
+        self._created_by = None
+        self._date_created = None
         self._modified_by = None
         self._date_modified = None
+        self._deleted_by = None
+        self._date_deleted = None
 
     @property
     def version(self) -> int:
@@ -85,6 +97,54 @@ class WfmShiftTradingJobCompleteEventWfmVersionMetadata(object):
         
 
         self._version = version
+
+    @property
+    def created_by(self) -> str:
+        """
+        Gets the created_by of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+
+
+        :return: The created_by of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by: str) -> None:
+        """
+        Sets the created_by of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+
+
+        :param created_by: The created_by of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+        :type: str
+        """
+        
+
+        self._created_by = created_by
+
+    @property
+    def date_created(self) -> str:
+        """
+        Gets the date_created of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+
+
+        :return: The date_created of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+        :rtype: str
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: str) -> None:
+        """
+        Sets the date_created of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+
+
+        :param date_created: The date_created of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+        :type: str
+        """
+        
+
+        self._date_created = date_created
 
     @property
     def modified_by(self) -> str:
@@ -133,6 +193,54 @@ class WfmShiftTradingJobCompleteEventWfmVersionMetadata(object):
         
 
         self._date_modified = date_modified
+
+    @property
+    def deleted_by(self) -> str:
+        """
+        Gets the deleted_by of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+
+
+        :return: The deleted_by of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+        :rtype: str
+        """
+        return self._deleted_by
+
+    @deleted_by.setter
+    def deleted_by(self, deleted_by: str) -> None:
+        """
+        Sets the deleted_by of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+
+
+        :param deleted_by: The deleted_by of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+        :type: str
+        """
+        
+
+        self._deleted_by = deleted_by
+
+    @property
+    def date_deleted(self) -> str:
+        """
+        Gets the date_deleted of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+
+
+        :return: The date_deleted of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+        :rtype: str
+        """
+        return self._date_deleted
+
+    @date_deleted.setter
+    def date_deleted(self, date_deleted: str) -> None:
+        """
+        Sets the date_deleted of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+
+
+        :param date_deleted: The date_deleted of this WfmShiftTradingJobCompleteEventWfmVersionMetadata.
+        :type: str
+        """
+        
+
+        self._date_deleted = date_deleted
 
     def to_dict(self):
         """

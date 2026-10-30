@@ -19,10 +19,12 @@
 | **entity_token** | str |  | [optional] |
 | **phone_number** | str |  | [optional] |
 | **external_contact_id** | str |  | [optional] |
+| **reference_id** | str |  | [optional] |
+| **reference_type** | str |  | [optional] |
 | **entity_modified_date** | datetime |  | [optional] |
 | **entity_modified_by** | str |  | [optional] |
 | **timestamp** | int |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

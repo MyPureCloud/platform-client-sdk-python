@@ -375,10 +375,11 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_oauth_client_usage_query_result is deprecated")
     def get_oauth_client_usage_query_result(self, execution_id: str, client_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
-        
+        Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -459,10 +460,11 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_oauth_client_usage_summary is deprecated")
     def get_oauth_client_usage_summary(self, client_id: str, **kwargs) -> 'UsageExecutionResult':
         """
         Get a summary of OAuth client API usage
-        After calling this method, you will then need to poll for the query results based on the returned execution Id
+        Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -846,10 +848,11 @@ class OAuthApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_oauth_client_usage_query is deprecated")
     def post_oauth_client_usage_query(self, client_id: str, body: 'ApiUsageClientQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query for OAuth client API usage
-        After calling this method, you will then need to poll for the query results based on the returned execution Id
+        Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationKnowledgeSearchSuggestionsTopicActiveSentiment
     from . import ConversationKnowledgeSearchSuggestionsTopicSuggestedIntent
     from . import ConversationKnowledgeSearchSuggestionsTopicSuggestedSearchResult
     from . import ConversationKnowledgeSearchSuggestionsTopicSuggestionContext
@@ -61,7 +62,8 @@ class ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent(
             'context': 'ConversationKnowledgeSearchSuggestionsTopicSuggestionContext',
             'feedback': 'ConversationKnowledgeSearchSuggestionsTopicSuggestionFeedback',
             'knowledge_search': 'ConversationKnowledgeSearchSuggestionsTopicSuggestedSearchResult',
-            'active_intent': 'ConversationKnowledgeSearchSuggestionsTopicSuggestedIntent'
+            'active_intent': 'ConversationKnowledgeSearchSuggestionsTopicSuggestedIntent',
+            'active_sentiment': 'ConversationKnowledgeSearchSuggestionsTopicActiveSentiment'
         }
 
         self.attribute_map = {
@@ -74,7 +76,8 @@ class ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent(
             'context': 'context',
             'feedback': 'feedback',
             'knowledge_search': 'knowledgeSearch',
-            'active_intent': 'activeIntent'
+            'active_intent': 'activeIntent',
+            'active_sentiment': 'activeSentiment'
         }
 
         self._event_time = None
@@ -87,6 +90,7 @@ class ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent(
         self._feedback = None
         self._knowledge_search = None
         self._active_intent = None
+        self._active_sentiment = None
 
     @property
     def event_time(self) -> datetime:
@@ -342,6 +346,30 @@ class ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent(
         
 
         self._active_intent = active_intent
+
+    @property
+    def active_sentiment(self) -> 'ConversationKnowledgeSearchSuggestionsTopicActiveSentiment':
+        """
+        Gets the active_sentiment of this ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent.
+
+
+        :return: The active_sentiment of this ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent.
+        :rtype: ConversationKnowledgeSearchSuggestionsTopicActiveSentiment
+        """
+        return self._active_sentiment
+
+    @active_sentiment.setter
+    def active_sentiment(self, active_sentiment: 'ConversationKnowledgeSearchSuggestionsTopicActiveSentiment') -> None:
+        """
+        Sets the active_sentiment of this ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent.
+
+
+        :param active_sentiment: The active_sentiment of this ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent.
+        :type: ConversationKnowledgeSearchSuggestionsTopicActiveSentiment
+        """
+        
+
+        self._active_sentiment = active_sentiment
 
     def to_dict(self):
         """

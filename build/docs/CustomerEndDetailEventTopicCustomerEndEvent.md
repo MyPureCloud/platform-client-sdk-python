@@ -30,7 +30,10 @@
 | **conversation_external_organization_ids** | list[str] |  | [optional] |
 | **division_id** | str |  | [optional] |
 | **utilization_label** | str |  | [optional] |
+| **outbound_campaign_id** | str |  | [optional] |
+| **outbound_contact_list_id** | str |  | [optional] |
+| **outbound_contact_id** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

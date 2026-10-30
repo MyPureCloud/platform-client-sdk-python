@@ -54,6 +54,7 @@ class ConversationThirdPartyActionSuggestionsTopicSuggestionContext(object):
             'user_id': 'str',
             'external_contact_id': 'str',
             'assistant_id': 'str',
+            'variation_id': 'str',
             'utterance_id': 'str',
             'message_id': 'str',
             'query_statement': 'str',
@@ -68,6 +69,7 @@ class ConversationThirdPartyActionSuggestionsTopicSuggestionContext(object):
             'user_id': 'userId',
             'external_contact_id': 'externalContactId',
             'assistant_id': 'assistantId',
+            'variation_id': 'variationId',
             'utterance_id': 'utteranceId',
             'message_id': 'messageId',
             'query_statement': 'queryStatement',
@@ -81,6 +83,7 @@ class ConversationThirdPartyActionSuggestionsTopicSuggestionContext(object):
         self._user_id = None
         self._external_contact_id = None
         self._assistant_id = None
+        self._variation_id = None
         self._utterance_id = None
         self._message_id = None
         self._query_statement = None
@@ -212,6 +215,30 @@ class ConversationThirdPartyActionSuggestionsTopicSuggestionContext(object):
         
 
         self._assistant_id = assistant_id
+
+    @property
+    def variation_id(self) -> str:
+        """
+        Gets the variation_id of this ConversationThirdPartyActionSuggestionsTopicSuggestionContext.
+
+
+        :return: The variation_id of this ConversationThirdPartyActionSuggestionsTopicSuggestionContext.
+        :rtype: str
+        """
+        return self._variation_id
+
+    @variation_id.setter
+    def variation_id(self, variation_id: str) -> None:
+        """
+        Sets the variation_id of this ConversationThirdPartyActionSuggestionsTopicSuggestionContext.
+
+
+        :param variation_id: The variation_id of this ConversationThirdPartyActionSuggestionsTopicSuggestionContext.
+        :type: str
+        """
+        
+
+        self._variation_id = variation_id
 
     @property
     def utterance_id(self) -> str:

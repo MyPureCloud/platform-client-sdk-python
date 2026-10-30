@@ -70,7 +70,10 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             'conversation_external_organization_ids': 'list[str]',
             'exit_reason': 'str',
             'transfer_type': 'str',
-            'utilization_label': 'str'
+            'utilization_label': 'str',
+            'outbound_campaign_id': 'str',
+            'outbound_contact_list_id': 'str',
+            'outbound_contact_id': 'str'
         }
 
         self.attribute_map = {
@@ -97,7 +100,10 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
             'exit_reason': 'exitReason',
             'transfer_type': 'transferType',
-            'utilization_label': 'utilizationLabel'
+            'utilization_label': 'utilizationLabel',
+            'outbound_campaign_id': 'outboundCampaignId',
+            'outbound_contact_list_id': 'outboundContactListId',
+            'outbound_contact_id': 'outboundContactId'
         }
 
         self._event_time = None
@@ -124,6 +130,9 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         self._exit_reason = None
         self._transfer_type = None
         self._utilization_label = None
+        self._outbound_campaign_id = None
+        self._outbound_contact_list_id = None
+        self._outbound_contact_id = None
 
     @property
     def event_time(self) -> int:
@@ -503,7 +512,7 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         """
         if isinstance(flow_type, int):
             flow_type = str(flow_type)
-        allowed_values = ["UNKNOWN", "INBOUNDCALL", "OUTBOUNDCALL", "INQUEUECALL", "SECURECALL", "INBOUNDEMAIL", "SURVEYINVITE", "INBOUNDSHORTMESSAGE", "INBOUNDCHAT", "WORKFLOW", "BOT", "DIGITALBOT", "COMMONMODULE", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "VOICE", "VOICEMAIL", "WORKITEM", "VOICESURVEY"]
+        allowed_values = ["UNKNOWN", "INBOUNDCALL", "OUTBOUNDCALL", "INQUEUECALL", "SECURECALL", "INBOUNDEMAIL", "SURVEYINVITE", "INBOUNDSHORTMESSAGE", "INBOUNDCHAT", "WORKFLOW", "BOT", "DIGITALBOT", "COMMONMODULE", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "VOICE", "VOICEMAIL", "WORKITEM", "VOICESURVEY", "BUSINESSPROCESS"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)
             self._flow_type = "outdated_sdk_version"
@@ -735,6 +744,78 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         
 
         self._utilization_label = utilization_label
+
+    @property
+    def outbound_campaign_id(self) -> str:
+        """
+        Gets the outbound_campaign_id of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :return: The outbound_campaign_id of this FlowEndDetailEventTopicFlowEndEvent.
+        :rtype: str
+        """
+        return self._outbound_campaign_id
+
+    @outbound_campaign_id.setter
+    def outbound_campaign_id(self, outbound_campaign_id: str) -> None:
+        """
+        Sets the outbound_campaign_id of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :param outbound_campaign_id: The outbound_campaign_id of this FlowEndDetailEventTopicFlowEndEvent.
+        :type: str
+        """
+        
+
+        self._outbound_campaign_id = outbound_campaign_id
+
+    @property
+    def outbound_contact_list_id(self) -> str:
+        """
+        Gets the outbound_contact_list_id of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :return: The outbound_contact_list_id of this FlowEndDetailEventTopicFlowEndEvent.
+        :rtype: str
+        """
+        return self._outbound_contact_list_id
+
+    @outbound_contact_list_id.setter
+    def outbound_contact_list_id(self, outbound_contact_list_id: str) -> None:
+        """
+        Sets the outbound_contact_list_id of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :param outbound_contact_list_id: The outbound_contact_list_id of this FlowEndDetailEventTopicFlowEndEvent.
+        :type: str
+        """
+        
+
+        self._outbound_contact_list_id = outbound_contact_list_id
+
+    @property
+    def outbound_contact_id(self) -> str:
+        """
+        Gets the outbound_contact_id of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :return: The outbound_contact_id of this FlowEndDetailEventTopicFlowEndEvent.
+        :rtype: str
+        """
+        return self._outbound_contact_id
+
+    @outbound_contact_id.setter
+    def outbound_contact_id(self, outbound_contact_id: str) -> None:
+        """
+        Sets the outbound_contact_id of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :param outbound_contact_id: The outbound_contact_id of this FlowEndDetailEventTopicFlowEndEvent.
+        :type: str
+        """
+        
+
+        self._outbound_contact_id = outbound_contact_id
 
     def to_dict(self):
         """

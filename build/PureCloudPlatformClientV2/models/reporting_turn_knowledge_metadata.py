@@ -232,7 +232,7 @@ class ReportingTurnKnowledgeMetadata(object):
         """
         if isinstance(answer_generation_status, int):
             answer_generation_status = str(answer_generation_status)
-        allowed_values = ["Success", "Failure", "NotAttempted", "NoAnswerGenerated", "Timeout", "Unknown"]
+        allowed_values = ["Success", "Failure", "NotAttempted", "NoAnswerGenerated", "Timeout", "DelegatedToAgenticVirtualAgent", "Unknown"]
         if answer_generation_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for answer_generation_status -> " + answer_generation_status)
             self._answer_generation_status = "outdated_sdk_version"

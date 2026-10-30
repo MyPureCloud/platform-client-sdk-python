@@ -16,7 +16,8 @@
 | **feedback** | [ConversationScriptSuggestionsTopicSuggestionFeedback](ConversationScriptSuggestionsTopicSuggestionFeedback) |  | [optional] |
 | **script** | [ConversationScriptSuggestionsTopicSuggestedScript](ConversationScriptSuggestionsTopicSuggestedScript) |  | [optional] |
 | **active_intent** | [ConversationScriptSuggestionsTopicSuggestedIntent](ConversationScriptSuggestionsTopicSuggestedIntent) |  | [optional] |
+| **active_sentiment** | [ConversationScriptSuggestionsTopicActiveSentiment](ConversationScriptSuggestionsTopicActiveSentiment) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

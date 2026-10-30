@@ -4845,6 +4845,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
+* externalContacts:conversation:viewAll
 
 ### Example
 
@@ -4894,6 +4895,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
+* externalContacts:conversation:viewAll
 
 ### Example
 
@@ -6921,4 +6923,4 @@ except ApiException as e:
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

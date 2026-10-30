@@ -87,7 +87,7 @@ class ActivationTrigger(object):
         """
         if isinstance(trigger_type, int):
             trigger_type = str(trigger_type)
-        allowed_values = ["Intent", "ConversationStart"]
+        allowed_values = ["Intent", "ConversationStart", "Sentiment"]
         if trigger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for trigger_type -> " + trigger_type)
             self._trigger_type = "outdated_sdk_version"

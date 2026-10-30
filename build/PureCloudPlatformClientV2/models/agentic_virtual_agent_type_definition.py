@@ -187,7 +187,7 @@ class AgenticVirtualAgentTypeDefinition(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["string", "integer", "number", "boolean", "null", "object", "array", "DataActionHttpError"]
+        allowed_values = ["string", "integer", "number", "boolean", "null", "object", "array", "DataActionHttpError", "A2AError"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -318,7 +318,7 @@ class AgenticVirtualAgentTypeDefinition(object):
     def default_instruction(self) -> str:
         """
         Gets the default_instruction of this AgenticVirtualAgentTypeDefinition.
-        Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError.
+        Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError or A2AError.
 
         :return: The default_instruction of this AgenticVirtualAgentTypeDefinition.
         :rtype: str
@@ -329,7 +329,7 @@ class AgenticVirtualAgentTypeDefinition(object):
     def default_instruction(self, default_instruction: str) -> None:
         """
         Sets the default_instruction of this AgenticVirtualAgentTypeDefinition.
-        Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError.
+        Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError or A2AError.
 
         :param default_instruction: The default_instruction of this AgenticVirtualAgentTypeDefinition.
         :type: str

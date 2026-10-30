@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import WorkitemOnAttributeChangeCondition
+    from . import WorkitemOnAttributeChangeMatch
     from . import WorkitemRuleAction
     from . import WorktypeReference
 
@@ -57,6 +58,7 @@ class WorkitemOnAttributeChangeRule(object):
             'action': 'WorkitemRuleAction',
             'worktype': 'WorktypeReference',
             'condition': 'WorkitemOnAttributeChangeCondition',
+            'match': 'WorkitemOnAttributeChangeMatch',
             'self_uri': 'str'
         }
 
@@ -67,6 +69,7 @@ class WorkitemOnAttributeChangeRule(object):
             'action': 'action',
             'worktype': 'worktype',
             'condition': 'condition',
+            'match': 'match',
             'self_uri': 'selfUri'
         }
 
@@ -76,6 +79,7 @@ class WorkitemOnAttributeChangeRule(object):
         self._action = None
         self._worktype = None
         self._condition = None
+        self._match = None
         self._self_uri = None
 
     @property
@@ -207,7 +211,7 @@ class WorkitemOnAttributeChangeRule(object):
     def condition(self) -> 'WorkitemOnAttributeChangeCondition':
         """
         Gets the condition of this WorkitemOnAttributeChangeRule.
-        The rules condition. If the condition criteria is met the rules action will be executed.
+        The rules condition. If the condition criteria is met the rules action will be executed. Mutually exclusive with match; a rule carries exactly one of condition or match.
 
         :return: The condition of this WorkitemOnAttributeChangeRule.
         :rtype: WorkitemOnAttributeChangeCondition
@@ -218,7 +222,7 @@ class WorkitemOnAttributeChangeRule(object):
     def condition(self, condition: 'WorkitemOnAttributeChangeCondition') -> None:
         """
         Sets the condition of this WorkitemOnAttributeChangeRule.
-        The rules condition. If the condition criteria is met the rules action will be executed.
+        The rules condition. If the condition criteria is met the rules action will be executed. Mutually exclusive with match; a rule carries exactly one of condition or match.
 
         :param condition: The condition of this WorkitemOnAttributeChangeRule.
         :type: WorkitemOnAttributeChangeCondition
@@ -226,6 +230,30 @@ class WorkitemOnAttributeChangeRule(object):
         
 
         self._condition = condition
+
+    @property
+    def match(self) -> 'WorkitemOnAttributeChangeMatch':
+        """
+        Gets the match of this WorkitemOnAttributeChangeRule.
+        Grouped match criteria combined with logical operators. Mutually exclusive with condition; a rule carries exactly one of condition or match.
+
+        :return: The match of this WorkitemOnAttributeChangeRule.
+        :rtype: WorkitemOnAttributeChangeMatch
+        """
+        return self._match
+
+    @match.setter
+    def match(self, match: 'WorkitemOnAttributeChangeMatch') -> None:
+        """
+        Sets the match of this WorkitemOnAttributeChangeRule.
+        Grouped match criteria combined with logical operators. Mutually exclusive with condition; a rule carries exactly one of condition or match.
+
+        :param match: The match of this WorkitemOnAttributeChangeRule.
+        :type: WorkitemOnAttributeChangeMatch
+        """
+        
+
+        self._match = match
 
     @property
     def self_uri(self) -> str:

@@ -1,0 +1,35 @@
+# WfmTimeOffRequestUpdateMuTopicTimeOffRequestUpdate
+
+## WfmTimeOffRequestUpdateMuTopicTimeOffRequestUpdate
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **id** | str |  | [optional] |
+| **mu_id** | str |  | [optional] |
+| **user** | [WfmTimeOffRequestUpdateMuTopicUserReference](WfmTimeOffRequestUpdateMuTopicUserReference) |  | [optional] |
+| **is_full_day_request** | bool |  | [optional] |
+| **marked_as_read** | bool |  | [optional] |
+| **activity_code_id** | str |  | [optional] |
+| **paid** | bool |  | [optional] |
+| **status** | str |  | [optional] |
+| **substatus** | str |  | [optional] |
+| **partial_day_start_date_times** | list[str] |  | [optional] |
+| **full_day_management_unit_dates** | list[str] |  | [optional] |
+| **full_day_earliest_start_offset_minutes** | list[int] |  | [optional] |
+| **full_day_latest_end_offset_minutes** | list[int] |  | [optional] |
+| **daily_duration_minutes** | int |  | [optional] |
+| **duration_minutes** | list[int] |  | [optional] |
+| **payable_minutes** | list[int] |  | [optional] |
+| **notes** | str |  | [optional] |
+| **reviewed_date** | str |  | [optional] |
+| **reviewed_by** | str |  | [optional] |
+| **submitted_date** | str |  | [optional] |
+| **submitted_by** | str |  | [optional] |
+| **modified_date** | str |  | [optional] |
+| **modified_by** | str |  | [optional] |
+
+
+
+_PureCloudPlatformClientV2 270.0.0_

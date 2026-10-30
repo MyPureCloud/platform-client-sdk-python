@@ -108,7 +108,7 @@ class ChecklistActivationPayload(object):
         """
         if isinstance(activation_trigger_type, int):
             activation_trigger_type = str(activation_trigger_type)
-        allowed_values = ["Intent", "ConversationStart"]
+        allowed_values = ["Intent", "ConversationStart", "Sentiment"]
         if activation_trigger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for activation_trigger_type -> " + activation_trigger_type)
             self._activation_trigger_type = "outdated_sdk_version"

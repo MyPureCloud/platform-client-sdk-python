@@ -434,7 +434,6 @@ class CaseManagementApi(object):
         """
         Delete a Stageplan from a draft Caseplan.
         
-	    delete_casemanagement_caseplan_stageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3787,7 +3786,6 @@ class CaseManagementApi(object):
         """
         Reposition a Stageplan within a draft Caseplan.
         
-	    post_casemanagement_caseplan_stageplan_reposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3882,7 +3880,6 @@ class CaseManagementApi(object):
         """
         Create a Stageplan on a draft Caseplan.
         
-	    post_casemanagement_caseplan_stageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

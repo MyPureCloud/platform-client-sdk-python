@@ -128,7 +128,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def external_contact_id(self) -> str:
         """
         Gets the external_contact_id of this SendAgentlessOutboundMessageRequest.
-        The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.
+        The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, Open and WhatsApp messenger types only. For WebMessaging it is required.
 
         :return: The external_contact_id of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -139,7 +139,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def external_contact_id(self, external_contact_id: str) -> None:
         """
         Sets the external_contact_id of this SendAgentlessOutboundMessageRequest.
-        The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.
+        The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, Open and WhatsApp messenger types only. For WebMessaging it is required.
 
         :param external_contact_id: The external_contact_id of this SendAgentlessOutboundMessageRequest.
         :type: str

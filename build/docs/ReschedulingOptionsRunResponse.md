@@ -12,11 +12,14 @@
 | **management_units** | [list[ReschedulingManagementUnitResponse]](ReschedulingManagementUnitResponse) | Per-management unit rescheduling options | [optional] |
 | **agent_count** | int | The number of agents to be considered in the reschedule | [optional] |
 | **activity_code_ids** | list[str] | The IDs of the activity codes being considered for reschedule | [optional] |
-| **do_not_change_weekly_paid_time** | bool | Whether weekly paid time is allowed to be changed | [optional] |
-| **do_not_change_daily_paid_time** | bool | Whether daily paid time is allowed to be changed | [optional] |
-| **do_not_change_shift_start_times** | bool | Whether shift start times are allowed to be changed | [optional] |
-| **do_not_change_manually_edited_shifts** | bool | Whether manually edited shifts are allowed to be changed | [optional] |
+| **do_not_change_weekly_paid_time** | bool | Whether weekly paid time is allowed to be changed | |
+| **do_not_change_daily_paid_time** | bool | Whether daily paid time is allowed to be changed | |
+| **do_not_change_shift_start_times** | bool | Whether shift start times are allowed to be changed | |
+| **do_not_change_manually_edited_shifts** | bool | Whether manually edited shifts are allowed to be changed | |
+| **activity_smoothing_type** | str | The activity smoothing type used for this reschedule run | |
+| **induce_schedule_variability** | bool | Whether schedule variability was induced for this reschedule run | |
+| **use_unavailable_times_snapshot** | bool | Whether original unavailable times from schedule generation were used instead of the latest saved unavailable times | |
 
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

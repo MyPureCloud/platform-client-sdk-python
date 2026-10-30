@@ -66,7 +66,7 @@ class CaseplanFilter(object):
     def name(self) -> str:
         """
         Gets the name of this CaseplanFilter.
-        Attribute name. Valid values: id, name, divisionId.
+        Attribute name. Valid values: id, name, divisionId, published. The published filter requires the EQ operator and exactly one value: 'true' (Caseplans that have a published version) or 'false' (Caseplans that have never been published).
 
         :return: The name of this CaseplanFilter.
         :rtype: str
@@ -77,7 +77,7 @@ class CaseplanFilter(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this CaseplanFilter.
-        Attribute name. Valid values: id, name, divisionId.
+        Attribute name. Valid values: id, name, divisionId, published. The published filter requires the EQ operator and exactly one value: 'true' (Caseplans that have a published version) or 'false' (Caseplans that have never been published).
 
         :param name: The name of this CaseplanFilter.
         :type: str
@@ -108,7 +108,7 @@ class CaseplanFilter(object):
         """
         if isinstance(operator, int):
             operator = str(operator)
-        allowed_values = ["IN", "CONTAINS", "BEGINS_WITH"]
+        allowed_values = ["EQ", "IN", "CONTAINS", "BEGINS_WITH"]
         if operator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for operator -> " + operator)
             self._operator = "outdated_sdk_version"

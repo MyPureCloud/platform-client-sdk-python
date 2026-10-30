@@ -103,6 +103,7 @@ from ..models import ExternalOrganizationTrustorLink
 from ..models import ExternalSource
 from ..models import GraphSettings
 from ..models import IdentifierClaimRequest
+from ..models import LatestClusterScan
 from ..models import Listing
 from ..models import MergeContactsRequest
 from ..models import MergeRequest
@@ -2468,7 +2469,6 @@ class ExternalContactsApi(object):
         """
         Returns a single cluster scan
         
-	    get_externalcontacts_graphs_clusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2550,7 +2550,6 @@ class ExternalContactsApi(object):
         """
         Returns a single cluster found by a scan
         
-	    get_externalcontacts_graphs_clusterscan_cluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2635,7 +2634,6 @@ class ExternalContactsApi(object):
         """
         Returns a list of clusters found by a scan
         
-	    get_externalcontacts_graphs_clusterscan_clusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2726,7 +2724,6 @@ class ExternalContactsApi(object):
         """
         Returns the statistics about a single cluster scan
         
-	    get_externalcontacts_graphs_clusterscan_statistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2805,7 +2802,6 @@ class ExternalContactsApi(object):
         """
         Returns a list of cluster scans
         
-	    get_externalcontacts_graphs_clusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2883,11 +2879,10 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_externalcontacts_graphs_clusterscans_latest(self, **kwargs) -> 'ClusterScan':
+    def get_externalcontacts_graphs_clusterscans_latest(self, **kwargs) -> 'LatestClusterScan':
         """
         Returns the latest cluster scan
         
-	    get_externalcontacts_graphs_clusterscans_latest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2900,7 +2895,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] expand: which fields, if any, to expand
-        :return: ClusterScan
+        :return: LatestClusterScan
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2954,7 +2949,7 @@ class ExternalContactsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='ClusterScan',
+                                            response_type='LatestClusterScan',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2963,7 +2958,6 @@ class ExternalContactsApi(object):
         """
         Returns the statistics about the latest cluster scan
         
-	    get_externalcontacts_graphs_clusterscans_latest_statistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3036,7 +3030,6 @@ class ExternalContactsApi(object):
         """
         Returns the org-wide settings for ExternalContact graph operations
         
-	    get_externalcontacts_graphs_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10992,7 +10985,6 @@ class ExternalContactsApi(object):
         """
         Merge a single cluster found by a scan
         
-	    put_externalcontacts_graphs_clusterscan_cluster_merge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11077,7 +11069,6 @@ class ExternalContactsApi(object):
         """
         Updates the org-wide settings for ExternalContact graph operations
         
-	    put_externalcontacts_graphs_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

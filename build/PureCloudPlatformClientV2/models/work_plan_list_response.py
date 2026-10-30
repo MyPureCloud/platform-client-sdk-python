@@ -49,14 +49,17 @@ class WorkPlanListResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[WorkPlanListItemResponse]'
+            'entities': 'list[WorkPlanListItemResponse]',
+            'download_url': 'str'
         }
 
         self.attribute_map = {
-            'entities': 'entities'
+            'entities': 'entities',
+            'download_url': 'downloadUrl'
         }
 
         self._entities = None
+        self._download_url = None
 
     @property
     def entities(self) -> List['WorkPlanListItemResponse']:
@@ -81,6 +84,30 @@ class WorkPlanListResponse(object):
         
 
         self._entities = entities
+
+    @property
+    def download_url(self) -> str:
+        """
+        Gets the download_url of this WorkPlanListResponse.
+        URL from which to download the work plans. The downloaded data conforms to this same schema, except downloadUrl will be null
+
+        :return: The download_url of this WorkPlanListResponse.
+        :rtype: str
+        """
+        return self._download_url
+
+    @download_url.setter
+    def download_url(self, download_url: str) -> None:
+        """
+        Sets the download_url of this WorkPlanListResponse.
+        URL from which to download the work plans. The downloaded data conforms to this same schema, except downloadUrl will be null
+
+        :param download_url: The download_url of this WorkPlanListResponse.
+        :type: str
+        """
+        
+
+        self._download_url = download_url
 
     def to_dict(self):
         """

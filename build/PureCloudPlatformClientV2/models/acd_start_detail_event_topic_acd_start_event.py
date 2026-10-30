@@ -70,7 +70,12 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
             'utilization_label': 'str',
             'routing_priority': 'int',
             'requested_routing_skill_ids': 'list[str]',
-            'skill_expression_applied': 'bool'
+            'skill_expression_applied': 'bool',
+            'requested_language_id': 'str',
+            'preferred_agent_ids': 'list[str]',
+            'outbound_campaign_id': 'str',
+            'outbound_contact_list_id': 'str',
+            'outbound_contact_id': 'str'
         }
 
         self.attribute_map = {
@@ -97,7 +102,12 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
             'utilization_label': 'utilizationLabel',
             'routing_priority': 'routingPriority',
             'requested_routing_skill_ids': 'requestedRoutingSkillIds',
-            'skill_expression_applied': 'skillExpressionApplied'
+            'skill_expression_applied': 'skillExpressionApplied',
+            'requested_language_id': 'requestedLanguageId',
+            'preferred_agent_ids': 'preferredAgentIds',
+            'outbound_campaign_id': 'outboundCampaignId',
+            'outbound_contact_list_id': 'outboundContactListId',
+            'outbound_contact_id': 'outboundContactId'
         }
 
         self._event_time = None
@@ -124,6 +134,11 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
         self._routing_priority = None
         self._requested_routing_skill_ids = None
         self._skill_expression_applied = None
+        self._requested_language_id = None
+        self._preferred_agent_ids = None
+        self._outbound_campaign_id = None
+        self._outbound_contact_list_id = None
+        self._outbound_contact_id = None
 
     @property
     def event_time(self) -> int:
@@ -715,6 +730,126 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
         
 
         self._skill_expression_applied = skill_expression_applied
+
+    @property
+    def requested_language_id(self) -> str:
+        """
+        Gets the requested_language_id of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The requested_language_id of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: str
+        """
+        return self._requested_language_id
+
+    @requested_language_id.setter
+    def requested_language_id(self, requested_language_id: str) -> None:
+        """
+        Sets the requested_language_id of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param requested_language_id: The requested_language_id of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: str
+        """
+        
+
+        self._requested_language_id = requested_language_id
+
+    @property
+    def preferred_agent_ids(self) -> List[str]:
+        """
+        Gets the preferred_agent_ids of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The preferred_agent_ids of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: list[str]
+        """
+        return self._preferred_agent_ids
+
+    @preferred_agent_ids.setter
+    def preferred_agent_ids(self, preferred_agent_ids: List[str]) -> None:
+        """
+        Sets the preferred_agent_ids of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param preferred_agent_ids: The preferred_agent_ids of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: list[str]
+        """
+        
+
+        self._preferred_agent_ids = preferred_agent_ids
+
+    @property
+    def outbound_campaign_id(self) -> str:
+        """
+        Gets the outbound_campaign_id of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The outbound_campaign_id of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: str
+        """
+        return self._outbound_campaign_id
+
+    @outbound_campaign_id.setter
+    def outbound_campaign_id(self, outbound_campaign_id: str) -> None:
+        """
+        Sets the outbound_campaign_id of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param outbound_campaign_id: The outbound_campaign_id of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: str
+        """
+        
+
+        self._outbound_campaign_id = outbound_campaign_id
+
+    @property
+    def outbound_contact_list_id(self) -> str:
+        """
+        Gets the outbound_contact_list_id of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The outbound_contact_list_id of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: str
+        """
+        return self._outbound_contact_list_id
+
+    @outbound_contact_list_id.setter
+    def outbound_contact_list_id(self, outbound_contact_list_id: str) -> None:
+        """
+        Sets the outbound_contact_list_id of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param outbound_contact_list_id: The outbound_contact_list_id of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: str
+        """
+        
+
+        self._outbound_contact_list_id = outbound_contact_list_id
+
+    @property
+    def outbound_contact_id(self) -> str:
+        """
+        Gets the outbound_contact_id of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The outbound_contact_id of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: str
+        """
+        return self._outbound_contact_id
+
+    @outbound_contact_id.setter
+    def outbound_contact_id(self, outbound_contact_id: str) -> None:
+        """
+        Sets the outbound_contact_id of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param outbound_contact_id: The outbound_contact_id of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: str
+        """
+        
+
+        self._outbound_contact_id = outbound_contact_id
 
     def to_dict(self):
         """

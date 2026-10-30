@@ -30,7 +30,12 @@
 | **routing_priority** | int |  | [optional] |
 | **requested_routing_skill_ids** | list[str] |  | [optional] |
 | **skill_expression_applied** | bool |  | [optional] |
+| **requested_language_id** | str |  | [optional] |
+| **preferred_agent_ids** | list[str] |  | [optional] |
+| **outbound_campaign_id** | str |  | [optional] |
+| **outbound_contact_list_id** | str |  | [optional] |
+| **outbound_contact_id** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

@@ -264,8 +264,6 @@ except ApiException as e:
 
 Delete a Stageplan from a draft Caseplan.
 
-delete_casemanagement_caseplan_stageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId} 
 
 Requires ANY permissions: 
@@ -2224,8 +2222,6 @@ except ApiException as e:
 
 Reposition a Stageplan within a draft Caseplan.
 
-post_casemanagement_caseplan_stageplan_reposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition 
 
 Requires ANY permissions: 
@@ -2277,8 +2273,6 @@ except ApiException as e:
 
 
 Create a Stageplan on a draft Caseplan.
-
-post_casemanagement_caseplan_stageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans 
 
@@ -2715,4 +2709,4 @@ except ApiException as e:
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

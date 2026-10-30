@@ -79,7 +79,11 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
             'conversation_external_contact_ids': 'list[str]',
             'conversation_external_organization_ids': 'list[str]',
             'utilization_label': 'str',
-            'flow_type': 'str'
+            'flow_type': 'str',
+            'preferred_agent_ids': 'list[str]',
+            'outbound_campaign_id': 'str',
+            'outbound_contact_list_id': 'str',
+            'outbound_contact_id': 'str'
         }
 
         self.attribute_map = {
@@ -115,7 +119,11 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
             'conversation_external_contact_ids': 'conversationExternalContactIds',
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
             'utilization_label': 'utilizationLabel',
-            'flow_type': 'flowType'
+            'flow_type': 'flowType',
+            'preferred_agent_ids': 'preferredAgentIds',
+            'outbound_campaign_id': 'outboundCampaignId',
+            'outbound_contact_list_id': 'outboundContactListId',
+            'outbound_contact_id': 'outboundContactId'
         }
 
         self._event_time = None
@@ -151,6 +159,10 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         self._conversation_external_organization_ids = None
         self._utilization_label = None
         self._flow_type = None
+        self._preferred_agent_ids = None
+        self._outbound_campaign_id = None
+        self._outbound_contact_list_id = None
+        self._outbound_contact_id = None
 
     @property
     def event_time(self) -> int:
@@ -973,6 +985,102 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         
 
         self._flow_type = flow_type
+
+    @property
+    def preferred_agent_ids(self) -> List[str]:
+        """
+        Gets the preferred_agent_ids of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :return: The preferred_agent_ids of this AcdEndDetailEventTopicAcdEndEvent.
+        :rtype: list[str]
+        """
+        return self._preferred_agent_ids
+
+    @preferred_agent_ids.setter
+    def preferred_agent_ids(self, preferred_agent_ids: List[str]) -> None:
+        """
+        Sets the preferred_agent_ids of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :param preferred_agent_ids: The preferred_agent_ids of this AcdEndDetailEventTopicAcdEndEvent.
+        :type: list[str]
+        """
+        
+
+        self._preferred_agent_ids = preferred_agent_ids
+
+    @property
+    def outbound_campaign_id(self) -> str:
+        """
+        Gets the outbound_campaign_id of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :return: The outbound_campaign_id of this AcdEndDetailEventTopicAcdEndEvent.
+        :rtype: str
+        """
+        return self._outbound_campaign_id
+
+    @outbound_campaign_id.setter
+    def outbound_campaign_id(self, outbound_campaign_id: str) -> None:
+        """
+        Sets the outbound_campaign_id of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :param outbound_campaign_id: The outbound_campaign_id of this AcdEndDetailEventTopicAcdEndEvent.
+        :type: str
+        """
+        
+
+        self._outbound_campaign_id = outbound_campaign_id
+
+    @property
+    def outbound_contact_list_id(self) -> str:
+        """
+        Gets the outbound_contact_list_id of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :return: The outbound_contact_list_id of this AcdEndDetailEventTopicAcdEndEvent.
+        :rtype: str
+        """
+        return self._outbound_contact_list_id
+
+    @outbound_contact_list_id.setter
+    def outbound_contact_list_id(self, outbound_contact_list_id: str) -> None:
+        """
+        Sets the outbound_contact_list_id of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :param outbound_contact_list_id: The outbound_contact_list_id of this AcdEndDetailEventTopicAcdEndEvent.
+        :type: str
+        """
+        
+
+        self._outbound_contact_list_id = outbound_contact_list_id
+
+    @property
+    def outbound_contact_id(self) -> str:
+        """
+        Gets the outbound_contact_id of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :return: The outbound_contact_id of this AcdEndDetailEventTopicAcdEndEvent.
+        :rtype: str
+        """
+        return self._outbound_contact_id
+
+    @outbound_contact_id.setter
+    def outbound_contact_id(self, outbound_contact_id: str) -> None:
+        """
+        Sets the outbound_contact_id of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :param outbound_contact_id: The outbound_contact_id of this AcdEndDetailEventTopicAcdEndEvent.
+        :type: str
+        """
+        
+
+        self._outbound_contact_id = outbound_contact_id
 
     def to_dict(self):
         """

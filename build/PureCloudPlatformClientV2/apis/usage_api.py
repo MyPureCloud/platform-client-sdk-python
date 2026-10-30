@@ -64,10 +64,11 @@ class UsageApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    @deprecated("get_oauth_client_usage_query_result is deprecated")
     def get_oauth_client_usage_query_result(self, execution_id: str, client_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
-        
+        Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -148,10 +149,11 @@ class UsageApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_oauth_client_usage_summary is deprecated")
     def get_oauth_client_usage_summary(self, client_id: str, **kwargs) -> 'UsageExecutionResult':
         """
         Get a summary of OAuth client API usage
-        After calling this method, you will then need to poll for the query results based on the returned execution Id
+        Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -403,10 +405,11 @@ class UsageApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_usage_query_execution_id_results is deprecated")
     def get_usage_query_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
-        
+        Deprecated - use GET /api/v2/usage/aggregates/query/jobs/{jobId} instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -481,10 +484,11 @@ class UsageApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_usage_simplesearch_execution_id_results is deprecated")
     def get_usage_simplesearch_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
-        
+        Deprecated - use GET /api/v2/usage/aggregates/query/jobs/{jobId} instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -565,10 +569,11 @@ class UsageApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_oauth_client_usage_query is deprecated")
     def post_oauth_client_usage_query(self, client_id: str, body: 'ApiUsageClientQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query for OAuth client API usage
-        After calling this method, you will then need to poll for the query results based on the returned execution Id
+        Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -811,10 +816,11 @@ class UsageApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_usage_query is deprecated")
     def post_usage_query(self, body: 'ApiUsageOrganizationQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query organization API Usage - 
-        After calling this method, you will then need to poll for the query results based on the returned execution Id
+        Deprecated - use POST /api/v2/usage/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -889,10 +895,11 @@ class UsageApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_usage_simplesearch is deprecated")
     def post_usage_simplesearch(self, body: 'ApiUsageSimpleSearch', **kwargs) -> 'UsageExecutionResult':
         """
         Search organization API Usage
-        After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
+        Deprecated - use POST /api/v2/usage/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

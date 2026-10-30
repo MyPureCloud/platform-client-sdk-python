@@ -123,6 +123,7 @@ from ..models import LabelResponse
 from ..models import LabelUpdateRequest
 from ..models import OperationCreatorUserResponse
 from ..models import OperationListing
+from ..models import OrgV3SourcesTagsResponse
 from ..models import SalesforceSourceRequest
 from ..models import SalesforceSourceResponse
 from ..models import SearchUpdateRequest
@@ -142,6 +143,9 @@ from ..models import V3SourceCreateRequest
 from ..models import V3SourceDetailedResponse
 from ..models import V3SourceExpandableListing
 from ..models import V3SourceExpandableResponse
+from ..models import V3SourceFileCountsRequest
+from ..models import V3SourceFileCountsResponse
+from ..models import V3SourceTagsGroupedResponse
 from ..models import V3SourceUpdateRequest
 from ..models import V3StartManualSyncRequest
 from ..models import V3Synchronization
@@ -5751,6 +5755,171 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_knowledge_sources_tags(self, **kwargs) -> 'OrgV3SourcesTagsResponse':
+        """
+        Get tags across sources for the organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_sources_tags(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Number of items per page. Maximum is 200.
+        :param str tag_name: Optional substring filter for tag names.
+        :param str source_ids: Optional comma-separated source IDs to scope tags.
+        :return: OrgV3SourcesTagsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'tag_name', 'source_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_sources_tags" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/knowledge/sources/tags'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'tag_name' in params:
+            query_params['tagName'] = params['tag_name']
+        if 'source_ids' in params:
+            query_params['sourceIds'] = params['source_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrgV3SourcesTagsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_sources_tags_grouped(self, **kwargs) -> 'V3SourceTagsGroupedResponse':
+        """
+        Get tags grouped by source for the organization
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_sources_tags_grouped(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Number of items per page. Maximum is 200.
+        :param str tag_name: Optional substring filter for tag names.
+        :return: V3SourceTagsGroupedResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'tag_name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_sources_tags_grouped" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/knowledge/sources/tags/grouped'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'tag_name' in params:
+            query_params['tagName'] = params['tag_name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SourceTagsGroupedResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_knowledge_connection(self, connection_id: str, **kwargs) -> 'ConnectionResponse':
         """
         Update connection
@@ -10934,6 +11103,81 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='V3SourceDetailedResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_sources_files_counts(self, **kwargs) -> 'V3SourceFileCountsResponse':
+        """
+        Get per-source file counts for the selected tag filter
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_sources_files_counts(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param V3SourceFileCountsRequest body: 
+        :return: V3SourceFileCountsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_sources_files_counts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/knowledge/sources/files/counts'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='V3SourceFileCountsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -48,16 +48,19 @@ class CsvMappingEntry(object):
         """
         self.swagger_types = {
             'source_field': 'str',
-            'target_field': 'str'
+            'target_field': 'str',
+            'value_format': 'str'
         }
 
         self.attribute_map = {
             'source_field': 'sourceField',
-            'target_field': 'targetField'
+            'target_field': 'targetField',
+            'value_format': 'valueFormat'
         }
 
         self._source_field = None
         self._target_field = None
+        self._value_format = None
 
     @property
     def source_field(self) -> str:
@@ -106,6 +109,35 @@ class CsvMappingEntry(object):
         
 
         self._target_field = target_field
+
+    @property
+    def value_format(self) -> str:
+        """
+        Gets the value_format of this CsvMappingEntry.
+        How the CSV cell value is interpreted at the target path. When omitted, the cell is treated as a string.
+
+        :return: The value_format of this CsvMappingEntry.
+        :rtype: str
+        """
+        return self._value_format
+
+    @value_format.setter
+    def value_format(self, value_format: str) -> None:
+        """
+        Sets the value_format of this CsvMappingEntry.
+        How the CSV cell value is interpreted at the target path. When omitted, the cell is treated as a string.
+
+        :param value_format: The value_format of this CsvMappingEntry.
+        :type: str
+        """
+        if isinstance(value_format, int):
+            value_format = str(value_format)
+        allowed_values = ["String", "Json"]
+        if value_format.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for value_format -> " + value_format)
+            self._value_format = "outdated_sdk_version"
+        else:
+            self._value_format = value_format
 
     def to_dict(self):
         """

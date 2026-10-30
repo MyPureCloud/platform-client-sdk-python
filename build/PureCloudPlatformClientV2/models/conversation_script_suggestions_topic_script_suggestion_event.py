@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationScriptSuggestionsTopicActiveSentiment
     from . import ConversationScriptSuggestionsTopicSuggestedIntent
     from . import ConversationScriptSuggestionsTopicSuggestedScript
     from . import ConversationScriptSuggestionsTopicSuggestionContext
@@ -61,7 +62,8 @@ class ConversationScriptSuggestionsTopicScriptSuggestionEvent(object):
             'context': 'ConversationScriptSuggestionsTopicSuggestionContext',
             'feedback': 'ConversationScriptSuggestionsTopicSuggestionFeedback',
             'script': 'ConversationScriptSuggestionsTopicSuggestedScript',
-            'active_intent': 'ConversationScriptSuggestionsTopicSuggestedIntent'
+            'active_intent': 'ConversationScriptSuggestionsTopicSuggestedIntent',
+            'active_sentiment': 'ConversationScriptSuggestionsTopicActiveSentiment'
         }
 
         self.attribute_map = {
@@ -74,7 +76,8 @@ class ConversationScriptSuggestionsTopicScriptSuggestionEvent(object):
             'context': 'context',
             'feedback': 'feedback',
             'script': 'script',
-            'active_intent': 'activeIntent'
+            'active_intent': 'activeIntent',
+            'active_sentiment': 'activeSentiment'
         }
 
         self._event_time = None
@@ -87,6 +90,7 @@ class ConversationScriptSuggestionsTopicScriptSuggestionEvent(object):
         self._feedback = None
         self._script = None
         self._active_intent = None
+        self._active_sentiment = None
 
     @property
     def event_time(self) -> datetime:
@@ -342,6 +346,30 @@ class ConversationScriptSuggestionsTopicScriptSuggestionEvent(object):
         
 
         self._active_intent = active_intent
+
+    @property
+    def active_sentiment(self) -> 'ConversationScriptSuggestionsTopicActiveSentiment':
+        """
+        Gets the active_sentiment of this ConversationScriptSuggestionsTopicScriptSuggestionEvent.
+
+
+        :return: The active_sentiment of this ConversationScriptSuggestionsTopicScriptSuggestionEvent.
+        :rtype: ConversationScriptSuggestionsTopicActiveSentiment
+        """
+        return self._active_sentiment
+
+    @active_sentiment.setter
+    def active_sentiment(self, active_sentiment: 'ConversationScriptSuggestionsTopicActiveSentiment') -> None:
+        """
+        Sets the active_sentiment of this ConversationScriptSuggestionsTopicScriptSuggestionEvent.
+
+
+        :param active_sentiment: The active_sentiment of this ConversationScriptSuggestionsTopicScriptSuggestionEvent.
+        :type: ConversationScriptSuggestionsTopicActiveSentiment
+        """
+        
+
+        self._active_sentiment = active_sentiment
 
     def to_dict(self):
         """

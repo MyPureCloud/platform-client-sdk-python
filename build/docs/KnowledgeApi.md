@@ -69,6 +69,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_source_synchronizations**](#get_knowledge_source_synchronizations) | Get synchronizations of a source.|
 |[**get_knowledge_sources**](#get_knowledge_sources) | List sources|
 |[**get_knowledge_sources_synchronizations**](#get_knowledge_sources_synchronizations) | Get synchronizations of all sources of the organization.|
+|[**get_knowledge_sources_tags**](#get_knowledge_sources_tags) | Get tags across sources for the organization|
+|[**get_knowledge_sources_tags_grouped**](#get_knowledge_sources_tags_grouped) | Get tags grouped by source for the organization|
 |[**patch_knowledge_connection**](#patch_knowledge_connection) | Update connection|
 |[**patch_knowledge_guest_session_documents_search_search_id**](#patch_knowledge_guest_session_documents_search_search_id) | Update search result.|
 |[**patch_knowledge_knowledgebase**](#patch_knowledge_knowledgebase) | Update knowledge base|
@@ -130,6 +132,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_source_synchronization_uploads**](#post_knowledge_source_synchronization_uploads) | Create presigned URL for uploading a file in the synchronization.|
 |[**post_knowledge_source_synchronizations**](#post_knowledge_source_synchronizations) | Start a manual synchronization from a source.|
 |[**post_knowledge_sources**](#post_knowledge_sources) | Create a new source|
+|[**post_knowledge_sources_files_counts**](#post_knowledge_sources_files_counts) | Get per-source file counts for the selected tag filter|
 |[**put_knowledge_knowledgebase_sources_salesforce_source_id**](#put_knowledge_knowledgebase_sources_salesforce_source_id) | Update Salesforce Knowledge integration source|
 |[**put_knowledge_knowledgebase_sources_servicenow_source_id**](#put_knowledge_knowledgebase_sources_servicenow_source_id) | Update ServiceNow Knowledge integration source|
 |[**put_knowledge_source**](#put_knowledge_source) | Update the source|
@@ -3492,6 +3495,112 @@ except ApiException as e:
 [**V3SynchronizationListing**](V3SynchronizationListing)
 
 
+## get_knowledge_sources_tags
+
+> [**OrgV3SourcesTagsResponse**](OrgV3SourcesTagsResponse) get_knowledge_sources_tags(page_number=page_number, page_size=page_size, tag_name=tag_name, source_ids=source_ids)
+
+
+Get tags across sources for the organization
+
+Wraps GET /api/v2/knowledge/sources/tags 
+
+Requires ALL permissions: 
+
+* knowledge:sourceTagList:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 100 # int | Number of items per page. Maximum is 200. (optional) (default to 100)
+tag_name = 'tag_name_example' # str | Optional substring filter for tag names. (optional)
+source_ids = 'source_ids_example' # str | Optional comma-separated source IDs to scope tags. (optional)
+
+try:
+    # Get tags across sources for the organization
+    api_response = api_instance.get_knowledge_sources_tags(page_number=page_number, page_size=page_size, tag_name=tag_name, source_ids=source_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_sources_tags: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Number of items per page. Maximum is 200. | [optional] [default to 100] |
+| **tag_name** | **str**| Optional substring filter for tag names. | [optional]  |
+| **source_ids** | **str**| Optional comma-separated source IDs to scope tags. | [optional]  |
+
+### Return type
+
+[**OrgV3SourcesTagsResponse**](OrgV3SourcesTagsResponse)
+
+
+## get_knowledge_sources_tags_grouped
+
+> [**V3SourceTagsGroupedResponse**](V3SourceTagsGroupedResponse) get_knowledge_sources_tags_grouped(page_number=page_number, page_size=page_size, tag_name=tag_name)
+
+
+Get tags grouped by source for the organization
+
+Wraps GET /api/v2/knowledge/sources/tags/grouped 
+
+Requires ALL permissions: 
+
+* knowledge:sourceTagList:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 100 # int | Number of items per page. Maximum is 200. (optional) (default to 100)
+tag_name = 'tag_name_example' # str | Optional substring filter for tag names. (optional)
+
+try:
+    # Get tags grouped by source for the organization
+    api_response = api_instance.get_knowledge_sources_tags_grouped(page_number=page_number, page_size=page_size, tag_name=tag_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_sources_tags_grouped: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Number of items per page. Maximum is 200. | [optional] [default to 100] |
+| **tag_name** | **str**| Optional substring filter for tag names. | [optional]  |
+
+### Return type
+
+[**V3SourceTagsGroupedResponse**](V3SourceTagsGroupedResponse)
+
+
 ## patch_knowledge_connection
 
 > [**ConnectionResponse**](ConnectionResponse) patch_knowledge_connection(connection_id, body=body)
@@ -6546,6 +6655,54 @@ except ApiException as e:
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
+## post_knowledge_sources_files_counts
+
+> [**V3SourceFileCountsResponse**](V3SourceFileCountsResponse) post_knowledge_sources_files_counts(body=body)
+
+
+Get per-source file counts for the selected tag filter
+
+Wraps POST /api/v2/knowledge/sources/files/counts 
+
+Requires ALL permissions: 
+
+* knowledge:sourceFileCount:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+body = PureCloudPlatformClientV2.V3SourceFileCountsRequest() # V3SourceFileCountsRequest |  (optional)
+
+try:
+    # Get per-source file counts for the selected tag filter
+    api_response = api_instance.post_knowledge_sources_files_counts(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_sources_files_counts: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**V3SourceFileCountsRequest**](V3SourceFileCountsRequest)|  | [optional]  |
+
+### Return type
+
+[**V3SourceFileCountsResponse**](V3SourceFileCountsResponse)
+
+
 ## put_knowledge_knowledgebase_sources_salesforce_source_id
 
 > [**SalesforceSourceResponse**](SalesforceSourceResponse) put_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id, body)
@@ -6700,4 +6857,4 @@ except ApiException as e:
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

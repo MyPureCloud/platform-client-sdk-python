@@ -19,10 +19,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_intents_customerintent**](#patch_intents_customerintent) | Patch customer intent for customerIntentId|
 |[**post_intents_assignments_externalcontact_customerintent_assignment**](#post_intents_assignments_externalcontact_customerintent_assignment) | Create customer intent assignment for external contact|
 |[**post_intents_categories**](#post_intents_categories) | Create category|
+|[**post_intents_categories_similar**](#post_intents_categories_similar) | Find similar categories|
 |[**post_intents_customerintent_sourceintents_bulk_add**](#post_intents_customerintent_sourceintents_bulk_add) | Bulk add source intents to a customer intent|
 |[**post_intents_customerintent_sourceintents_bulk_remove**](#post_intents_customerintent_sourceintents_bulk_remove) | Bulk remove source intents mapped to a customer intent|
 |[**post_intents_customerintents**](#post_intents_customerintents) | Create customer intents|
 |[**post_intents_customerintents_bulk_retrieve**](#post_intents_customerintents_bulk_retrieve) | Get customer intents by IDs|
+|[**post_intents_customerintents_similar**](#post_intents_customerintents_similar) | Find similar customer intents|
 
 
 
@@ -682,6 +684,56 @@ except ApiException as e:
 [**IntentsCategory**](IntentsCategory)
 
 
+## post_intents_categories_similar
+
+> [**SimilarCategoriesResponse**](SimilarCategoriesResponse) post_intents_categories_similar(body)
+
+
+Find similar categories
+
+post_intents_categories_similar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/intents/categories/similar 
+
+Requires ANY permissions: 
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntentsApi()
+body = PureCloudPlatformClientV2.IntentsCategory() # IntentsCategory | Similarity search criteria
+
+try:
+    # Find similar categories
+    api_response = api_instance.post_intents_categories_similar(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntentsApi->post_intents_categories_similar: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**IntentsCategory**](IntentsCategory)| Similarity search criteria |  |
+
+### Return type
+
+[**SimilarCategoriesResponse**](SimilarCategoriesResponse)
+
+
 ## post_intents_customerintent_sourceintents_bulk_add
 
 > [**BulkSourceIntentsResponse**](BulkSourceIntentsResponse) post_intents_customerintent_sourceintents_bulk_add(customer_intent_id, body)
@@ -878,4 +930,54 @@ except ApiException as e:
 [**list[CustomerIntentResponse]**](CustomerIntentResponse)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+## post_intents_customerintents_similar
+
+> [**SimilarCustomerIntentsResponse**](SimilarCustomerIntentsResponse) post_intents_customerintents_similar(body)
+
+
+Find similar customer intents
+
+post_intents_customerintents_similar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/intents/customerintents/similar 
+
+Requires ANY permissions: 
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntentsApi()
+body = PureCloudPlatformClientV2.SimilarCustomerIntentsRequest() # SimilarCustomerIntentsRequest | Similarity search criteria
+
+try:
+    # Find similar customer intents
+    api_response = api_instance.post_intents_customerintents_similar(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntentsApi->post_intents_customerintents_similar: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SimilarCustomerIntentsRequest**](SimilarCustomerIntentsRequest)| Similarity search criteria |  |
+
+### Return type
+
+[**SimilarCustomerIntentsResponse**](SimilarCustomerIntentsResponse)
+
+
+_PureCloudPlatformClientV2 270.0.0_

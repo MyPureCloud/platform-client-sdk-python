@@ -34,6 +34,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import Attachment
     from . import EmailAddress
+    from . import RecipientWarning
 
 class EmailMessage(object):
     """
@@ -67,6 +68,7 @@ class EmailMessage(object):
             'draft_type': 'str',
             'email_size_bytes': 'int',
             'max_email_size_bytes': 'int',
+            'recipient_warnings': 'list[RecipientWarning]',
             'self_uri': 'str'
         }
 
@@ -88,6 +90,7 @@ class EmailMessage(object):
             'draft_type': 'draftType',
             'email_size_bytes': 'emailSizeBytes',
             'max_email_size_bytes': 'maxEmailSizeBytes',
+            'recipient_warnings': 'recipientWarnings',
             'self_uri': 'selfUri'
         }
 
@@ -108,6 +111,7 @@ class EmailMessage(object):
         self._draft_type = None
         self._email_size_bytes = None
         self._max_email_size_bytes = None
+        self._recipient_warnings = None
         self._self_uri = None
 
     @property
@@ -527,6 +531,30 @@ class EmailMessage(object):
         
 
         self._max_email_size_bytes = max_email_size_bytes
+
+    @property
+    def recipient_warnings(self) -> List['RecipientWarning']:
+        """
+        Gets the recipient_warnings of this EmailMessage.
+        The recipients that failed validation. Advisory only; recipient policy is enforced at send time.
+
+        :return: The recipient_warnings of this EmailMessage.
+        :rtype: list[RecipientWarning]
+        """
+        return self._recipient_warnings
+
+    @recipient_warnings.setter
+    def recipient_warnings(self, recipient_warnings: List['RecipientWarning']) -> None:
+        """
+        Sets the recipient_warnings of this EmailMessage.
+        The recipients that failed validation. Advisory only; recipient policy is enforced at send time.
+
+        :param recipient_warnings: The recipient_warnings of this EmailMessage.
+        :type: list[RecipientWarning]
+        """
+        
+
+        self._recipient_warnings = recipient_warnings
 
     @property
     def self_uri(self) -> str:

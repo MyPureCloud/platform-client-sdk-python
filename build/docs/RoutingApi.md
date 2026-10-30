@@ -3017,7 +3017,7 @@ This endpoint does not need any parameters.
 
 ## get_routing_queue
 
-> [**Queue**](Queue) get_routing_queue(queue_id, expand=expand)
+> [**Queue**](Queue) get_routing_queue(queue_id, expand=expand, force_member_recount=force_member_recount)
 
 
 Get details about this queue.
@@ -3043,10 +3043,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 queue_id = 'queue_id_example' # str | Queue ID
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+force_member_recount = False # bool | Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters. (optional) (default to False)
 
 try:
     # Get details about this queue.
-    api_response = api_instance.get_routing_queue(queue_id, expand=expand)
+    api_response = api_instance.get_routing_queue(queue_id, expand=expand, force_member_recount=force_member_recount)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queue: %s\n" % e)
@@ -3059,6 +3060,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
+| **force_member_recount** | **bool**| Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters. | [optional] [default to False] |
 
 ### Return type
 
@@ -9010,4 +9012,4 @@ except ApiException as e:
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

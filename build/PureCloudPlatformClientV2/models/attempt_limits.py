@@ -59,6 +59,7 @@ class AttemptLimits(object):
             'time_zone_id': 'str',
             'reset_period': 'str',
             'recall_entries': 'dict(str, RecallEntry)',
+            'phone_type_recall_entries': 'dict(str, dict(str, RecallEntry))',
             'self_uri': 'str'
         }
 
@@ -73,6 +74,7 @@ class AttemptLimits(object):
             'time_zone_id': 'timeZoneId',
             'reset_period': 'resetPeriod',
             'recall_entries': 'recallEntries',
+            'phone_type_recall_entries': 'phoneTypeRecallEntries',
             'self_uri': 'selfUri'
         }
 
@@ -86,6 +88,7 @@ class AttemptLimits(object):
         self._time_zone_id = None
         self._reset_period = None
         self._recall_entries = None
+        self._phone_type_recall_entries = None
         self._self_uri = None
 
     @property
@@ -332,6 +335,30 @@ class AttemptLimits(object):
         
 
         self._recall_entries = recall_entries
+
+    @property
+    def phone_type_recall_entries(self) -> Dict[str, Dict[str, 'RecallEntry']]:
+        """
+        Gets the phone_type_recall_entries of this AttemptLimits.
+        Configuration for recall attempts per phone type
+
+        :return: The phone_type_recall_entries of this AttemptLimits.
+        :rtype: dict(str, dict(str, RecallEntry))
+        """
+        return self._phone_type_recall_entries
+
+    @phone_type_recall_entries.setter
+    def phone_type_recall_entries(self, phone_type_recall_entries: Dict[str, Dict[str, 'RecallEntry']]) -> None:
+        """
+        Sets the phone_type_recall_entries of this AttemptLimits.
+        Configuration for recall attempts per phone type
+
+        :param phone_type_recall_entries: The phone_type_recall_entries of this AttemptLimits.
+        :type: dict(str, dict(str, RecallEntry))
+        """
+        
+
+        self._phone_type_recall_entries = phone_type_recall_entries
 
     @property
     def self_uri(self) -> str:

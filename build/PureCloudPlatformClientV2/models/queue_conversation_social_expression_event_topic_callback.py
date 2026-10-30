@@ -79,7 +79,8 @@ class QueueConversationSocialExpressionEventTopicCallback(object):
             'after_call_work_required': 'bool',
             'caller_id': 'str',
             'caller_id_name': 'str',
-            'queue_media_settings': 'QueueConversationSocialExpressionEventTopicQueueMediaSettings'
+            'queue_media_settings': 'QueueConversationSocialExpressionEventTopicQueueMediaSettings',
+            'public_ip_address': 'str'
         }
 
         self.attribute_map = {
@@ -109,7 +110,8 @@ class QueueConversationSocialExpressionEventTopicCallback(object):
             'after_call_work_required': 'afterCallWorkRequired',
             'caller_id': 'callerId',
             'caller_id_name': 'callerIdName',
-            'queue_media_settings': 'queueMediaSettings'
+            'queue_media_settings': 'queueMediaSettings',
+            'public_ip_address': 'publicIpAddress'
         }
 
         self._state = None
@@ -139,6 +141,7 @@ class QueueConversationSocialExpressionEventTopicCallback(object):
         self._caller_id = None
         self._caller_id_name = None
         self._queue_media_settings = None
+        self._public_ip_address = None
 
     @property
     def state(self) -> str:
@@ -807,6 +810,30 @@ class QueueConversationSocialExpressionEventTopicCallback(object):
         
 
         self._queue_media_settings = queue_media_settings
+
+    @property
+    def public_ip_address(self) -> str:
+        """
+        Gets the public_ip_address of this QueueConversationSocialExpressionEventTopicCallback.
+        The reported client IP of the phone for the call.
+
+        :return: The public_ip_address of this QueueConversationSocialExpressionEventTopicCallback.
+        :rtype: str
+        """
+        return self._public_ip_address
+
+    @public_ip_address.setter
+    def public_ip_address(self, public_ip_address: str) -> None:
+        """
+        Sets the public_ip_address of this QueueConversationSocialExpressionEventTopicCallback.
+        The reported client IP of the phone for the call.
+
+        :param public_ip_address: The public_ip_address of this QueueConversationSocialExpressionEventTopicCallback.
+        :type: str
+        """
+        
+
+        self._public_ip_address = public_ip_address
 
     def to_dict(self):
         """

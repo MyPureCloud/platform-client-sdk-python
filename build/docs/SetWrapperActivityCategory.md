@@ -1,0 +1,13 @@
+# SetWrapperActivityCategory
+
+## SetWrapperActivityCategory
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **values** | list[str] |  | [optional] |
+
+
+
+_PureCloudPlatformClientV2 270.0.0_

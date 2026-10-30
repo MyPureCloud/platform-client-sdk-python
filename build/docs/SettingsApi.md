@@ -12,10 +12,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_emails_settings**](#get_emails_settings) | Get email Contact Center settings|
 |[**get_emails_settings_threading**](#get_emails_settings_threading) | Get email threading settings|
 |[**get_externalcontacts_settings**](#get_externalcontacts_settings) | Get settings|
+|[**get_search_settings**](#get_search_settings) | Get the organization&#39;s search settings|
 |[**get_settings_executiondata**](#get_settings_executiondata) | Get the execution history enabled setting.|
 |[**get_users_agentui_agents_autoanswer_agent_id_settings**](#get_users_agentui_agents_autoanswer_agent_id_settings) | Get agent auto answer settings|
 |[**patch_emails_settings**](#patch_emails_settings) | Patch email Contact Center settings|
 |[**patch_emails_settings_threading**](#patch_emails_settings_threading) | Patch email threading settings|
+|[**patch_search_settings**](#patch_search_settings) | Patch the organization&#39;s search settings|
+|[**patch_search_settings_contentsearch**](#patch_search_settings_contentsearch) | Patch the organization&#39;s content search settings|
 |[**patch_settings_executiondata**](#patch_settings_executiondata) | Edit the execution history on off setting.|
 |[**patch_users_agentui_agents_autoanswer_agent_id_settings**](#patch_users_agentui_agents_autoanswer_agent_id_settings) | Update agent auto answer settings|
 |[**put_externalcontacts_settings**](#put_externalcontacts_settings) | Set settings|
@@ -289,6 +292,53 @@ This endpoint does not need any parameters.
 [**ExternalContactsSettings**](ExternalContactsSettings)
 
 
+## get_search_settings
+
+> [**OrgSettings**](OrgSettings) get_search_settings()
+
+
+Get the organization's search settings
+
+get_search_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/search/settings 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* analytics:transcriptsearchsetting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SettingsApi()
+
+try:
+    # Get the organization's search settings
+    api_response = api_instance.get_search_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SettingsApi->get_search_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**OrgSettings**](OrgSettings)
+
+
 ## get_settings_executiondata
 
 > [**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse) get_settings_executiondata()
@@ -477,6 +527,106 @@ except ApiException as e:
 ### Return type
 
 [**EmailThreadingSettings**](EmailThreadingSettings)
+
+
+## patch_search_settings
+
+> [**OrgSettings**](OrgSettings) patch_search_settings(body)
+
+
+Patch the organization's search settings
+
+patch_search_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/search/settings 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SettingsApi()
+body = PureCloudPlatformClientV2.OrgSettings() # OrgSettings | Search Settings
+
+try:
+    # Patch the organization's search settings
+    api_response = api_instance.patch_search_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SettingsApi->patch_search_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OrgSettings**](OrgSettings)| Search Settings |  |
+
+### Return type
+
+[**OrgSettings**](OrgSettings)
+
+
+## patch_search_settings_contentsearch
+
+> [**ContentSearchSetting**](ContentSearchSetting) patch_search_settings_contentsearch(body)
+
+
+Patch the organization's content search settings
+
+patch_search_settings_contentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/search/settings/contentsearch 
+
+Requires ANY permissions: 
+
+* analytics:transcriptsearchsetting:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SettingsApi()
+body = PureCloudPlatformClientV2.ContentSearchSetting() # ContentSearchSetting | Content search setting
+
+try:
+    # Patch the organization's content search settings
+    api_response = api_instance.patch_search_settings_contentsearch(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SettingsApi->patch_search_settings_contentsearch: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContentSearchSetting**](ContentSearchSetting)| Content search setting |  |
+
+### Return type
+
+[**ContentSearchSetting**](ContentSearchSetting)
 
 
 ## patch_settings_executiondata
@@ -677,4 +827,4 @@ except ApiException as e:
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

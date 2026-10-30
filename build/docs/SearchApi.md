@@ -11,10 +11,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_groups_search**](#get_groups_search) | Search groups using the q64 value returned from a previous search|
 |[**get_locations_search**](#get_locations_search) | Search locations using the q64 value returned from a previous search|
 |[**get_search**](#get_search) | Search using the q64 value returned from a previous search.|
+|[**get_search_settings**](#get_search_settings) | Get the organization&#39;s search settings|
 |[**get_search_suggest**](#get_search_suggest) | Suggest resources using the q64 value returned from a previous suggest query.|
 |[**get_telephony_providers_edges_sites_search**](#get_telephony_providers_edges_sites_search) | Search sites using the q64 value returned from a previous search|
 |[**get_users_search**](#get_users_search) | Search users using the q64 value returned from a previous search|
 |[**get_voicemail_search**](#get_voicemail_search) | Search voicemails using the q64 value returned from a previous search|
+|[**patch_search_settings**](#patch_search_settings) | Patch the organization&#39;s search settings|
+|[**patch_search_settings_contentsearch**](#patch_search_settings_contentsearch) | Patch the organization&#39;s content search settings|
 |[**post_conversations_customattributes_search**](#post_conversations_customattributes_search) | Search resources.|
 |[**post_conversations_participants_attributes_search**](#post_conversations_participants_attributes_search) | Search conversations|
 |[**post_documentation_all_search**](#post_documentation_all_search) | Search all documents|
@@ -273,6 +276,53 @@ except ApiException as e:
 [**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
+## get_search_settings
+
+> [**OrgSettings**](OrgSettings) get_search_settings()
+
+
+Get the organization's search settings
+
+get_search_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/search/settings 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* analytics:transcriptsearchsetting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+
+try:
+    # Get the organization's search settings
+    api_response = api_instance.get_search_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->get_search_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**OrgSettings**](OrgSettings)
+
+
 ## get_search_suggest
 
 > [**JsonNodeSearchResponse**](JsonNodeSearchResponse) get_search_suggest(q64, expand=expand, profile=profile)
@@ -475,6 +525,106 @@ except ApiException as e:
 ### Return type
 
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
+
+
+## patch_search_settings
+
+> [**OrgSettings**](OrgSettings) patch_search_settings(body)
+
+
+Patch the organization's search settings
+
+patch_search_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/search/settings 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.OrgSettings() # OrgSettings | Search Settings
+
+try:
+    # Patch the organization's search settings
+    api_response = api_instance.patch_search_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->patch_search_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OrgSettings**](OrgSettings)| Search Settings |  |
+
+### Return type
+
+[**OrgSettings**](OrgSettings)
+
+
+## patch_search_settings_contentsearch
+
+> [**ContentSearchSetting**](ContentSearchSetting) patch_search_settings_contentsearch(body)
+
+
+Patch the organization's content search settings
+
+patch_search_settings_contentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/search/settings/contentsearch 
+
+Requires ANY permissions: 
+
+* analytics:transcriptsearchsetting:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.ContentSearchSetting() # ContentSearchSetting | Content search setting
+
+try:
+    # Patch the organization's content search settings
+    api_response = api_instance.patch_search_settings_contentsearch(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->patch_search_settings_contentsearch: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContentSearchSetting**](ContentSearchSetting)| Content search setting |  |
+
+### Return type
+
+[**ContentSearchSetting**](ContentSearchSetting)
 
 
 ## post_conversations_customattributes_search
@@ -916,6 +1066,8 @@ Requires ANY permissions:
 * analytics:conversationDetail:view
 * recording:recording:view
 * recording:recordingSegment:view
+* analytics:transcriptcontent:search
+* speechAndTextAnalytics:data:view
 
 ### Example
 
@@ -1293,4 +1445,4 @@ except ApiException as e:
 [**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

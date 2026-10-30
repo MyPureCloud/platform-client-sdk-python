@@ -32,6 +32,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationThirdPartyActionSuggestionsTopicActiveSentiment
+    from . import ConversationThirdPartyActionSuggestionsTopicConversationTurn
+    from . import ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry
     from . import ConversationThirdPartyActionSuggestionsTopicSuggestedIntent
     from . import ConversationThirdPartyActionSuggestionsTopicSuggestionContext
     from . import ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback
@@ -60,8 +63,11 @@ class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEven
             'engagement_type': 'str',
             'feedback': 'ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback',
             'active_intent': 'ConversationThirdPartyActionSuggestionsTopicSuggestedIntent',
+            'active_sentiment': 'ConversationThirdPartyActionSuggestionsTopicActiveSentiment',
             'context': 'ConversationThirdPartyActionSuggestionsTopicSuggestionContext',
-            'third_party_suggestion': 'ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion'
+            'conversation_turns': 'list[ConversationThirdPartyActionSuggestionsTopicConversationTurn]',
+            'third_party_suggestion': 'ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion',
+            'copilot_context': 'list[ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry]'
         }
 
         self.attribute_map = {
@@ -73,8 +79,11 @@ class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEven
             'engagement_type': 'engagementType',
             'feedback': 'feedback',
             'active_intent': 'activeIntent',
+            'active_sentiment': 'activeSentiment',
             'context': 'context',
-            'third_party_suggestion': 'thirdPartySuggestion'
+            'conversation_turns': 'conversationTurns',
+            'third_party_suggestion': 'thirdPartySuggestion',
+            'copilot_context': 'copilotContext'
         }
 
         self._event_time = None
@@ -85,8 +94,11 @@ class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEven
         self._engagement_type = None
         self._feedback = None
         self._active_intent = None
+        self._active_sentiment = None
         self._context = None
+        self._conversation_turns = None
         self._third_party_suggestion = None
+        self._copilot_context = None
 
     @property
     def event_time(self) -> datetime:
@@ -296,6 +308,30 @@ class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEven
         self._active_intent = active_intent
 
     @property
+    def active_sentiment(self) -> 'ConversationThirdPartyActionSuggestionsTopicActiveSentiment':
+        """
+        Gets the active_sentiment of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+
+
+        :return: The active_sentiment of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+        :rtype: ConversationThirdPartyActionSuggestionsTopicActiveSentiment
+        """
+        return self._active_sentiment
+
+    @active_sentiment.setter
+    def active_sentiment(self, active_sentiment: 'ConversationThirdPartyActionSuggestionsTopicActiveSentiment') -> None:
+        """
+        Sets the active_sentiment of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+
+
+        :param active_sentiment: The active_sentiment of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+        :type: ConversationThirdPartyActionSuggestionsTopicActiveSentiment
+        """
+        
+
+        self._active_sentiment = active_sentiment
+
+    @property
     def context(self) -> 'ConversationThirdPartyActionSuggestionsTopicSuggestionContext':
         """
         Gets the context of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
@@ -320,6 +356,30 @@ class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEven
         self._context = context
 
     @property
+    def conversation_turns(self) -> List['ConversationThirdPartyActionSuggestionsTopicConversationTurn']:
+        """
+        Gets the conversation_turns of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+
+
+        :return: The conversation_turns of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+        :rtype: list[ConversationThirdPartyActionSuggestionsTopicConversationTurn]
+        """
+        return self._conversation_turns
+
+    @conversation_turns.setter
+    def conversation_turns(self, conversation_turns: List['ConversationThirdPartyActionSuggestionsTopicConversationTurn']) -> None:
+        """
+        Sets the conversation_turns of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+
+
+        :param conversation_turns: The conversation_turns of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+        :type: list[ConversationThirdPartyActionSuggestionsTopicConversationTurn]
+        """
+        
+
+        self._conversation_turns = conversation_turns
+
+    @property
     def third_party_suggestion(self) -> 'ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion':
         """
         Gets the third_party_suggestion of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
@@ -342,6 +402,30 @@ class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEven
         
 
         self._third_party_suggestion = third_party_suggestion
+
+    @property
+    def copilot_context(self) -> List['ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry']:
+        """
+        Gets the copilot_context of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+
+
+        :return: The copilot_context of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+        :rtype: list[ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry]
+        """
+        return self._copilot_context
+
+    @copilot_context.setter
+    def copilot_context(self, copilot_context: List['ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry']) -> None:
+        """
+        Sets the copilot_context of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+
+
+        :param copilot_context: The copilot_context of this ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.
+        :type: list[ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry]
+        """
+        
+
+        self._copilot_context = copilot_context
 
     def to_dict(self):
         """

@@ -4794,12 +4794,13 @@ class RoutingApi(object):
             for asynchronous request. (optional)
         :param str queue_id: Queue ID (required)
         :param list[str] expand: Which fields, if any, to expand
+        :param bool force_member_recount: Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters.
         :return: Queue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['queue_id', 'expand']
+        all_params = ['queue_id', 'expand', 'force_member_recount']
         all_params.append('callback')
 
         params = locals()
@@ -4825,6 +4826,8 @@ class RoutingApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'force_member_recount' in params:
+            query_params['forceMemberRecount'] = params['force_member_recount']
 
         header_params = {}
 

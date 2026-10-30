@@ -49,24 +49,27 @@ class CaseQueryJobFilter(object):
         self.swagger_types = {
             'name': 'str',
             'operator': 'str',
-            'values': 'list[str]'
+            'values': 'list[str]',
+            'case_sensitive': 'bool'
         }
 
         self.attribute_map = {
             'name': 'name',
             'operator': 'operator',
-            'values': 'values'
+            'values': 'values',
+            'case_sensitive': 'caseSensitive'
         }
 
         self._name = None
         self._operator = None
         self._values = None
+        self._case_sensitive = None
 
     @property
     def name(self) -> str:
         """
         Gets the name of this CaseQueryJobFilter.
-        Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference'.
+        Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference', 'externalId'.
 
         :return: The name of this CaseQueryJobFilter.
         :rtype: str
@@ -77,7 +80,7 @@ class CaseQueryJobFilter(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this CaseQueryJobFilter.
-        Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference'.
+        Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference', 'externalId'.
 
         :param name: The name of this CaseQueryJobFilter.
         :type: str
@@ -138,6 +141,30 @@ class CaseQueryJobFilter(object):
         
 
         self._values = values
+
+    @property
+    def case_sensitive(self) -> bool:
+        """
+        Gets the case_sensitive of this CaseQueryJobFilter.
+        Whether the filter matches letter case exactly. Only valid for 'reference' and 'externalId' filters. Defaults to true.
+
+        :return: The case_sensitive of this CaseQueryJobFilter.
+        :rtype: bool
+        """
+        return self._case_sensitive
+
+    @case_sensitive.setter
+    def case_sensitive(self, case_sensitive: bool) -> None:
+        """
+        Sets the case_sensitive of this CaseQueryJobFilter.
+        Whether the filter matches letter case exactly. Only valid for 'reference' and 'externalId' filters. Defaults to true.
+
+        :param case_sensitive: The case_sensitive of this CaseQueryJobFilter.
+        :type: bool
+        """
+        
+
+        self._case_sensitive = case_sensitive
 
     def to_dict(self):
         """

@@ -75,6 +75,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'followup_actions': 'list[ConversationSummaryTopicConversationFollowupAction]',
             'extracted_entities': 'list[ConversationSummaryTopicSummaryExtractedCustomEntity]',
             'wrap_up_codes': 'list[ConversationSummaryTopicConversationWrapUpCode]',
+            'wrap_up_code_prediction_enabled': 'bool',
             'trigger_source': 'ConversationSummaryTopicTriggerSource',
             'summary_source_type': 'str',
             'trigger_type': 'str',
@@ -102,6 +103,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
             'followup_actions': 'followupActions',
             'extracted_entities': 'extractedEntities',
             'wrap_up_codes': 'wrapUpCodes',
+            'wrap_up_code_prediction_enabled': 'wrapUpCodePredictionEnabled',
             'trigger_source': 'triggerSource',
             'summary_source_type': 'summarySourceType',
             'trigger_type': 'triggerType',
@@ -128,6 +130,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         self._followup_actions = None
         self._extracted_entities = None
         self._wrap_up_codes = None
+        self._wrap_up_code_prediction_enabled = None
         self._trigger_source = None
         self._summary_source_type = None
         self._trigger_type = None
@@ -555,6 +558,30 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         self._wrap_up_codes = wrap_up_codes
 
     @property
+    def wrap_up_code_prediction_enabled(self) -> bool:
+        """
+        Gets the wrap_up_code_prediction_enabled of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :return: The wrap_up_code_prediction_enabled of this ConversationSummaryTopicConversationSummaryEvent.
+        :rtype: bool
+        """
+        return self._wrap_up_code_prediction_enabled
+
+    @wrap_up_code_prediction_enabled.setter
+    def wrap_up_code_prediction_enabled(self, wrap_up_code_prediction_enabled: bool) -> None:
+        """
+        Sets the wrap_up_code_prediction_enabled of this ConversationSummaryTopicConversationSummaryEvent.
+
+
+        :param wrap_up_code_prediction_enabled: The wrap_up_code_prediction_enabled of this ConversationSummaryTopicConversationSummaryEvent.
+        :type: bool
+        """
+        
+
+        self._wrap_up_code_prediction_enabled = wrap_up_code_prediction_enabled
+
+    @property
     def trigger_source(self) -> 'ConversationSummaryTopicTriggerSource':
         """
         Gets the trigger_source of this ConversationSummaryTopicConversationSummaryEvent.
@@ -682,7 +709,7 @@ class ConversationSummaryTopicConversationSummaryEvent(object):
         """
         if isinstance(error_type, int):
             error_type = str(error_type)
-        allowed_values = ["UNKNOWN", "CONVERSATION_TOO_LONG", "CONVERSATION_TOO_SHORT", "RATE_LIMITED"]
+        allowed_values = ["UNKNOWN", "CONVERSATION_TOO_LONG", "CONVERSATION_TOO_SHORT", "RATE_LIMITED", "EXTERNAL_SERVICE_TIMEOUT"]
         if error_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for error_type -> " + error_type)
             self._error_type = "outdated_sdk_version"

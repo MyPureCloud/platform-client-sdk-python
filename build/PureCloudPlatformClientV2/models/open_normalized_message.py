@@ -234,7 +234,7 @@ class OpenNormalizedMessage(object):
         """
         if isinstance(status, int):
             status = str(status)
-        allowed_values = ["Sent", "Delivered", "Read", "Failed", "Published", "Removed"]
+        allowed_values = ["Sent", "Delivered", "Read", "Failed", "Published", "Removed", "Modified"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"

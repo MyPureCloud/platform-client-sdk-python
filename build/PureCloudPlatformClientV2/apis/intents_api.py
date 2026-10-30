@@ -51,6 +51,9 @@ from ..models import ErrorBody
 from ..models import IntentsCategory
 from ..models import IntentsCategoryListing
 from ..models import IntentsCategoryPatch
+from ..models import SimilarCategoriesResponse
+from ..models import SimilarCustomerIntentsRequest
+from ..models import SimilarCustomerIntentsResponse
 
 class IntentsApi(object):
     """
@@ -1136,6 +1139,85 @@ class IntentsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_intents_categories_similar(self, body: 'IntentsCategory', **kwargs) -> 'SimilarCategoriesResponse':
+        """
+        Find similar categories
+        
+	    post_intents_categories_similar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_intents_categories_similar(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param IntentsCategory body: Similarity search criteria (required)
+        :return: SimilarCategoriesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_intents_categories_similar" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_intents_categories_similar`")
+
+
+        resource_path = '/api/v2/intents/categories/similar'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SimilarCategoriesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_intents_customerintent_sourceintents_bulk_add(self, customer_intent_id: str, body: 'BulkAddSourceIntentsRequest', **kwargs) -> 'BulkSourceIntentsResponse':
         """
         Bulk add source intents to a customer intent
@@ -1456,6 +1538,85 @@ class IntentsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[CustomerIntentResponse]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_intents_customerintents_similar(self, body: 'SimilarCustomerIntentsRequest', **kwargs) -> 'SimilarCustomerIntentsResponse':
+        """
+        Find similar customer intents
+        
+	    post_intents_customerintents_similar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_intents_customerintents_similar(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SimilarCustomerIntentsRequest body: Similarity search criteria (required)
+        :return: SimilarCustomerIntentsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_intents_customerintents_similar" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_intents_customerintents_similar`")
+
+
+        resource_path = '/api/v2/intents/customerintents/similar'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SimilarCustomerIntentsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

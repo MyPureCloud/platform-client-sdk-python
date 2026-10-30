@@ -50,6 +50,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'mu_id': 'str',
             'user': 'WfmTimeOffRequestUpdateTopicUserReference',
             'is_full_day_request': 'bool',
             'marked_as_read': 'bool',
@@ -75,6 +76,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
 
         self.attribute_map = {
             'id': 'id',
+            'mu_id': 'muId',
             'user': 'user',
             'is_full_day_request': 'isFullDayRequest',
             'marked_as_read': 'markedAsRead',
@@ -99,6 +101,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         }
 
         self._id = None
+        self._mu_id = None
         self._user = None
         self._is_full_day_request = None
         self._marked_as_read = None
@@ -144,6 +147,30 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         
 
         self._id = id
+
+    @property
+    def mu_id(self) -> str:
+        """
+        Gets the mu_id of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :return: The mu_id of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :rtype: str
+        """
+        return self._mu_id
+
+    @mu_id.setter
+    def mu_id(self, mu_id: str) -> None:
+        """
+        Sets the mu_id of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+
+
+        :param mu_id: The mu_id of this WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.
+        :type: str
+        """
+        
+
+        self._mu_id = mu_id
 
     @property
     def user(self) -> 'WfmTimeOffRequestUpdateTopicUserReference':

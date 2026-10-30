@@ -55,7 +55,8 @@
 | **timeout_seconds** | int |  | [optional] |
 | **callback_scheduled_time** | datetime |  | [optional] |
 | **automated_callback_config_id** | str |  | [optional] |
+| **public_ip_address** | str |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

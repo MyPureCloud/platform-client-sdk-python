@@ -16,7 +16,8 @@
 | **feedback** | [ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback](ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback) |  | [optional] |
 | **knowledge_article** | [ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle](ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle) |  | [optional] |
 | **active_intent** | [ConversationKnowledgeArticleSuggestionsTopicSuggestedIntent](ConversationKnowledgeArticleSuggestionsTopicSuggestedIntent) |  | [optional] |
+| **active_sentiment** | [ConversationKnowledgeArticleSuggestionsTopicActiveSentiment](ConversationKnowledgeArticleSuggestionsTopicActiveSentiment) |  | [optional] |
 
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

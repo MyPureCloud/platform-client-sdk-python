@@ -150,6 +150,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_managementunit_agent**](#get_workforcemanagement_managementunit_agent) | Get data for agent in the management unit|
 |[**get_workforcemanagement_managementunit_agent_shifttrades**](#get_workforcemanagement_managementunit_agent_shifttrades) | Gets all the shift trades for a given agent|
 |[**get_workforcemanagement_managementunit_decisionmetrics**](#get_workforcemanagement_managementunit_decisionmetrics) | Gets the decision metrics of all user in given management unit|
+|[**get_workforcemanagement_managementunit_selfschedule_settings**](#get_workforcemanagement_managementunit_selfschedule_settings) | Get admin self-scheduling settings for a management unit|
 |[**get_workforcemanagement_managementunit_shifttrades_matched**](#get_workforcemanagement_managementunit_shifttrades_matched) | Gets a summary of all shift trades in the matched state|
 |[**get_workforcemanagement_managementunit_shifttrades_users**](#get_workforcemanagement_managementunit_shifttrades_users) | Gets list of users available for whom you can send direct shift trade requests|
 |[**get_workforcemanagement_managementunit_timeofflimit**](#get_workforcemanagement_managementunit_timeofflimit) | Gets a time off limit object|
@@ -175,6 +176,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_schedulebids**](#get_workforcemanagement_schedulebids) | Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently|
 |[**get_workforcemanagement_schedulingjob**](#get_workforcemanagement_schedulingjob) | Get status of the scheduling job|
 |[**get_workforcemanagement_schedulingpreferences_settings**](#get_workforcemanagement_schedulingpreferences_settings) | Get scheduling preferences settings for the agent&#39;s business unit|
+|[**get_workforcemanagement_selfschedule_activitymove**](#get_workforcemanagement_selfschedule_activitymove) | Lookup a single agent activity move based on its identifier|
+|[**get_workforcemanagement_selfschedule_job**](#get_workforcemanagement_selfschedule_job) | View result of create self-schedule activity move operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_selfschedule_offers_job**](#get_workforcemanagement_selfschedule_offers_job) | View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_selfschedule_query**](#get_workforcemanagement_selfschedule_query) | Query self-schedule activity moves for agent|
+|[**get_workforcemanagement_selfschedule_settings**](#get_workforcemanagement_selfschedule_settings) | Agent gets the self-schedule management unit settings.|
 |[**get_workforcemanagement_shifttrades**](#get_workforcemanagement_shifttrades) | Gets all of my shift trades|
 |[**get_workforcemanagement_shifttrading_trade_job**](#get_workforcemanagement_shifttrading_trade_job) | View result of update trade operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_shifttrading_trade_match_job**](#get_workforcemanagement_shifttrading_trade_match_job) | View result of match shift trade operation. Only the receiving user who started the operation can query the status.|
@@ -227,6 +233,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_managementunit**](#patch_workforcemanagement_managementunit) | Update the requested management unit|
 |[**patch_workforcemanagement_managementunit_agents**](#patch_workforcemanagement_managementunit_agents) | Update agent configurations|
 |[**patch_workforcemanagement_managementunit_agents_workplans_bulk**](#patch_workforcemanagement_managementunit_agents_workplans_bulk) | Updates agent work plan configuration|
+|[**patch_workforcemanagement_managementunit_selfschedule_settings**](#patch_workforcemanagement_managementunit_selfschedule_settings) | Update admin self-scheduling settings for a management unit|
 |[**patch_workforcemanagement_managementunit_timeofflimit**](#patch_workforcemanagement_managementunit_timeofflimit) | Updates a time off limit object.|
 |[**patch_workforcemanagement_managementunit_timeoffplan**](#patch_workforcemanagement_managementunit_timeoffplan) | Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead|
 |[**patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus**](#patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus) | Set integration status for a time off request.|
@@ -373,6 +380,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_notifications_update**](#post_workforcemanagement_notifications_update) | Mark a list of notifications as read or unread|
 |[**post_workforcemanagement_schedules**](#post_workforcemanagement_schedules) | Get published schedule for the current user|
 |[**post_workforcemanagement_schedulingpreferences_query**](#post_workforcemanagement_schedulingpreferences_query) | Get agent scheduling preferences|
+|[**post_workforcemanagement_selfschedule_jobs**](#post_workforcemanagement_selfschedule_jobs) | Agent starts an async job to edit a shift request by updating the start time of one or more activities.|
+|[**post_workforcemanagement_selfschedule_offers_jobs**](#post_workforcemanagement_selfschedule_offers_jobs) | Agent starts async job to search for best time for offers|
 |[**post_workforcemanagement_shifttrading_trade_jobs**](#post_workforcemanagement_shifttrading_trade_jobs) | Updates a shift trade. This route can only be called by the initiating user|
 |[**post_workforcemanagement_shifttrading_trade_match_jobs**](#post_workforcemanagement_shifttrading_trade_match_jobs) | Matches a shift trade. This route can only be called by the receiving user|
 |[**post_workforcemanagement_shifttrading_trade_state_jobs**](#post_workforcemanagement_shifttrading_trade_state_jobs) | Update trade state by a user|
@@ -2150,6 +2159,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -2612,6 +2623,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -2778,6 +2791,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -4531,7 +4546,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -7144,7 +7159,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of business units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -7647,6 +7662,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -7746,6 +7763,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -7988,6 +8007,54 @@ except ApiException as e:
 ### Return type
 
 [**DecisionMetricsResponse**](DecisionMetricsResponse)
+
+
+## get_workforcemanagement_managementunit_selfschedule_settings
+
+> [**SelfScheduleManagementUnitSettings**](SelfScheduleManagementUnitSettings) get_workforcemanagement_managementunit_selfschedule_settings(management_unit_id)
+
+
+Get admin self-scheduling settings for a management unit
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings 
+
+Requires ANY permissions: 
+
+* wfm:selfScheduleSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
+
+try:
+    # Get admin self-scheduling settings for a management unit
+    api_response = api_instance.get_workforcemanagement_managementunit_selfschedule_settings(management_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_selfschedule_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit |  |
+
+### Return type
+
+[**SelfScheduleManagementUnitSettings**](SelfScheduleManagementUnitSettings)
 
 
 ## get_workforcemanagement_managementunit_shifttrades_matched
@@ -8855,7 +8922,7 @@ except ApiException as e:
 
 ## get_workforcemanagement_managementunit_workplans
 
-> [**WorkPlanListResponse**](WorkPlanListResponse) get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand, exclude=exclude)
+> [**WorkPlanListResponse**](WorkPlanListResponse) get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand, exclude=exclude, force_download_service=force_download_service)
 
 
 Get work plans
@@ -8888,10 +8955,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 expand = ['expand_example'] # list[str] | Include to access additional data on the work plans (optional)
 exclude = ['exclude_example'] # list[str] | Exclude specific data on the work plans from the response (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 
 try:
     # Get work plans
-    api_response = api_instance.get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand, exclude=exclude)
+    api_response = api_instance.get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand, exclude=exclude, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplans: %s\n" % e)
@@ -8905,6 +8973,7 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **expand** | [**list[str]**](str)| Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
 | **exclude** | [**list[str]**](str)| Exclude specific data on the work plans from the response | [optional] <br />**Values**: shifts.activities |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
@@ -8958,7 +9027,7 @@ except ApiException as e:
 | **page_size** | **int**| Deprecated, paging is not supported | [optional]  |
 | **page_number** | **int**| Deprecated, paging is not supported | [optional]  |
 | **expand** | **str**| Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
-| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics |
 | **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 
 ### Return type
@@ -9291,6 +9360,242 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse)
+
+
+## get_workforcemanagement_selfschedule_activitymove
+
+> [**SelfScheduleActivityMoveListItem**](SelfScheduleActivityMoveListItem) get_workforcemanagement_selfschedule_activitymove(activity_move_id)
+
+
+Lookup a single agent activity move based on its identifier
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/activitymoves/{activityMoveId} 
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleActivityMove:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+activity_move_id = 'activity_move_id_example' # str | The ID of the activity move
+
+try:
+    # Lookup a single agent activity move based on its identifier
+    api_response = api_instance.get_workforcemanagement_selfschedule_activitymove(activity_move_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_selfschedule_activitymove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **activity_move_id** | **str**| The ID of the activity move |  |
+
+### Return type
+
+[**SelfScheduleActivityMoveListItem**](SelfScheduleActivityMoveListItem)
+
+
+## get_workforcemanagement_selfschedule_job
+
+> [**SelfScheduleJob**](SelfScheduleJob) get_workforcemanagement_selfschedule_job(job_id)
+
+
+View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_selfschedule_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_selfschedule_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+
+### Return type
+
+[**SelfScheduleJob**](SelfScheduleJob)
+
+
+## get_workforcemanagement_selfschedule_offers_job
+
+> [**SelfScheduleOffersJob**](SelfScheduleOffersJob) get_workforcemanagement_selfschedule_offers_job(job_id)
+
+
+View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/offers/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleOffers:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the offer job
+
+try:
+    # View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_selfschedule_offers_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_selfschedule_offers_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the offer job |  |
+
+### Return type
+
+[**SelfScheduleOffersJob**](SelfScheduleOffersJob)
+
+
+## get_workforcemanagement_selfschedule_query
+
+> [**SelfScheduleQuery**](SelfScheduleQuery) get_workforcemanagement_selfschedule_query()
+
+
+Query self-schedule activity moves for agent
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/query 
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleQuery:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Query self-schedule activity moves for agent
+    api_response = api_instance.get_workforcemanagement_selfschedule_query()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_selfschedule_query: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SelfScheduleQuery**](SelfScheduleQuery)
+
+
+## get_workforcemanagement_selfschedule_settings
+
+> [**SelfScheduleAgentManagementUnitSettings**](SelfScheduleAgentManagementUnitSettings) get_workforcemanagement_selfschedule_settings()
+
+
+Agent gets the self-schedule management unit settings.
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/settings 
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleSettings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Agent gets the self-schedule management unit settings.
+    api_response = api_instance.get_workforcemanagement_selfschedule_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_selfschedule_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**SelfScheduleAgentManagementUnitSettings**](SelfScheduleAgentManagementUnitSettings)
 
 
 ## get_workforcemanagement_shifttrades
@@ -11915,6 +12220,56 @@ except ApiException as e:
 ### Return type
 
 [**UpdateMuAgentWorkPlansBatchResponse**](UpdateMuAgentWorkPlansBatchResponse)
+
+
+## patch_workforcemanagement_managementunit_selfschedule_settings
+
+> [**SelfScheduleManagementUnitSettings**](SelfScheduleManagementUnitSettings) patch_workforcemanagement_managementunit_selfschedule_settings(management_unit_id, body)
+
+
+Update admin self-scheduling settings for a management unit
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings 
+
+Requires ANY permissions: 
+
+* wfm:selfScheduleSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
+body = PureCloudPlatformClientV2.SelfScheduleManagementUnitSettingsRequest() # SelfScheduleManagementUnitSettingsRequest | body
+
+try:
+    # Update admin self-scheduling settings for a management unit
+    api_response = api_instance.patch_workforcemanagement_managementunit_selfschedule_settings(management_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_selfschedule_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit |  |
+| **body** | [**SelfScheduleManagementUnitSettingsRequest**](SelfScheduleManagementUnitSettingsRequest)| body |  |
+
+### Return type
+
+[**SelfScheduleManagementUnitSettings**](SelfScheduleManagementUnitSettings)
 
 
 ## patch_workforcemanagement_managementunit_timeofflimit
@@ -19510,6 +19865,102 @@ except ApiException as e:
 [**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing)
 
 
+## post_workforcemanagement_selfschedule_jobs
+
+> [**SelfScheduleJob**](SelfScheduleJob) post_workforcemanagement_selfschedule_jobs(body)
+
+
+Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+
+Wraps POST /api/v2/workforcemanagement/selfschedule/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.SelfScheduleJobRequest() # SelfScheduleJobRequest | The request body
+
+try:
+    # Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+    api_response = api_instance.post_workforcemanagement_selfschedule_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_selfschedule_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SelfScheduleJobRequest**](SelfScheduleJobRequest)| The request body |  |
+
+### Return type
+
+[**SelfScheduleJob**](SelfScheduleJob)
+
+
+## post_workforcemanagement_selfschedule_offers_jobs
+
+> [**SelfScheduleOffersJob**](SelfScheduleOffersJob) post_workforcemanagement_selfschedule_offers_jobs(body)
+
+
+Agent starts async job to search for best time for offers
+
+Wraps POST /api/v2/workforcemanagement/selfschedule/offers/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleOffers:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.SelfScheduleOffersJobRequest() # SelfScheduleOffersJobRequest | The request body
+
+try:
+    # Agent starts async job to search for best time for offers
+    api_response = api_instance.post_workforcemanagement_selfschedule_offers_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_selfschedule_offers_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SelfScheduleOffersJobRequest**](SelfScheduleOffersJobRequest)| The request body |  |
+
+### Return type
+
+[**SelfScheduleOffersJob**](SelfScheduleOffersJob)
+
+
 ## post_workforcemanagement_shifttrading_trade_jobs
 
 > [**ShiftTradeUpdateTradeJobResponse**](ShiftTradeUpdateTradeJobResponse) post_workforcemanagement_shifttrading_trade_jobs(trade_id, body, force_async=force_async)
@@ -20469,4 +20920,4 @@ except ApiException as e:
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

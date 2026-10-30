@@ -32,7 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import Division
+    from . import WritableDivision
 
 class ExtensionPool(object):
     """
@@ -51,7 +51,7 @@ class ExtensionPool(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
-            'division': 'Division',
+            'division': 'WritableDivision',
             'description': 'str',
             'version': 'int',
             'date_created': 'datetime',
@@ -149,24 +149,24 @@ class ExtensionPool(object):
         self._name = name
 
     @property
-    def division(self) -> 'Division':
+    def division(self) -> 'WritableDivision':
         """
         Gets the division of this ExtensionPool.
         The division to which this entity belongs.
 
         :return: The division of this ExtensionPool.
-        :rtype: Division
+        :rtype: WritableDivision
         """
         return self._division
 
     @division.setter
-    def division(self, division: 'Division') -> None:
+    def division(self, division: 'WritableDivision') -> None:
         """
         Sets the division of this ExtensionPool.
         The division to which this entity belongs.
 
         :param division: The division of this ExtensionPool.
-        :type: Division
+        :type: WritableDivision
         """
         
 

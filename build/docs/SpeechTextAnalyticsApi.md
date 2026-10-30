@@ -3043,6 +3043,8 @@ Requires ANY permissions:
 * analytics:conversationDetail:view
 * recording:recording:view
 * recording:recordingSegment:view
+* analytics:transcriptcontent:search
+* speechAndTextAnalytics:data:view
 
 ### Example
 
@@ -3478,4 +3480,4 @@ except ApiException as e:
 [**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

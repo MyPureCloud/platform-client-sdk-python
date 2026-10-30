@@ -32,6 +32,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import ConversationCustomAttributesSearchCriteria
     from . import SearchSort
 
 class ConversationCustomAttributesSearchRequest(object):
@@ -50,6 +51,8 @@ class ConversationCustomAttributesSearchRequest(object):
         """
         self.swagger_types = {
             'expand': 'list[str]',
+            'query_reserved_fields': 'list[ConversationCustomAttributesSearchCriteria]',
+            'query_custom_attributes': 'list[ConversationCustomAttributesSearchCriteria]',
             'page_size': 'int',
             'page_number': 'int',
             'sort': 'list[SearchSort]',
@@ -59,6 +62,8 @@ class ConversationCustomAttributesSearchRequest(object):
 
         self.attribute_map = {
             'expand': 'expand',
+            'query_reserved_fields': 'queryReservedFields',
+            'query_custom_attributes': 'queryCustomAttributes',
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'sort': 'sort',
@@ -67,6 +72,8 @@ class ConversationCustomAttributesSearchRequest(object):
         }
 
         self._expand = None
+        self._query_reserved_fields = None
+        self._query_custom_attributes = None
         self._page_size = None
         self._page_number = None
         self._sort = None
@@ -96,6 +103,54 @@ class ConversationCustomAttributesSearchRequest(object):
         
 
         self._expand = expand
+
+    @property
+    def query_reserved_fields(self) -> List['ConversationCustomAttributesSearchCriteria']:
+        """
+        Gets the query_reserved_fields of this ConversationCustomAttributesSearchRequest.
+        The search criteria for reserved fields
+
+        :return: The query_reserved_fields of this ConversationCustomAttributesSearchRequest.
+        :rtype: list[ConversationCustomAttributesSearchCriteria]
+        """
+        return self._query_reserved_fields
+
+    @query_reserved_fields.setter
+    def query_reserved_fields(self, query_reserved_fields: List['ConversationCustomAttributesSearchCriteria']) -> None:
+        """
+        Sets the query_reserved_fields of this ConversationCustomAttributesSearchRequest.
+        The search criteria for reserved fields
+
+        :param query_reserved_fields: The query_reserved_fields of this ConversationCustomAttributesSearchRequest.
+        :type: list[ConversationCustomAttributesSearchCriteria]
+        """
+        
+
+        self._query_reserved_fields = query_reserved_fields
+
+    @property
+    def query_custom_attributes(self) -> List['ConversationCustomAttributesSearchCriteria']:
+        """
+        Gets the query_custom_attributes of this ConversationCustomAttributesSearchRequest.
+        The search criteria for custom attributes
+
+        :return: The query_custom_attributes of this ConversationCustomAttributesSearchRequest.
+        :rtype: list[ConversationCustomAttributesSearchCriteria]
+        """
+        return self._query_custom_attributes
+
+    @query_custom_attributes.setter
+    def query_custom_attributes(self, query_custom_attributes: List['ConversationCustomAttributesSearchCriteria']) -> None:
+        """
+        Sets the query_custom_attributes of this ConversationCustomAttributesSearchRequest.
+        The search criteria for custom attributes
+
+        :param query_custom_attributes: The query_custom_attributes of this ConversationCustomAttributesSearchRequest.
+        :type: list[ConversationCustomAttributesSearchCriteria]
+        """
+        
+
+        self._query_custom_attributes = query_custom_attributes
 
     @property
     def page_size(self) -> int:

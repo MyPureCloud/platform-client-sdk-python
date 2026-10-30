@@ -48,7 +48,6 @@ from .license_api import LicenseApi
 from .locations_api import LocationsApi
 from .log_capture_api import LogCaptureApi
 from .messaging_api import MessagingApi
-from .mobile_devices_api import MobileDevicesApi
 from .notifications_api import NotificationsApi
 from .o_auth_api import OAuthApi
 from .objects_api import ObjectsApi
@@ -135,7 +134,6 @@ from .license_api import LicenseApi
 from .locations_api import LocationsApi
 from .log_capture_api import LogCaptureApi
 from .messaging_api import MessagingApi
-from .mobile_devices_api import MobileDevicesApi
 from .notifications_api import NotificationsApi
 from .o_auth_api import OAuthApi
 from .objects_api import ObjectsApi

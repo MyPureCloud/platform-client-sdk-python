@@ -1604,8 +1604,6 @@ except ApiException as e:
 
 Returns a single cluster scan
 
-get_externalcontacts_graphs_clusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId} 
 
 Requires ANY permissions: 
@@ -1656,8 +1654,6 @@ except ApiException as e:
 
 Returns a single cluster found by a scan
 
-get_externalcontacts_graphs_clusterscan_cluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId} 
 
 Requires ANY permissions: 
@@ -1707,8 +1703,6 @@ except ApiException as e:
 
 
 Returns a list of clusters found by a scan
-
-get_externalcontacts_graphs_clusterscan_clusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters 
 
@@ -1766,8 +1760,6 @@ except ApiException as e:
 
 Returns the statistics about a single cluster scan
 
-get_externalcontacts_graphs_clusterscan_statistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics 
 
 Requires ANY permissions: 
@@ -1816,8 +1808,6 @@ except ApiException as e:
 
 Returns a list of cluster scans
 
-get_externalcontacts_graphs_clusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans 
 
 Requires ANY permissions: 
@@ -1865,12 +1855,10 @@ except ApiException as e:
 
 ## get_externalcontacts_graphs_clusterscans_latest
 
-> [**ClusterScan**](ClusterScan) get_externalcontacts_graphs_clusterscans_latest(expand=expand)
+> [**LatestClusterScan**](LatestClusterScan) get_externalcontacts_graphs_clusterscans_latest(expand=expand)
 
 
 Returns the latest cluster scan
-
-get_externalcontacts_graphs_clusterscans_latest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/latest 
 
@@ -1906,11 +1894,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: statistics.aggregated |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: statistics.aggregated, settings |
 
 ### Return type
 
-[**ClusterScan**](ClusterScan)
+[**LatestClusterScan**](LatestClusterScan)
 
 
 ## get_externalcontacts_graphs_clusterscans_latest_statistics
@@ -1919,8 +1907,6 @@ except ApiException as e:
 
 
 Returns the statistics about the latest cluster scan
-
-get_externalcontacts_graphs_clusterscans_latest_statistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/latest/statistics 
 
@@ -1965,8 +1951,6 @@ This endpoint does not need any parameters.
 
 
 Returns the org-wide settings for ExternalContact graph operations
-
-get_externalcontacts_graphs_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/settings 
 
@@ -6933,8 +6917,6 @@ except ApiException as e:
 
 Merge a single cluster found by a scan
 
-put_externalcontacts_graphs_clusterscan_cluster_merge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge 
 
 Requires ANY permissions: 
@@ -6984,8 +6966,6 @@ except ApiException as e:
 
 
 Updates the org-wide settings for ExternalContact graph operations
-
-put_externalcontacts_graphs_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/externalcontacts/graphs/settings 
 
@@ -7433,4 +7413,4 @@ except ApiException as e:
 [**Relationship**](Relationship)
 
 
-_PureCloudPlatformClientV2 269.0.0_
+_PureCloudPlatformClientV2 270.0.0_

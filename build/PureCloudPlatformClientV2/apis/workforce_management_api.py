@@ -313,6 +313,15 @@ from ..models import SearchAlternativeShiftTradesRequest
 from ..models import SearchShiftTradesRequest
 from ..models import SearchShiftTradesResponse
 from ..models import SearchUnmatchedShiftTradeListJobRequest
+from ..models import SelfScheduleActivityMoveListItem
+from ..models import SelfScheduleAgentManagementUnitSettings
+from ..models import SelfScheduleJob
+from ..models import SelfScheduleJobRequest
+from ..models import SelfScheduleManagementUnitSettings
+from ..models import SelfScheduleManagementUnitSettingsRequest
+from ..models import SelfScheduleOffersJob
+from ..models import SelfScheduleOffersJobRequest
+from ..models import SelfScheduleQuery
 from ..models import ServiceGoalTemplate
 from ..models import ServiceGoalTemplateList
 from ..models import SetTimeOffIntegrationStatusRequest
@@ -12484,6 +12493,84 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_managementunit_selfschedule_settings(self, management_unit_id: str, **kwargs) -> 'SelfScheduleManagementUnitSettings':
+        """
+        Get admin self-scheduling settings for a management unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_managementunit_selfschedule_settings(management_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit (required)
+        :return: SelfScheduleManagementUnitSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_managementunit_selfschedule_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `get_workforcemanagement_managementunit_selfschedule_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleManagementUnitSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("get_workforcemanagement_managementunit_shifttrades_matched is deprecated")
     def get_workforcemanagement_managementunit_shifttrades_matched(self, management_unit_id: str, **kwargs) -> 'ShiftTradeMatchesSummaryResponse':
         """
@@ -13866,12 +13953,13 @@ class WorkforceManagementApi(object):
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param list[str] expand: Include to access additional data on the work plans
         :param list[str] exclude: Exclude specific data on the work plans from the response
+        :param bool force_download_service: Force the result of this operation to be sent via download service. For testing/app development purposes
         :return: WorkPlanListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'expand', 'exclude']
+        all_params = ['management_unit_id', 'expand', 'exclude', 'force_download_service']
         all_params.append('callback')
 
         params = locals()
@@ -13899,6 +13987,8 @@ class WorkforceManagementApi(object):
             query_params['expand'] = params['expand']
         if 'exclude' in params:
             query_params['exclude'] = params['exclude']
+        if 'force_download_service' in params:
+            query_params['forceDownloadService'] = params['force_download_service']
 
         header_params = {}
 
@@ -14541,6 +14631,384 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BusinessUnitSchedulingPreferencesSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_selfschedule_activitymove(self, activity_move_id: str, **kwargs) -> 'SelfScheduleActivityMoveListItem':
+        """
+        Lookup a single agent activity move based on its identifier
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_selfschedule_activitymove(activity_move_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str activity_move_id: The ID of the activity move (required)
+        :return: SelfScheduleActivityMoveListItem
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['activity_move_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_selfschedule_activitymove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'activity_move_id' is set
+        if ('activity_move_id' not in params) or (params['activity_move_id'] is None):
+            raise ValueError("Missing the required parameter `activity_move_id` when calling `get_workforcemanagement_selfschedule_activitymove`")
+
+
+        resource_path = '/api/v2/workforcemanagement/selfschedule/activitymoves/{activityMoveId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'activity_move_id' in params:
+            path_params['activityMoveId'] = params['activity_move_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleActivityMoveListItem',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_selfschedule_job(self, job_id: str, **kwargs) -> 'SelfScheduleJob':
+        """
+        View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_selfschedule_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: SelfScheduleJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_selfschedule_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_selfschedule_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/selfschedule/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_selfschedule_offers_job(self, job_id: str, **kwargs) -> 'SelfScheduleOffersJob':
+        """
+        View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_selfschedule_offers_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the offer job (required)
+        :return: SelfScheduleOffersJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_selfschedule_offers_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_selfschedule_offers_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/selfschedule/offers/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleOffersJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_selfschedule_query(self, **kwargs) -> 'SelfScheduleQuery':
+        """
+        Query self-schedule activity moves for agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_selfschedule_query(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: SelfScheduleQuery
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_selfschedule_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/selfschedule/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleQuery',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_selfschedule_settings(self, **kwargs) -> 'SelfScheduleAgentManagementUnitSettings':
+        """
+        Agent gets the self-schedule management unit settings.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_selfschedule_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: SelfScheduleAgentManagementUnitSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_selfschedule_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/selfschedule/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleAgentManagementUnitSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -18926,6 +19394,90 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UpdateMuAgentWorkPlansBatchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_managementunit_selfschedule_settings(self, management_unit_id: str, body: 'SelfScheduleManagementUnitSettingsRequest', **kwargs) -> 'SelfScheduleManagementUnitSettings':
+        """
+        Update admin self-scheduling settings for a management unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_managementunit_selfschedule_settings(management_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit (required)
+        :param SelfScheduleManagementUnitSettingsRequest body: body (required)
+        :return: SelfScheduleManagementUnitSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_managementunit_selfschedule_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit_selfschedule_settings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_managementunit_selfschedule_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleManagementUnitSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -31563,6 +32115,162 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AgentSchedulingPreferenceListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_selfschedule_jobs(self, body: 'SelfScheduleJobRequest', **kwargs) -> 'SelfScheduleJob':
+        """
+        Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_selfschedule_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SelfScheduleJobRequest body: The request body (required)
+        :return: SelfScheduleJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_selfschedule_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_selfschedule_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/selfschedule/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_selfschedule_offers_jobs(self, body: 'SelfScheduleOffersJobRequest', **kwargs) -> 'SelfScheduleOffersJob':
+        """
+        Agent starts async job to search for best time for offers
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_selfschedule_offers_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SelfScheduleOffersJobRequest body: The request body (required)
+        :return: SelfScheduleOffersJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_selfschedule_offers_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_selfschedule_offers_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/selfschedule/offers/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SelfScheduleOffersJob',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

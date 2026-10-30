@@ -33,6 +33,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CaseQueryJobFilter
+    from . import CaseQueryJobFilterGroup
     from . import CaseQueryJobSort
 
 class CaseQueryJobCreate(object):
@@ -53,6 +54,7 @@ class CaseQueryJobCreate(object):
             'page_size': 'int',
             'page_number': 'int',
             'filters': 'list[CaseQueryJobFilter]',
+            'filter_groups': 'list[CaseQueryJobFilterGroup]',
             'sort': 'CaseQueryJobSort',
             'attributes': 'list[str]',
             'expands': 'list[str]'
@@ -62,6 +64,7 @@ class CaseQueryJobCreate(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'filters': 'filters',
+            'filter_groups': 'filterGroups',
             'sort': 'sort',
             'attributes': 'attributes',
             'expands': 'expands'
@@ -70,6 +73,7 @@ class CaseQueryJobCreate(object):
         self._page_size = None
         self._page_number = None
         self._filters = None
+        self._filter_groups = None
         self._sort = None
         self._attributes = None
         self._expands = None
@@ -154,6 +158,30 @@ class CaseQueryJobCreate(object):
         
 
         self._filters = filters
+
+    @property
+    def filter_groups(self) -> List['CaseQueryJobFilterGroup']:
+        """
+        Gets the filter_groups of this CaseQueryJobCreate.
+        List of filter groups to be used in the search. The filters within a group are combined using the group operator; groups are combined with each other and with the top-level filters using AND. 
+
+        :return: The filter_groups of this CaseQueryJobCreate.
+        :rtype: list[CaseQueryJobFilterGroup]
+        """
+        return self._filter_groups
+
+    @filter_groups.setter
+    def filter_groups(self, filter_groups: List['CaseQueryJobFilterGroup']) -> None:
+        """
+        Sets the filter_groups of this CaseQueryJobCreate.
+        List of filter groups to be used in the search. The filters within a group are combined using the group operator; groups are combined with each other and with the top-level filters using AND. 
+
+        :param filter_groups: The filter_groups of this CaseQueryJobCreate.
+        :type: list[CaseQueryJobFilterGroup]
+        """
+        
+
+        self._filter_groups = filter_groups
 
     @property
     def sort(self) -> 'CaseQueryJobSort':

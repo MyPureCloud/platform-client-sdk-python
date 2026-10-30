@@ -134,7 +134,7 @@ class ExportDetails(object):
         """
         if isinstance(export_type, int):
             export_type = str(export_type)
-        allowed_values = ["Architect", "Yaml"]
+        allowed_values = ["Architect", "Yaml", "FlowInfoSpec"]
         if export_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for export_type -> " + export_type)
             self._export_type = "outdated_sdk_version"
